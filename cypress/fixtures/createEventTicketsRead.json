@@ -3,8 +3,32 @@
 
     "email"           :"aswanthm385@gmail.com",
     "password"        :"112233",
-    "eventtitle"      :"International Cherry Blossom Festival"
-    
+    "eventtitle"      :"International Cherry Blossom Festival",
+    "venuename1"      : "New York, NY, USA",
+    "venuename2"      : "Chicago",
+    "levelname1"      :"Silver",
+    "levelname2"      :"Gold",
+    "ticketname1"     :"Free Ticket",
+    "ticketname2"     :"Paid Ticket",
+    "timeslot1"       :"Oct 14, 2024 at 9:00 AM - Oct 14, 2024 at 10:00 AM",
+    "timeslot2"       :"Oct 14, 2024 at 10:00 AM - Oct 14, 2024 at 11:00 AM",
+    "freeticketpricing" :"Free Events",
+    "paidticketpricing" : "Paid Events",
+    "ticketstockquantity" : "100",
+    "paidticketprice"  : "10",
+    "maxnooftickets"   : "10",
+    "tickettax"        :"10",
+    "salesstartdate"   :"2024-10-11",
+    "salesenddate"     :"2024-10-13",
+    "salesstarttime"   :"1000",
+    "salesendtime"     :"1100",
+    "freeticketprice"  :"0",
+    "freetickettax"    :"0 %",
+    "freetickettype"   :"Free",
+    "editedticketname" :"Free Silver Ticket",
+    "editedquantity"   :"200"
+
+
 
 
 }

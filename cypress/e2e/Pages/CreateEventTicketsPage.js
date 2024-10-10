@@ -9,12 +9,265 @@ class CreateEventTickets{
     eventsDashboardMenu = '//*[@id="navbar"]/ul/li[2]/a';
     eventEditButton = ':nth-child(1) > .btn > .bi';
     searchEventInputBox = '#myOwneventstab > :nth-child(1) > .col-md-4 > .input-group > .form-control';
-    ticketsTab =':nth-child(5) > .nav-link > .progressactive > .bi';
+    ticketsProgressTab=':nth-child(5) > .nav-link > .progressactive > .bi';
+    ticketsTab = '.features > .list-inline > :nth-child(1) > .nav-link > span';
+    addonTab = '.features > .list-inline > [data-aos-delay="100"] > .nav-link > span';
+    onlineToggleButton ='#flexSwitchCheckChecked';
+    selectVenueDropDown = ':nth-child(1) > .col-md-3 > .form-floating > .form-select';
+    selectLevelDropDown = ':nth-child(1) > .form-floating > .form-select';
+    selectTimeSlotDropDown = '#contentInsideSignupTIckets > :nth-child(2) > .form-floating > .form-select';
+    ticketNameField = '#Ticket_name';
+    selectPricingDropDown = ':nth-child(4) > .form-floating > .form-select';
+    stockQuantityField = '.form-floating > #Available_quantity';
+    ticketPriceField = '.form-floating > #Add-onPrice';
+    maxNoOfTicketsField ='.form-floating > #Maximum_No_tickets';
+    ticketTaxField = '.form-floating > #Ticket_tax';
+    salesStartDateField = '#Event_start_date';
+    salesStartTimeField = ':nth-child(10) > app-marzet-tp > .form-floating > #martime_0_tp';
+    salesEndDateField = '#Event_end_date';
+    salesEndTimeField = ':nth-child(12) > app-marzet-tp > .form-floating > #martime_0_tp';
+    saveTicketButton = '//button[normalize-space()="Save Ticket"]';
+    addonNameField = '#Add-onsname';
+    addonPricingDropDown = ':nth-child(2) > .form-select';
+    addonStockQuantityField = ':nth-child(3) > #Available_quantity';
+    addonPriceField = ':nth-child(4) > #Add-onPrice';
+    maxNoOfAddonsField = ':nth-child(5) > #Maximum_No_tickets';
+    addonTaxField = ':nth-child(6) > #Ticket_tax';
+    selectTicketDropDown = ':nth-child(7) > .form-select';
+    saveAddonButton = '#contentInsideSignupSlot0 > .col-md-12 > .btn';
+    continueButton = '.fixed_btm_div > .btn';
+    ticketEditButton = ':nth-child(1) > .btn > small > .bi';
+    ticketDeleteButton = ':nth-child(2) > .btn > small > .bi';
+    addonEditButton = ':nth-child(6) > .list-inline > :nth-child(1) > .btn > small > .bi';
+    addonDeleteButton = ':nth-child(6) > .list-inline > :nth-child(2) > .btn > small > .bi';
+    onlineDropDown = ':nth-child(1) > .col-md-3 > .form-floating > .form-select';
 
 
-    clickTicketsTab(){
+    checkSavedTicketData(ticketname,levelname,tickettype,stockquantity,ticketprice,tickettax){
+
+        cy.xpath('//tbody//tr//td[1]').invoke('text').then((text) => {
+            expect(text).to.include(ticketname);
+        });
+
+        cy.xpath('//tbody//tr//td[2]').invoke('text').then((text) => {
+            expect(text).to.include(levelname);
+        });
+
+        cy.xpath('//tbody//tr//td[3]').invoke('text').then((text) => {
+            expect(text).to.include(tickettype);
+        });
+
+        cy.xpath('//tbody//tr//td[4]').invoke('text').then((text) => {
+            expect(text).to.include(stockquantity);
+        });
+
+        cy.xpath('//tbody//tr//td[5]').invoke('text').then((text) => {
+            expect(text).to.include(ticketprice);
+        });
+
+        cy.xpath('//tbody//tr//td[6]').invoke('text').then((text) => {
+            expect(text).to.include(tickettax);
+        });
+
+    
+    }
+
+
+
+
+    selectVenue(venuename){
         
+        cy.get(this.selectVenueDropDown).select(venuename);
+
+    }
+
+    selectLevel(levelname){
+        
+        cy.get(this.selectLevelDropDown).select(levelname);
+        
+    }
+
+    selectTimeSlot(timeslot){
+        
+        cy.get(this.selectTimeSlotDropDown).select(timeslot);
+        
+    }
+
+    inputTicketName(ticketname){
+        
+        cy.get(this.ticketNameField).clear().type(ticketname);
+        
+    }
+
+    selectTicketPricing(ticketpricing){
+        
+        cy.get(this.selectPricingDropDown).select(ticketpricing);
+        
+    }
+
+    
+    inputTicketQuantity(quantity){
+        
+        cy.get(this.stockQuantityField).clear().type(quantity);
+        
+    }
+
+        
+    inputTicketPrice(price){
+        
+        cy.get(this.ticketPriceField).clear().type(price);
+        
+    }
+
+    inputMaxNoOfTickets(quantity){
+        
+        cy.get(this.maxNoOfTicketsField).clear().type(quantity);
+        
+    }
+
+    inputTicketTax(taxrate){
+        
+        cy.get(this.ticketTaxField).clear().type(taxrate);
+        
+    }
+
+    inputSalesStartDate(startdate){
+        
+        cy.get(this.salesStartDateField).clear().type(startdate);
+        
+    }
+
+    inputSalesEndDate(enddate){
+        
+        cy.get(this.salesEndDateField).clear().type(enddate);
+        
+    }
+
+
+    inputSalesStartTime(salesstarttime){
+        
+        cy.get(this.salesStartTimeField).clear().type(salesstarttime);
+        
+    }
+
+    
+    inputSalesEndTime(salesendtime){
+        
+        cy.get(this.salesEndTimeField).clear().type(salesendtime);
+        
+    }
+
+    SaveTicket(){
+
+        cy.xpath(this.saveTicketButton).click({force:true});
+
+    }
+
+    clickTicketEditButton(){
+
+        cy.get(this.ticketEditButton).click({force:true});
+    }
+
+    clickTicketDeleteButton(){
+
+        cy.get(this.ticketDeleteButton).click({force:true});
+    }
+
+    clickTicketTab(){
+
         cy.get(this.ticketsTab).click({force:true});
+    }
+
+    clickAddonTab(){
+
+        cy.get(this.addonTab).click({force:true});
+    }
+
+    clickOnlineToggleButton(){
+
+        cy.get(this.onlineToggleButton).click({force:true});
+    }
+
+    selectOnlineTitle(onlinetitle){
+
+         cy.get(this.onlineDropDown).select(onlinetitle);
+
+    }
+    
+
+    inputAddonName(addonname){
+        
+        cy.get(this.addonNameField).clear().type(addonname);
+        
+    }
+
+    selectAddonPricing(addonpricing){
+        
+        cy.get(this.addonPricingDropDown).select(addonpricing);
+        
+    }
+
+    
+    inputAddonQuantity(quantity){
+        
+        cy.get(this.addonStockQuantityField).clear().type(quantity);
+        
+    }
+
+        
+    inputAddonPrice(price){
+        
+        cy.get(this.addonPriceField).clear().type(price);
+        
+    }
+
+    inputMaxNoOfAddons(quantity){
+        
+        cy.get(this.maxNoOfAddonsField).clear().type(quantity);
+        
+    }
+
+    inputAddonTax(taxrate){
+        
+        cy.get(this.addonTaxField).clear().type(taxrate);
+        
+    }
+
+
+    selectTicket(ticketname){
+
+        cy.get(this.selectTicketDropDown).select(ticketname);
+    }
+
+    saveAddon(){
+
+        cy.get(this.saveAddonButton).click({force:true});
+    }
+
+    clickAddonEditButton(){
+
+        cy.get(this.addonEditButton).click({force:true});
+
+    }
+
+    
+    clickAddonDeleteButton(){
+
+        cy.get(this.addonDeleteButton).click({force:true});
+        
+    }
+
+
+    clickContinueButton(){
+
+        cy.get(this.continueButton).click({force:true});
+        cy.url().should('include','https://test.eventzet.com/#/events/Dashboard/EventzetEventsCreate/EventDesign');
+    }
+
+
+    clickTicketsProgressTab(){
+        
+        cy.get(this.ticketsProgressTab).click({force:true});
         cy.intercept('GET', '/api/TicketAddOn/GetTicketAddOnList?EventID=*').as('ticketData');
         cy.wait('@ticketData', { timeout: 25000 });
         cy.url().should('include','https://test.eventzet.com/#/events/Dashboard/EventzetEventsCreate/EventTicket');
