@@ -12,6 +12,15 @@ class CreateEventTickets{
     ticketsTab =':nth-child(5) > .nav-link > .progressactive > .bi';
 
 
+    clickTicketsTab(){
+        
+        cy.get(this.ticketsTab).click({force:true});
+        cy.intercept('GET', '/api/TicketAddOn/GetTicketAddOnList?EventID=*').as('ticketData');
+        cy.wait('@ticketData', { timeout: 25000 });
+        cy.url().should('include','https://test.eventzet.com/#/events/Dashboard/EventzetEventsCreate/EventTicket');
+    }
+
+
     searchEventName(eventname) {
 
         cy.get(this.searchEventInputBox).clear().type(eventname);
