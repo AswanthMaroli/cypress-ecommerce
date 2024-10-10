@@ -1,0 +1,71 @@
+
+
+    {
+        "searchname"        : "Charity Signup",
+        "signupcreator"     :  "jr James",
+        "useremail"         : "james21@gmail.com",
+        "userpassword"      : "james123",
+        "firstslot"         :" First Slot  ",
+ 
+        "firstslotdate"     :"Tuesday,7/23/24 - Texas",
+        "firstslottime"     :" 9:00 AM - 10:00 AM ",
+        "firstslotcount"    :"Qty : 10",
+        "secondslot"        :" Second Slot  ",
+        "slottext1"        :"First Slot",
+        "slottext2"        :"Second Slot",
+       
+        "secondslotdate"    :"Tuesday,7/16/24 - New York",
+        "secondslottime"    :" 10:00 AM - 11:00 AM ",
+        "secondslotcount"   :"Qty : 20",
+        "signuptitle"       :"Charity Signup",
+        "signupdescription" :"Signup for charity purpose",
+        "signuplocation"    :"Texas",
+        "signuplocation2"   :"New York",
+        "slotcount1"        :"10",
+        "slotcount2"        :"20",
+        "slotname1"         :" First Slot  ",
+        "slotname2"         :" Second Slot ",
+        "starttime1"        :"09:00 am",
+        "endtime1"          :"10:00 am",
+        "starttime2"        :"10:00 am",
+        "endtime2"          :"11:00 am",
+        "date1"             :"7/23/24 - Texas",
+        "date2"             :"7/16/24 - New York",
+        "question1"         :"Please Enter your contact details ?",
+        "question2"         :"Your home town ?",
+        "timeslot1"         :" 9:00 AM - 10:00 AM ",
+        "timeslot2"         :" 10:00 AM - 11:00 AM ",
+        "publishdate1"      :"07/23/2024",
+        "publishdate2"      :"07/16/2024",
+        
+        "slotdate1"         :"  7/23/24, Tuesday ",
+        "slotdate2"         :"  7/16/24, Tuesday ",
+        "regslotdate1"      :"  7/23/24,Tuesday ",
+        "regslotdate2"      :"  7/16/24,Tuesday ",
+        "quantity1"         :1,
+        "quantity2"         :2,
+        "comment1"          :"comment1", 
+        "comment2"          :"comment2",
+        "firstname"         :"James",
+        "lastname"          :"jr",
+        "email"             :"jackwilly963@gmail.com",
+        "gender"            :"Male",
+        "address"           :"RoseVilla",
+        "city"              :"Dallas",
+        "state"             :"Texas",
+        "postalcode"        :22682,
+        "datetime1"         :" July 23, 2024 & 9:00 AM - 10:00 AM",
+        "datetime2"         :" July 16, 2024 & 10:00 AM - 11:00 AM",
+        "regcount1"         :"Quantity : 1",
+        "regcount2"          :"Quantity : 2",
+        "reglocation1"     :" Texas",
+        "reglocation2"     :" New York"
+
+
+        
+      
+
+      }
+
+
+

@@ -1,0 +1,46 @@
+{   
+    "tiername"         :"Regular",
+    "tiername1"        :"Silver",
+    "tiername2"        :"Gold",
+    "tiername3"        :"Diamond",
+    "ticketname"       :"Free Ticket",
+    "ticketname1"      :"Paid Ticket",
+    "ticketname2"      :"Silver Ticket",
+    "ticketname3"      :"Gold Ticket",
+    "availablequantity":"100",
+    "price1"           :"10",
+    "price2"           :"10",
+    "maxnumber"        :"5",
+    "salesstarttime"   :"1000",
+    "salesendtime"     :"1800",
+    "useremail"        :"james21@gmail.com",
+    "userpassword"     :"james123",
+    "freeevents"       :"Free Event",
+    "paidevents"       :"Paid Event",
+    "firstTier"        :"0",
+    "secondTier"       :"1",
+    "Regular"          :"2",
+    "addonName1"       :"Pepsi",
+    "addonQuantity1"   :"100",
+    "addonPrice1"      :"1",
+    "addonTier1"       :"2: 873",
+    "addonName2"       :"Burger",
+    "addonQuantity2"   :"200",
+    "addonPrice2"      :"2",
+    "question"         :"Please Enter your contact details ?",
+    "instruction"      :"No smoking ",
+    "message"          :"Hy All",
+    "instruction1"     :"Please Switch Off Mobile",
+    "message1"         :"Welcome All",
+    "taxState"         :"43: 340",
+    "salesTaxId"       :"2121",
+    "taxName"          :"Federal",
+    "taxRate"          :"10"
+
+  
+    
+
+
+
+    
+}

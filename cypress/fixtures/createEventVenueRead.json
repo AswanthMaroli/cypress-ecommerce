@@ -1,0 +1,25 @@
+{
+
+    "email"           :"aswanthm385@gmail.com",
+    "password"        :"112233",
+    "venue1"          : "New York",
+    "venue2"          : "Chicago",
+    "address1"        : "123 Newyork Street",
+    "address2"        : "Chicago Street",
+    "onlinetitle"     : "Online Trading Course",
+    "onlineurl"       : "https://test.eventzet.com",
+    "onlineinstructions" : "Please Join the url on time",
+    "onlinetitle1"     : "Online Video Editing Course",
+    "onlineurl1"       : "https://test.eventzet.com/home",
+    "onlineinstructions1" : "Video editing - Zoom",
+    "city1"            : "Austin",
+    "city2"            : "Dallas",
+    "eventtitle"      :"International Cherry Blossom Festival"
+
+
+
+
+
+
+
+}

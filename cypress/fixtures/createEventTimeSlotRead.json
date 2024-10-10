@@ -1,0 +1,24 @@
+{
+
+    "email"           :"aswanthm385@gmail.com",
+    "password"        :"112233",
+    "eventtitle"      :"International Cherry Blossom Festival",
+    "timezone"        :"(GMT-10:00) Hawaii",
+    "starttime"       :"0900",
+    "endtime"         :"1000",
+    "checkstarttime"  :"Start time : 9:00 AM",
+    "checkendtime"    :"End time : 10:00 AM",
+    "starttime1"      :"1000",
+    "endtime1"        :"1100",
+    "checkstarttime1" :"Start time : 10:00 AM",
+    "checkendtime1"   :"End time : 11:00 AM",
+    "timezone2"       :"(GMT-06:00) Central Time(US & Canada)"
+    
+
+
+
+
+
+
+
+}

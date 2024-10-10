@@ -1,0 +1,34 @@
+{
+
+   "eventTitle"         :"International Cherry Blossom Festival ",
+   "ticketname1"        :"Regular",
+   "ticketname2"        :"Gold",
+   "inputTicket1"       :"1",
+   "inputTicket2"       :"1",
+   "prefix"             :"jr",
+   "buyerFirstName"     :"david",
+   "buyerLastName"      :"luca",
+   "buyerEmail"         :"jackwilly963@gmail.com",
+   "gender"             :"Male",
+   "buyerPhone"         :"9046967547",
+   "address"            :"rosevilla",
+   "city"               :"Dallas",
+   "state"              :"Texas",
+   "zipCode"            :"2233",
+   "attendeeFirstName1" :"Mathew",
+   "attendeeLastName1"  :"Max",
+   "attendeeEmail1"     :"mathew@gmail.com",
+   "attendeeFirstName2" :"David",
+   "attendeeLastName2"  :"john",
+   "attendeeEmail2"     :"david@gmail.com",
+   "tier1"              :"Silver",
+   "tier2"              :"Gold",
+   "cardNumber"         :"370000000000002",
+   "cardOwnerName"      :"david luca",
+   "month"              :"10",
+   "year"               :"2030",
+   "cvv"                :"234"
+
+   
+
+}

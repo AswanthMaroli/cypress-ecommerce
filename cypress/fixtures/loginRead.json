@@ -1,0 +1,15 @@
+{
+    "useremail":"aswanthm385@gmail.com",
+    "userpassword":"112233",
+    "incorrectpassword":"sasddd",
+    "incorrectemail":"jjffgjjg@fmail.com",
+    "suspendedemail":"jojopj65@gmail.com",
+    "suspendedpassword":"123",
+    "expiredpassword":"123",
+    "useremail2"   :"jackwilly963@gmail.com",
+    "userpassword2"   :"123",
+    "lowercasepassword"   :"password",
+    "uppercasepassword"   :"PASSWORD",
+    "casesensitivepassword" :"Password123"
+    
+}

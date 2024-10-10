@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="5013.520" tests="165" failures="2">
+  <testsuite name="Root Suite" timestamp="2024-01-29T05:27:43" tests="0" file="cypress\e2e\Tests\flow.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="EventZet End to End Test" timestamp="2024-01-29T05:27:43" tests="165" time="5013.482" failures="2">
+    <testcase name="Test 1: Clicking Create Event button - if user is not logged in, go to login page" time="0.000" classname="EventZet End to End Test Test 1: Clicking Create Event button - if user is not logged in, go to login page">
+      <failure message="Timed out retrying after 4000ms: expected &apos;https://test.eventzet.com/#/Eventshell/Eventhome&apos; to include &apos;https://test.eventzet.com/#/Eventshell/Eventlogin&apos;" type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: expected 'https://test.eventzet.com/#/Eventshell/Eventhome' to include 'https://test.eventzet.com/#/Eventshell/Eventlogin'
+    at Context.eval (webpack://eventzet_cypress/./cypress/e2e/Tests/home.cy.js:16:13)]]></failure>
+    </testcase>
+    <testcase name="Test 2: Clicking Search Event button" time="16.310" classname="EventZet End to End Test Test 2: Clicking Search Event button">
+    </testcase>
+    <testcase name="Test 3: Clicking Search Event icon" time="9.805" classname="EventZet End to End Test Test 3: Clicking Search Event icon">
+    </testcase>
+    <testcase name="Test 4: Clicking Dashboard menu - if user is not logged in, go to login page" time="10.471" classname="EventZet End to End Test Test 4: Clicking Dashboard menu - if user is not logged in, go to login page">
+    </testcase>
+    <testcase name="Test 5: Clicking Find Order Menu" time="11.798" classname="EventZet End to End Test Test 5: Clicking Find Order Menu">
+    </testcase>
+    <testcase name="Test 6: Clicking Pricing Menu" time="6.079" classname="EventZet End to End Test Test 6: Clicking Pricing Menu">
+    </testcase>
+    <testcase name="Test 7: Clicking Create Event button - if user is logged in, go to create event page" time="18.580" classname="EventZet End to End Test Test 7: Clicking Create Event button - if user is logged in, go to create event page">
+    </testcase>
+    <testcase name="Test 8: Clicking dashboard menu - if user is logged in, go to organizer dashboard page" time="18.770" classname="EventZet End to End Test Test 8: Clicking dashboard menu - if user is logged in, go to organizer dashboard page">
+    </testcase>
+    <testcase name="Test 9: Clicking Help Menu - Contact event organizer" time="14.661" classname="EventZet End to End Test Test 9: Clicking Help Menu - Contact event organizer">
+    </testcase>
+    <testcase name="Test 10: Clicking Help Menu - FAQ" time="8.713" classname="EventZet End to End Test Test 10: Clicking Help Menu - FAQ">
+    </testcase>
+    <testcase name="Test 11: Clicking All Filters in the home page " time="15.039" classname="EventZet End to End Test Test 11: Clicking All Filters in the home page ">
+    </testcase>
+    <testcase name="Test 20: Clicking ViewMore Button" time="5.931" classname="EventZet End to End Test Test 20: Clicking ViewMore Button">
+    </testcase>
+    <testcase name="Test 21: Checking logo image is visible in the home page" time="11.855" classname="EventZet End to End Test Test 21: Checking logo image is visible in the home page">
+    </testcase>
+    <testcase name="Test 1:Running signupSuccess" time="25.074" classname="EventZet End to End Test Test 1:Running signupSuccess">
+    </testcase>
+    <testcase name="Test 2:Running signup With InvalidEmail" time="14.666" classname="EventZet End to End Test Test 2:Running signup With InvalidEmail">
+    </testcase>
+    <testcase name="Test 3:Running signup With Existing Username" time="14.852" classname="EventZet End to End Test Test 3:Running signup With Existing Username">
+    </testcase>
+    <testcase name="Test 4:Running signup With Missing Firstname" time="13.864" classname="EventZet End to End Test Test 4:Running signup With Missing Firstname">
+    </testcase>
+    <testcase name="Test 5:Running signup With Missing Lastname" time="14.063" classname="EventZet End to End Test Test 5:Running signup With Missing Lastname">
+    </testcase>
+    <testcase name="Test 6:Running signup With Missing Password" time="16.480" classname="EventZet End to End Test Test 6:Running signup With Missing Password">
+    </testcase>
+    <testcase name="Test 7:Running signup With Missing ConfirmPassword" time="15.413" classname="EventZet End to End Test Test 7:Running signup With Missing ConfirmPassword">
+    </testcase>
+    <testcase name="Test 8:Running signupWithNullValues" time="12.950" classname="EventZet End to End Test Test 8:Running signupWithNullValues">
+    </testcase>
+    <testcase name="Test 9:Running signup With Password And ConfirmPassword Mismatch" time="15.994" classname="EventZet End to End Test Test 9:Running signup With Password And ConfirmPassword Mismatch">
+    </testcase>
+    <testcase name="Test 10:Running signup With Missing Email" time="15.845" classname="EventZet End to End Test Test 10:Running signup With Missing Email">
+    </testcase>
+    <testcase name="Test 11:Running signup With Missing ConfirmEmail" time="17.346" classname="EventZet End to End Test Test 11:Running signup With Missing ConfirmEmail">
+    </testcase>
+    <testcase name="Test 12:Running signup With Email And ConfirmEmail Mismatch" time="16.759" classname="EventZet End to End Test Test 12:Running signup With Email And ConfirmEmail Mismatch">
+    </testcase>
+    <testcase name="Test 13:Running signup with n no of users" time="50.132" classname="EventZet End to End Test Test 13:Running signup with n no of users">
+    </testcase>
+    <testcase name="Test 14:Running Signup With LowerCase Password " time="25.685" classname="EventZet End to End Test Test 14:Running Signup With LowerCase Password ">
+    </testcase>
+    <testcase name="Test 15:Running Signup With UpperCase Password " time="0.000" classname="EventZet End to End Test Test 15:Running Signup With UpperCase Password ">
+      <failure message="Timed out retrying after 4000ms: expected &apos;&lt;button.btn.md-button.md-raised.ptr_hand.text-center.btn_100px&gt;&apos; to be &apos;visible&apos;
+
+This element `&lt;button.btn.md-button.md-raised.ptr_hand.text-center.btn_100px&gt;` is not visible because its parent `&lt;div.popup_modalalert&gt;` has CSS property: `display: none`" type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: expected '<button.btn.md-button.md-raised.ptr_hand.text-center.btn_100px>' to be 'visible'
+
+This element `<button.btn.md-button.md-raised.ptr_hand.text-center.btn_100px>` is not visible because its parent `<div.popup_modalalert>` has CSS property: `display: none`
+    at Signup.successPopUpClick (webpack://eventzet_cypress/./cypress/e2e/Pages/signUpPages.js:65:37)
+    at Context.eval (webpack://eventzet_cypress/./cypress/e2e/Tests/signUp.cy.js:577:5)]]></failure>
+    </testcase>
+    <testcase name="Test 1:Running loginSuccess" time="17.270" classname="EventZet End to End Test Test 1:Running loginSuccess">
+    </testcase>
+    <testcase name="Test 2:Running loginWithIncorrectPassword" time="17.277" classname="EventZet End to End Test Test 2:Running loginWithIncorrectPassword">
+    </testcase>
+    <testcase name="Test 3:Running loginWithIncorrectEmail" time="14.737" classname="EventZet End to End Test Test 3:Running loginWithIncorrectEmail">
+    </testcase>
+    <testcase name="Test 4:Running loginWithoutCredentials" time="14.428" classname="EventZet End to End Test Test 4:Running loginWithoutCredentials">
+    </testcase>
+    <testcase name="Test 5:Running loginWithSuspendedAccount" time="15.238" classname="EventZet End to End Test Test 5:Running loginWithSuspendedAccount">
+    </testcase>
+    <testcase name="Test 6:Running loginWithExpiredPassword" time="17.896" classname="EventZet End to End Test Test 6:Running loginWithExpiredPassword">
+    </testcase>
+    <testcase name="Test 7:Running loginWithIncorrectCredentials" time="16.758" classname="EventZet End to End Test Test 7:Running loginWithIncorrectCredentials">
+    </testcase>
+    <testcase name="Test 8:Running loginWithSpecialCharactersInPassword" time="13.856" classname="EventZet End to End Test Test 8:Running loginWithSpecialCharactersInPassword">
+    </testcase>
+    <testcase name="Test 9:Running loginWithSpacesInEmail" time="15.247" classname="EventZet End to End Test Test 9:Running loginWithSpacesInEmail">
+    </testcase>
+    <testcase name="Test 10:Running loginWithWhitespaceInPassword" time="18.002" classname="EventZet End to End Test Test 10:Running loginWithWhitespaceInPassword">
+    </testcase>
+    <testcase name="Test 11:Running loginWithNumericPassword" time="13.233" classname="EventZet End to End Test Test 11:Running loginWithNumericPassword">
+    </testcase>
+    <testcase name="Test 12:Running loginWithLowerCasePassword" time="16.167" classname="EventZet End to End Test Test 12:Running loginWithLowerCasePassword">
+    </testcase>
+    <testcase name="Test 13:Running loginWithUpperCasePassword" time="15.912" classname="EventZet End to End Test Test 13:Running loginWithUpperCasePassword">
+    </testcase>
+    <testcase name="Test 14:Running loginWithCaseSensitivePassword" time="12.137" classname="EventZet End to End Test Test 14:Running loginWithCaseSensitivePassword">
+    </testcase>
+    <testcase name="Test 1:Checking SearchFilter Button is Clickable" time="7.198" classname="EventZet End to End Test Test 1:Checking SearchFilter Button is Clickable">
+    </testcase>
+    <testcase name="Test 3:Search event by using searchbox" time="8.216" classname="EventZet End to End Test Test 3:Search event by using searchbox">
+    </testcase>
+    <testcase name="Test 4:Search event by using loacation searchbox" time="6.383" classname="EventZet End to End Test Test 4:Search event by using loacation searchbox">
+    </testcase>
+    <testcase name="Test 5:Filter events by category" time="12.139" classname="EventZet End to End Test Test 5:Filter events by category">
+    </testcase>
+    <testcase name="Test 6:Filter events by type" time="12.129" classname="EventZet End to End Test Test 6:Filter events by type">
+    </testcase>
+    <testcase name="Test 7:Filter events by StartDate" time="11.262" classname="EventZet End to End Test Test 7:Filter events by StartDate">
+    </testcase>
+    <testcase name="Test 8:Filter events by EndDate" time="12.465" classname="EventZet End to End Test Test 8:Filter events by EndDate">
+    </testcase>
+    <testcase name="Test 9:Filter free events" time="12.702" classname="EventZet End to End Test Test 9:Filter free events">
+    </testcase>
+    <testcase name="Test 10:Filter paid events" time="11.151" classname="EventZet End to End Test Test 10:Filter paid events">
+    </testcase>
+    <testcase name="Test 11:Filter online events" time="10.913" classname="EventZet End to End Test Test 11:Filter online events">
+    </testcase>
+    <testcase name="Test 12:Clear Searchbox input filter " time="12.346" classname="EventZet End to End Test Test 12:Clear Searchbox input filter ">
+    </testcase>
+    <testcase name="Test 13:Clear locationbox input filter " time="8.920" classname="EventZet End to End Test Test 13:Clear locationbox input filter ">
+    </testcase>
+    <testcase name="Test 14:Filter Paid&amp;Free event" time="9.314" classname="EventZet End to End Test Test 14:Filter Paid&amp;Free event">
+    </testcase>
+    <testcase name="Test 15:Filter Paid Online event" time="10.407" classname="EventZet End to End Test Test 15:Filter Paid Online event">
+    </testcase>
+    <testcase name="Test 16:Filter Free Online event" time="10.311" classname="EventZet End to End Test Test 16:Filter Free Online event">
+    </testcase>
+    <testcase name="Test 17:Filter Free&amp;Paid Online event" time="9.550" classname="EventZet End to End Test Test 17:Filter Free&amp;Paid Online event">
+    </testcase>
+    <testcase name="Test 18:Filter Free event having any category" time="12.127" classname="EventZet End to End Test Test 18:Filter Free event having any category">
+    </testcase>
+    <testcase name="Test 19:Filter Paid event having any category" time="14.386" classname="EventZet End to End Test Test 19:Filter Paid event having any category">
+    </testcase>
+    <testcase name="Test 20:Filter Online event having any category" time="15.988" classname="EventZet End to End Test Test 20:Filter Online event having any category">
+    </testcase>
+    <testcase name="Test 21:Filter Paid event having any type" time="13.201" classname="EventZet End to End Test Test 21:Filter Paid event having any type">
+    </testcase>
+    <testcase name="Test 22:Filter Free event having any type" time="10.302" classname="EventZet End to End Test Test 22:Filter Free event having any type">
+    </testcase>
+    <testcase name="Test 23:Filter Online event having any type" time="12.926" classname="EventZet End to End Test Test 23:Filter Online event having any type">
+    </testcase>
+    <testcase name="Test 24:Filter Free&amp;Paid event having any type" time="14.852" classname="EventZet End to End Test Test 24:Filter Free&amp;Paid event having any type">
+    </testcase>
+    <testcase name="Test 25:Filter Free Online event having any type" time="11.746" classname="EventZet End to End Test Test 25:Filter Free Online event having any type">
+    </testcase>
+    <testcase name="Test 26:Filter Paid Online event having any type" time="12.988" classname="EventZet End to End Test Test 26:Filter Paid Online event having any type">
+    </testcase>
+    <testcase name="Test 27:Filter Free&amp;Paid event having any category" time="14.768" classname="EventZet End to End Test Test 27:Filter Free&amp;Paid event having any category">
+    </testcase>
+    <testcase name="Test 28:Filter Free Online event having any category" time="12.826" classname="EventZet End to End Test Test 28:Filter Free Online event having any category">
+    </testcase>
+    <testcase name="Test 29:Filter Paid Online event having any category" time="14.718" classname="EventZet End to End Test Test 29:Filter Paid Online event having any category">
+    </testcase>
+    <testcase name="Test 30:Filter Free event combination with StartDate " time="13.472" classname="EventZet End to End Test Test 30:Filter Free event combination with StartDate ">
+    </testcase>
+    <testcase name="Test 31:Filter Free event combination with EndDate " time="12.576" classname="EventZet End to End Test Test 31:Filter Free event combination with EndDate ">
+    </testcase>
+    <testcase name="Test 32:Filter Paid event combination with StartDate " time="9.418" classname="EventZet End to End Test Test 32:Filter Paid event combination with StartDate ">
+    </testcase>
+    <testcase name="Test 33:Filter Paid event combination with EndDate " time="11.958" classname="EventZet End to End Test Test 33:Filter Paid event combination with EndDate ">
+    </testcase>
+    <testcase name="Test 34:Filter Online event combination with StartDate " time="10.817" classname="EventZet End to End Test Test 34:Filter Online event combination with StartDate ">
+    </testcase>
+    <testcase name="Test 35:Filter Online event combination with EndDate " time="10.135" classname="EventZet End to End Test Test 35:Filter Online event combination with EndDate ">
+    </testcase>
+    <testcase name="Test 36:Filter Free&amp;Paid event combination with StartDate " time="9.785" classname="EventZet End to End Test Test 36:Filter Free&amp;Paid event combination with StartDate ">
+    </testcase>
+    <testcase name="Test 37:Filter Free&amp;Paid event combination with EndDate " time="10.397" classname="EventZet End to End Test Test 37:Filter Free&amp;Paid event combination with EndDate ">
+    </testcase>
+    <testcase name="Test 38:Filter Based on Category and StartDate " time="12.728" classname="EventZet End to End Test Test 38:Filter Based on Category and StartDate ">
+    </testcase>
+    <testcase name="Test 39:Filter Based on Category and EndDate " time="9.721" classname="EventZet End to End Test Test 39:Filter Based on Category and EndDate ">
+    </testcase>
+    <testcase name="Test 40:Filter Based on Type and StartDate " time="13.521" classname="EventZet End to End Test Test 40:Filter Based on Type and StartDate ">
+    </testcase>
+    <testcase name="Test 41:Filter Based on Type and EndDate " time="11.929" classname="EventZet End to End Test Test 41:Filter Based on Type and EndDate ">
+    </testcase>
+    <testcase name="Test 42:Filter multiple categories" time="14.528" classname="EventZet End to End Test Test 42:Filter multiple categories">
+    </testcase>
+    <testcase name="Test 43:Filter multiple Types" time="13.187" classname="EventZet End to End Test Test 43:Filter multiple Types">
+    </testcase>
+    <testcase name="Test 1: Check whether my events page is visible or not" time="25.497" classname="EventZet End to End Test Test 1: Check whether my events page is visible or not">
+    </testcase>
+    <testcase name="Test 2: Event is visible or not" time="23.267" classname="EventZet End to End Test Test 2: Event is visible or not">
+    </testcase>
+    <testcase name="Test 3: Event Saved alert message is visible or not" time="25.235" classname="EventZet End to End Test Test 3: Event Saved alert message is visible or not">
+    </testcase>
+    <testcase name="Test 4: Event search is working fine or not" time="26.741" classname="EventZet End to End Test Test 4: Event search is working fine or not">
+    </testcase>
+    <testcase name="Test 5: Verify user can unpublish the event" time="27.081" classname="EventZet End to End Test Test 5: Verify user can unpublish the event">
+    </testcase>
+    <testcase name="Test 6: Verify user can publish the event" time="29.737" classname="EventZet End to End Test Test 6: Verify user can publish the event">
+    </testcase>
+    <testcase name="Test 7: Verify user can delete event" time="29.471" classname="EventZet End to End Test Test 7: Verify user can delete event">
+    </testcase>
+    <testcase name="Test1:Running Check validation is working or not " time="33.067" classname="EventZet End to End Test Test1:Running Check validation is working or not ">
+    </testcase>
+    <testcase name="Test 2:Running Save the page without inputting the event name " time="38.016" classname="EventZet End to End Test Test 2:Running Save the page without inputting the event name ">
+    </testcase>
+    <testcase name="Test 3:Running Save the page without inputting the event venue " time="36.894" classname="EventZet End to End Test Test 3:Running Save the page without inputting the event venue ">
+    </testcase>
+    <testcase name="Test 4:Running Save the page without inputting the event startdate and enddate " time="39.044" classname="EventZet End to End Test Test 4:Running Save the page without inputting the event startdate and enddate ">
+    </testcase>
+    <testcase name="Test 5:Running Save the page without inputting the organizer email" time="40.977" classname="EventZet End to End Test Test 5:Running Save the page without inputting the organizer email">
+    </testcase>
+    <testcase name="Test 6:Running Input invalid email in organizer email field" time="40.903" classname="EventZet End to End Test Test 6:Running Input invalid email in organizer email field">
+    </testcase>
+    <testcase name="Test 7:Running Select Organization" time="36.324" classname="EventZet End to End Test Test 7:Running Select Organization">
+    </testcase>
+    <testcase name="Test 8:Running Select Online in venue" time="39.773" classname="EventZet End to End Test Test 8:Running Select Online in venue">
+    </testcase>
+    <testcase name="Test 9:Running Save the page with valid data" time="45.891" classname="EventZet End to End Test Test 9:Running Save the page with valid data">
+    </testcase>
+    <testcase name="Running navigation is working or not if we save basic info page" time="38.354" classname="EventZet End to End Test Running navigation is working or not if we save basic info page">
+    </testcase>
+    <testcase name="Check Upload Banner Image" time="33.749" classname="EventZet End to End Test Check Upload Banner Image">
+    </testcase>
+    <testcase name="Check Upload Sub Images" time="37.027" classname="EventZet End to End Test Check Upload Sub Images">
+    </testcase>
+    <testcase name="Check Upload Video" time="36.644" classname="EventZet End to End Test Check Upload Video">
+    </testcase>
+    <testcase name="Checking  delete sub image functionality" time="45.524" classname="EventZet End to End Test Checking  delete sub image functionality">
+    </testcase>
+    <testcase name="Checking  image upload limit" time="51.347" classname="EventZet End to End Test Checking  image upload limit">
+    </testcase>
+    <testcase name="Checking  image file type" time="38.333" classname="EventZet End to End Test Checking  image file type">
+    </testcase>
+    <testcase name="Checking  Previous Button is working or not" time="40.168" classname="EventZet End to End Test Checking  Previous Button is working or not">
+    </testcase>
+    <testcase name="Checking  save details page" time="52.575" classname="EventZet End to End Test Checking  save details page">
+    </testcase>
+    <testcase name="Check Add tier popup is visible or not" time="42.031" classname="EventZet End to End Test Check Add tier popup is visible or not">
+    </testcase>
+    <testcase name="Check whether default  tier is visible or not" time="49.822" classname="EventZet End to End Test Check whether default  tier is visible or not">
+    </testcase>
+    <testcase name="Check whether user can edit default tier" time="52.041" classname="EventZet End to End Test Check whether user can edit default tier">
+    </testcase>
+    <testcase name="Check whether user can delete default tier" time="47.585" classname="EventZet End to End Test Check whether user can delete default tier">
+    </testcase>
+    <testcase name="Check whether user can add multiple tiers" time="49.799" classname="EventZet End to End Test Check whether user can add multiple tiers">
+    </testcase>
+    <testcase name="Check  tier name field validation" time="39.330" classname="EventZet End to End Test Check  tier name field validation">
+    </testcase>
+    <testcase name="Check whether user can create a ticket or not" time="64.212" classname="EventZet End to End Test Check whether user can create a ticket or not">
+    </testcase>
+    <testcase name="Check  whether user can edit ticket" time="50.009" classname="EventZet End to End Test Check  whether user can edit ticket">
+    </testcase>
+    <testcase name="Check  whether user can delete ticket" time="46.000" classname="EventZet End to End Test Check  whether user can delete ticket">
+    </testcase>
+    <testcase name="Check whether user can create Free and Paid ticket" time="94.473" classname="EventZet End to End Test Check whether user can create Free and Paid ticket">
+    </testcase>
+    <testcase name="Check whether user can create addon" time="59.684" classname="EventZet End to End Test Check whether user can create addon">
+    </testcase>
+    <testcase name="Check whether user can edit addon" time="55.856" classname="EventZet End to End Test Check whether user can edit addon">
+    </testcase>
+    <testcase name="Check whether user can delete addon" time="50.722" classname="EventZet End to End Test Check whether user can delete addon">
+    </testcase>
+    <testcase name="Check whether user can create multiple addon" time="66.642" classname="EventZet End to End Test Check whether user can create multiple addon">
+    </testcase>
+    <testcase name="Check whether user can save the tickets page" time="53.889" classname="EventZet End to End Test Check whether user can save the tickets page">
+    </testcase>
+    <testcase name="Check customer details page title" time="53.408" classname="EventZet End to End Test Check customer details page title">
+    </testcase>
+    <testcase name="Check whether user can add qustions" time="61.082" classname="EventZet End to End Test Check whether user can add qustions">
+    </testcase>
+    <testcase name="Check whether user can save customer details page" time="55.146" classname="EventZet End to End Test Check whether user can save customer details page">
+    </testcase>
+    <testcase name="Check whether user can delete qustions" time="58.914" classname="EventZet End to End Test Check whether user can delete qustions">
+    </testcase>
+    <testcase name="Check whether user can add special instruction" time="48.946" classname="EventZet End to End Test Check whether user can add special instruction">
+    </testcase>
+    <testcase name="Check whether user can edit special instruction" time="52.510" classname="EventZet End to End Test Check whether user can edit special instruction">
+    </testcase>
+    <testcase name="Check whether user can add message for email" time="54.909" classname="EventZet End to End Test Check whether user can add message for email">
+    </testcase>
+    <testcase name="Check whether user can edit message for email" time="48.804" classname="EventZet End to End Test Check whether user can edit message for email">
+    </testcase>
+    <testcase name="Check Publish page title" time="73.537" classname="EventZet End to End Test Check Publish page title">
+    </testcase>
+    <testcase name="Check user can enable service charge is given by the event creator button" time="61.044" classname="EventZet End to End Test Check user can enable service charge is given by the event creator button">
+    </testcase>
+    <testcase name="Check user can enable accept refund requests button" time="61.291" classname="EventZet End to End Test Check user can enable accept refund requests button">
+    </testcase>
+    <testcase name="Check user can save publish page without selecting refund policy in dropdown" time="70.277" classname="EventZet End to End Test Check user can save publish page without selecting refund policy in dropdown">
+    </testcase>
+    <testcase name="Check user can disable service charge is given by the event creator button" time="72.413" classname="EventZet End to End Test Check user can disable service charge is given by the event creator button">
+    </testcase>
+    <testcase name="Check user can disable accept refund requests button" time="65.796" classname="EventZet End to End Test Check user can disable accept refund requests button">
+    </testcase>
+    <testcase name="Check whether user can check tax settings" time="68.080" classname="EventZet End to End Test Check whether user can check tax settings">
+    </testcase>
+    <testcase name="Check whether user can check tax settings Yes Checkbox " time="84.473" classname="EventZet End to End Test Check whether user can check tax settings Yes Checkbox ">
+    </testcase>
+    <testcase name="Check whether user can input tax details" time="76.658" classname="EventZet End to End Test Check whether user can input tax details">
+    </testcase>
+    <testcase name="Check whether user can save publish page" time="90.943" classname="EventZet End to End Test Check whether user can save publish page">
+    </testcase>
+    <testcase name="Check whether user can publish the event " time="92.458" classname="EventZet End to End Test Check whether user can publish the event ">
+    </testcase>
+    <testcase name="Check event details page is visible or not" time="27.713" classname="EventZet End to End Test Check event details page is visible or not">
+    </testcase>
+    <testcase name="Check event name is present in the event details page" time="24.706" classname="EventZet End to End Test Check event name is present in the event details page">
+    </testcase>
+    <testcase name="Check event ticket details is present in the event details page" time="22.238" classname="EventZet End to End Test Check event ticket details is present in the event details page">
+    </testcase>
+    <testcase name="Check username is present in the event details page" time="19.404" classname="EventZet End to End Test Check username is present in the event details page">
+    </testcase>
+    <testcase name="Check event location is present in the event details page" time="18.706" classname="EventZet End to End Test Check event location is present in the event details page">
+    </testcase>
+    <testcase name="Check RegisterNow button is present in the event details page" time="31.606" classname="EventZet End to End Test Check RegisterNow button is present in the event details page">
+    </testcase>
+    <testcase name="Check Copy url button is clickable or not" time="20.897" classname="EventZet End to End Test Check Copy url button is clickable or not">
+    </testcase>
+    <testcase name="Check RegisterNow button is clickable or not" time="19.823" classname="EventZet End to End Test Check RegisterNow button is clickable or not">
+    </testcase>
+    <testcase name="Check event registration popup is visible or not" time="16.773" classname="EventZet End to End Test Check event registration popup is visible or not">
+    </testcase>
+    <testcase name="Check whether user can input ticket count" time="26.299" classname="EventZet End to End Test Check whether user can input ticket count">
+    </testcase>
+    <testcase name="Check whether registration popup close icon and close button is working or not" time="28.942" classname="EventZet End to End Test Check whether registration popup close icon and close button is working or not">
+    </testcase>
+    <testcase name="Check whether registration details page validation is working or not" time="27.766" classname="EventZet End to End Test Check whether registration details page validation is working or not">
+    </testcase>
+    <testcase name="Check whether add attendee validation is visible or not " time="43.210" classname="EventZet End to End Test Check whether add attendee validation is visible or not ">
+    </testcase>
+    <testcase name="Check whether user can add attendee details" time="45.958" classname="EventZet End to End Test Check whether user can add attendee details">
+    </testcase>
+    <testcase name="Check whether user can save registration details page" time="58.481" classname="EventZet End to End Test Check whether user can save registration details page">
+    </testcase>
+    <testcase name="Check whether billing info page validation is working or not" time="64.763" classname="EventZet End to End Test Check whether billing info page validation is working or not">
+    </testcase>
+    <testcase name="Check whether can user make payment or not" time="78.290" classname="EventZet End to End Test Check whether can user make payment or not">
+    </testcase>
+    <testcase name="Check Registration and order details page " time="119.547" classname="EventZet End to End Test Check Registration and order details page ">
+    </testcase>
+    <testcase name="Test 1:Without login user can access organizer dashboard or not " time="10.511" classname="EventZet End to End Test Test 1:Without login user can access organizer dashboard or not ">
+    </testcase>
+    <testcase name="Test 2: logined user can access organizer dashboard or not " time="18.104" classname="EventZet End to End Test Test 2: logined user can access organizer dashboard or not ">
+    </testcase>
+    <testcase name="Test 3: Menu buttons in the organizer dashboard working fine or not " time="60.096" classname="EventZet End to End Test Test 3: Menu buttons in the organizer dashboard working fine or not ">
+    </testcase>
+    <testcase name="Test 4:  Historical order chart is visible or not " time="25.975" classname="EventZet End to End Test Test 4:  Historical order chart is visible or not ">
+    </testcase>
+  </testsuite>
+</testsuites>

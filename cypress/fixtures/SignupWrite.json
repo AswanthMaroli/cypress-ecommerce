@@ -1,0 +1,93 @@
+[
+  {
+    "Testname": "Test 1:Running signupSuccess",
+    "Name": "Nanni Hettie",
+    "Useremail": "jucoj@gmail.com",
+    "Userpassword": "jucoj@gmail.com",
+    "Confirmpassword": "xvCjOra7"
+  },
+  {
+    "Testname": "Test 2:Running signup With InvalidEmail",
+    "Name": "Ciobanu Kathryn",
+    "Useremail": "andrew",
+    "Userpassword": "andrew",
+    "Confirmpassword": "u0gkKcuO"
+  },
+  {
+    "Testname": "Test 3:Running signup With Existing Username",
+    "Name": "Evers Amelia",
+    "Useremail": "aswanthm385@gmail.com",
+    "Userpassword": "aswanthm385@gmail.com",
+    "Confirmpassword": "nBWXgJa3"
+  },
+  {
+    "Testname": "Test 4:Running signup With Missing Firstname",
+    "Name": "Francis ",
+    "Useremail": "zumma@gmail.com",
+    "Userpassword": "zumma@gmail.com",
+    "Confirmpassword": "evci8itG"
+  },
+  {
+    "Testname": "Test 5:Running signup With  Missing Lastname",
+    "Name": " Duane",
+    "Useremail": "ledejzuk@gmail.com",
+    "Userpassword": "ledejzuk@gmail.com",
+    "Confirmpassword": "LPeAssDO"
+  },
+  {
+    "Testname": "Test 6:Running signup With  Missing Password",
+    "Name": "Mellor Russell",
+    "Useremail": "geb@gmail.com",
+    "Userpassword": "geb@gmail.com",
+    "Confirmpassword": " "
+  },
+  {
+    "Testname": "Test 6:Running signup With  Missing Password",
+    "Name": "Mazzanti Carl",
+    "Useremail": "nulraj@gmail.com",
+    "Userpassword": "nulraj@gmail.com",
+    "Confirmpassword": "6I9pW742"
+  },
+  {
+    "Testname": "Test 9:Running signup With  Password And ConfirmPassword Mismatch",
+    "Name": "Robertson Matilda",
+    "Useremail": "tamafe@gmail.com",
+    "Userpassword": "tamafe@gmail.com",
+    "Confirmpassword": "D1FwDK6Z"
+  },
+  {
+    "Testname": "Test 10:Running signup With Missing Email",
+    "Name": "Capanni Callie",
+    "Useremail": " ",
+    "Userpassword": "iz@gmail.com",
+    "Confirmpassword": "5PKCYPgs"
+  },
+  {
+    "Testname": "Test 13:Running signup With  n no of users",
+    "Name": "Diop Leroy",
+    "Useremail": "biw@gmail.com",
+    "Userpassword": "biw@gmail.com",
+    "Confirmpassword": "ds5pzdm1"
+  },
+  {
+    "Testname": "Test 13:Running signup With  n no of users",
+    "Name": "Rhodes Howard",
+    "Useremail": "kujit@gmail.com",
+    "Userpassword": "kujit@gmail.com",
+    "Confirmpassword": "wC6hzzIv"
+  },
+  {
+    "Testname": "Test 14:Running signup With  With LowerCase Password ",
+    "Name": "Baars Theresa",
+    "Useremail": "muaneop@gmail.com",
+    "Userpassword": "muaneop@gmail.com",
+    "Confirmpassword": "password"
+  },
+  {
+    "Testname": "Test 15:Running signup With  With UpperCase Password ",
+    "Name": "Tonini Jon",
+    "Useremail": "fezulac@gmail.com",
+    "Userpassword": "fezulac@gmail.com",
+    "Confirmpassword": "PASSWORD"
+  }
+]

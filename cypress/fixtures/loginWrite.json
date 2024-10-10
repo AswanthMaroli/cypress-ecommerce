@@ -1,0 +1,72 @@
+[
+  {
+    "Testname": "Test 1:Running loginSuccess",
+    "Useremail": "aswanthm385@gmail.com",
+    "Userpassword": "112233"
+  },
+  {
+    "Testname": "Test 2:Running loginWithIncorrectPassword",
+    "Useremail": "aswanthm385@gmail.com",
+    "Userpassword": "sasddd"
+  },
+  {
+    "Testname": "Test 3:Running loginWithIncorrectEmail",
+    "Useremail": "jjffgjjg@fmail.com",
+    "Userpassword": "112233"
+  },
+  {
+    "Testname": "Test 4:Running loginWithoutCredentials",
+    "Useremail": "",
+    "Userpassword": ""
+  },
+  {
+    "Testname": "Test 5:Running loginWithSuspendedAccount",
+    "Useremail": "jojopj65@gmail.com",
+    "Userpassword": "123"
+  },
+  {
+    "Testname": "Test 6:Running loginWithExpiredPassword",
+    "Useremail": "aswanthm385@gmail.com",
+    "Userpassword": "123"
+  },
+  {
+    "Testname": "Test 7:Running loginWithIncorrectCredentials",
+    "Useremail": "jjffgjjg@fmail.com",
+    "Userpassword": "sasddd"
+  },
+  {
+    "Testname": "Test 8:Running loginWithSpecialCharactersInPassword",
+    "Useremail": "aswanthm385@gmail.com",
+    "Userpassword": "112233"
+  },
+  {
+    "Testname": "Test 9:Running loginWithSpacesInEmail",
+    "Useremail": "  aswanthm385@gmail.com  ",
+    "Userpassword": "112233"
+  },
+  {
+    "Testname": "Test 10:Running loginWithWhitespaceInPassword",
+    "Useremail": "aswanthm385@gmail.com",
+    "Userpassword": "  112233"
+  },
+  {
+    "Testname": "Test 11:Running loginWithNumericPassword",
+    "Useremail": "jackwilly963@gmail.com",
+    "Userpassword": "123"
+  },
+  {
+    "Testname": "Test 12:Running loginWithLowerCasePassword",
+    "Useremail": "test1@gmail.com",
+    "Userpassword": "password"
+  },
+  {
+    "Testname": "Test 13:Running loginWithUpperCasePassword",
+    "Useremail": "test2@gmail.com",
+    "Userpassword": "PASSWORD"
+  },
+  {
+    "Testname": "Test 14:Running loginWithCaseSensitivePassword",
+    "Useremail": "savio@gmail.com",
+    "Userpassword": "Password123"
+  }
+]
