@@ -35,6 +35,78 @@ class CreateEventPublish {
     publishEventPopup = '[style="display: block;"] > .cardboxalert > .card';
 
 
+    loginMenuButton = ':nth-child(2) > :nth-child(8) > #EventZetHomemenuLoginmenu';
+    userEmail = '#UserEmail';
+    userPassword = '#UserPassword';
+    login = '#EventLoginBtn';
+    createEventMenu = '#EventZetCreateEventMenu';
+    myEvents = ':nth-child(3) > .nav-link > .fs-4';
+    eventsDashboardMenu = '//*[@id="navbar"]/ul/li[2]/a';
+    eventEditButton = ':nth-child(1) > .btn > .bi';
+    searchEventInputBox = '#myOwneventstab > :nth-child(1) > .col-md-4 > .input-group > .form-control';
+    publishTab = ':nth-child(8) > .nav-link > .progressactive > .bi';
+
+
+    clickPublishProgressTab(){
+        
+        cy.get(this.publishTab).click({force:true});
+        cy.intercept('GET', '/api/BasicInfo/GetEventLocation?EventID=*').as('publishPage');
+        cy.wait('@publishPage', { timeout: 25000 });
+        cy.url().should('include','https://test.eventzet.com/#/events/Dashboard/EventzetEventsCreate/Eventpublish');
+    }
+
+
+    searchEventName(eventname) {
+
+        cy.get(this.searchEventInputBox).clear().type(eventname);
+
+    }
+
+    clickEventEditButton() {
+
+        cy.get(this.eventEditButton).click({ force: true });
+
+    }
+    inputEmail(useremail) {
+
+        cy.get(this.userEmail).click({ force: true }).type(useremail);
+
+    }
+
+    inputPassword(userepassword) {
+
+        cy.get(this.userPassword).click({ force: true }).type(userepassword);
+
+    }
+
+    clickLoginMenu() {
+
+        cy.get(this.loginMenuButton).click();
+
+    }
+
+    loginClick() {
+
+        cy.get(this.login).click();
+        cy.wait(6000);
+
+    }
+
+
+    eventsDashboardMenuClick() {
+
+        cy.xpath(this.eventsDashboardMenu).click();
+        cy.wait(4000);
+
+    }
+
+    clickMyEvents() {
+
+        cy.get(this.myEvents).click({ force: true });
+
+    }
+
+
     publishEvent() {
 
         cy.get(this.publishEventButton).click();
@@ -45,50 +117,6 @@ class CreateEventPublish {
 
         cy.get(this.publishEventPopup).should('be.visible').should('contain', 'Event published successfully!');
         cy.get('[style="display: block;"] > .cardboxalert > .card > .w-100 > .btn').click();
-
-    }
-
-
-
-
-    selectState(state) {
-
-        cy.xpath(this.taxState).select(state);
-
-    }
-
-    inputSalesTaxId(taxid) {
-
-        cy.get(this.salesTaxId).clear().type(taxid);
-
-    }
-
-    inputTaxName(taxname) {
-
-        cy.get(this.taxName).clear().type(taxname);
-
-    }
-
-    inputTaxRate(taxrate) {
-
-        cy.get(this.taxRate).clear().type(taxrate);
-
-    }
-
-
-    clickTaxSettingsNoButton() {
-
-        cy.get(':nth-child(3) > :nth-child(2) > .text-seconadary').should('contain', 'No, I do not need to charge tax for this event');
-        cy.scrollTo('bottom');
-        cy.get(this.taxSettingsNoButton).check();
-
-    }
-
-    clickTaxSettingsYesButton() {
-
-        cy.get(':nth-child(3) > :nth-child(3) > .text-seconadary').should('contain', 'Yes, I need to charge tax for this event');
-        cy.scrollTo('bottom');
-        cy.get(this.taxSettingsYesButton).check();
 
     }
 
@@ -164,67 +192,8 @@ class CreateEventPublish {
         cy.wait(2000);
     }
 
-    clickEventPreviewCloseIcon() {
+ 
 
-        cy.get(this.eventPreviewCloseIcon).click({ force: true });
-    }
-
-
-    clickEventPreviewCloseButton() {
-
-        cy.get(this.eventPreviewCloseButton).click({ force: true });
-    }
-
-    clickEventPreview() {
-
-        cy.get(this.eventPreview).click({ force: true });
-        cy.wait(2000);
-        cy.get('.modal-body').should('be.visible');
-
-    }
-
-
-    checkEventName() {
-
-        cy.get(this.eventName).should('exist').
-            should('contain', 'International Cherry Blossom Festival ');
-    }
-
-    clickCustomerDetailsPreviousButton() {
-
-        cy.xpath(this.customerDetailsPreviousButton).click({ force: true });
-    }
-
-
-    clickCustomerDetailsSaveButton() {
-
-        cy.xpath(this.customerDetailsSaveButton).click({ force: true });
-    }
-
-    clickMyEventMenu() {
-
-        cy.get(this.myEventMenu).click({ force: true });
-
-    }
-
-    checkTitle() {
-
-        cy.scrollTo(0, 0);
-        cy.wait(1000);
-        cy.xpath(this.title).should('contain', 'Publish Your Event');
-    }
-
-    clickEventEditButton() {
-
-        cy.get(this.eventEditButton).click({ force: true });
-
-    }
-
-    clickMyEvents() {
-
-        cy.xpath(this.myEvents).click({ force: true });
-
-    }
 
 
 
@@ -245,50 +214,9 @@ class CreateEventPublish {
 
 
 
-    clickSaveButton() {
+ 
 
-        cy.get(this.basicInfoSaveButton).click({ force: true });
 
-    }
-
-    clickDetailsSaveButton() {
-
-        cy.xpath(this.detailsSaveButton).click({ force: true });
-
-    }
-
-    inputEmail(useremail) {
-
-        cy.get(this.userEmail).click({ force: true }).clear().type(useremail);
-
-    }
-
-    inputPassword(password) {
-
-        cy.get(this.userPassword).click({ force: true }).clear().type(password);
-
-    }
-
-    loginClick() {
-
-        cy.get(this.loginButton).click({ force: true });
-    }
-
-    clickLoginMenu() {
-
-        cy.get(this.loginMenu).click({ force: true });
-    }
-
-    clickAddTicketContinueButton() {
-
-        cy.xpath(this.addTicketContinueButton).click({ force: true });
-
-    }
-
-    clickTierCloseIcon() {
-
-        cy.get(this.tierCloseIcon).click({ force: true });
-    }
 
 
 
