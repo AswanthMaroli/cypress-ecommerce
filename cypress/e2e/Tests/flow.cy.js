@@ -158,8 +158,8 @@ describe('EventZet End to End Test', () => {
   // const { CreateEventBasicInfoTests } = require('./createEventVenue.cy');
   // const { CreateEventLevelTests } = require('./createEventLevel.cy');
   // const { CreateEventTimeSlotsTests } = require('./createEventTimeSlots.cy');
-  const { CreateEventTicketsTests } = require('./createEventTickets.cy')
-
+  // const { CreateEventTicketsTests } = require('./createEventTickets.cy');
+  const { CreateEventDesignTests } = require('./createEventDesign.cy');
   // const { CreateEventDetailsTests } = require('./createEventDetails.cy');
   // const { CreateEventAddTicketTests } = require('./createEventAddTickets.cy');
   // const { CreateEventCustomerDetailsTests } = require('./createEventCustomerDetails.cy');
