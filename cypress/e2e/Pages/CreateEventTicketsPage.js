@@ -36,12 +36,73 @@ class CreateEventTickets{
     selectTicketDropDown = ':nth-child(7) > .form-select';
     saveAddonButton = '#contentInsideSignupSlot0 > .col-md-12 > .btn';
     continueButton = '.fixed_btm_div > .btn';
-    ticketEditButton = ':nth-child(1) > .btn > small > .bi';
-    ticketDeleteButton = ':nth-child(2) > .btn > small > .bi';
-    addonEditButton = ':nth-child(6) > .list-inline > :nth-child(1) > .btn > small > .bi';
-    addonDeleteButton = ':nth-child(6) > .list-inline > :nth-child(2) > .btn > small > .bi';
+    firstTicketEditButton = ':nth-child(2) > tr > :nth-child(9) > .list-inline > :nth-child(1) > .btn > small > .bi';
+    secondTicketEditButton = ':nth-child(3) > tr > :nth-child(9) > .list-inline > :nth-child(1) > .btn';
+    firstTicketDeleteButton = ':nth-child(2) > tr > :nth-child(9) > .list-inline > :nth-child(2) > .btn';
+    secondTicketDeleteButton = ':nth-child(3) > tr > :nth-child(9) > .list-inline > :nth-child(2) > .btn > small > .bi'; 
     onlineDropDown = ':nth-child(1) > .col-md-3 > .form-floating > .form-select';
+    firstAddonEditButton = ':nth-child(6) > .list-inline > :nth-child(1) > .btn > small > .bi';
+    firstAddonDeleteButton = ':nth-child(6) > .list-inline > :nth-child(2) > .btn > small > .bi';
 
+
+
+    checkSavedTicketData1(ticketname,levelname,tickettype,stockquantity,ticketprice,tickettax){
+
+        cy.xpath('//tbody//tr//td[1]').invoke('text').then((text) => {
+            expect(text).to.include(ticketname);
+        });
+
+        cy.xpath('//tbody//tr//td[2]').invoke('text').then((text) => {
+            expect(text).to.include(levelname);
+        });
+
+        cy.xpath('//tbody//tr//td[3]').invoke('text').then((text) => {
+            expect(text).to.include(tickettype);
+        });
+
+        cy.xpath('//tbody//tr//td[4]').invoke('text').then((text) => {
+            expect(text).to.include(stockquantity);
+        });
+
+        cy.xpath('//tbody//tr//td[5]').invoke('text').then((text) => {
+            expect(text).to.include(ticketprice);
+        });
+
+        cy.xpath('//tbody//tr//td[6]').invoke('text').then((text) => {
+            expect(text).to.include(tickettax);
+        });
+
+    
+    }
+
+    checkSavedTicketData2(ticketname,levelname,tickettype,stockquantity,ticketprice,tickettax){
+
+        cy.xpath('//tbody[2]//tr//td[1]').invoke('text').then((text) => {
+            expect(text).to.include(ticketname);
+        });
+
+        cy.xpath('//tbody[2]//tr//td[2]').invoke('text').then((text) => {
+            expect(text).to.include(levelname);
+        });
+
+        cy.xpath('//tbody[2]//tr//td[3]').invoke('text').then((text) => {
+            expect(text).to.include(tickettype);
+        });
+
+        cy.xpath('//tbody[2]//tr//td[4]').invoke('text').then((text) => {
+            expect(text).to.include(stockquantity);
+        });
+
+        cy.xpath('//tbody[2]//tr//td[5]').invoke('text').then((text) => {
+            expect(text).to.include(ticketprice);
+        });
+
+        cy.xpath('//tbody[2]//tr//td[6]').invoke('text').then((text) => {
+            expect(text).to.include(tickettax);
+        });
+
+    
+    }
 
     checkSavedTicketData(ticketname,levelname,tickettype,stockquantity,ticketprice,tickettax){
 
@@ -71,6 +132,83 @@ class CreateEventTickets{
 
     
     }
+
+    checkSavedTicketData3(ticketname,levelname,tickettype,stockquantity,ticketprice,tickettax){
+
+        cy.xpath('//tbody[3]//tr//td[1]').invoke('text').then((text) => {
+            expect(text).to.include(ticketname);
+        });
+
+        cy.xpath('//tbody[3]//tr//td[2]').invoke('text').then((text) => {
+            expect(text).to.include(levelname);
+        });
+
+        cy.xpath('//tbody[3]//tr//td[3]').invoke('text').then((text) => {
+            expect(text).to.include(tickettype);
+        });
+
+        cy.xpath('//tbody[3]//tr//td[4]').invoke('text').then((text) => {
+            expect(text).to.include(stockquantity);
+        });
+
+        cy.xpath('//tbody[3]//tr//td[5]').invoke('text').then((text) => {
+            expect(text).to.include(ticketprice);
+        });
+
+        cy.xpath('//tbody[3]//tr//td[6]').invoke('text').then((text) => {
+            expect(text).to.include(tickettax);
+        });
+
+    
+    }
+
+    checkSavedAddOnData1(addonname,addonquantity,ticketname,addonprice,addontax){
+
+        cy.xpath('//*[@id="tabAddonmaker"]/div/div[2]/div[2]/div/table/tbody/tr/td[1]').invoke('text').then((text) => {
+            expect(text).to.include(addonname);
+        });
+
+        cy.xpath('//*[@id="tabAddonmaker"]/div/div[2]/div[2]/div/table/tbody/tr/td[2]').invoke('text').then((text) => {
+            expect(text).to.include(addonquantity);
+        });
+
+        cy.xpath('//*[@id="tabAddonmaker"]/div/div[2]/div[2]/div/table/tbody/tr/td[3]').invoke('text').then((text) => {
+            expect(text).to.include(ticketname);
+        });
+
+        cy.xpath('//*[@id="tabAddonmaker"]/div/div[2]/div[2]/div/table/tbody/tr/td[4]').invoke('text').then((text) => {
+            expect(text).to.include(addonprice);
+        });
+
+        cy.xpath('//*[@id="tabAddonmaker"]/div/div[2]/div[2]/div/table/tbody/tr/td[5]').invoke('text').then((text) => {
+            expect(text).to.include(addontax);
+        });
+
+    
+    }
+
+
+    clickFirstAddonEditButton(){
+
+        cy.get(this.firstAddonEditButton).click({force:true});
+    }
+
+    clickSecondTicketEditButton(){
+
+        cy.get(this.secondTicketEditButton).click({force:true});
+    }
+
+
+    clickFirstAddonDeleteButton(){
+
+        cy.get(this.firstAddonDeleteButton).click({force:true});
+    }
+
+    clickSecondTicketDeleteButton(){
+
+        cy.get(this.secondTicketDeleteButton).click({force:true});
+    }
+
 
 
 
@@ -163,15 +301,27 @@ class CreateEventTickets{
 
     }
 
-    clickTicketEditButton(){
+    clickFirstTicketEditButton(){
 
-        cy.get(this.ticketEditButton).click({force:true});
+        cy.get(this.firstTicketEditButton).click({force:true});
     }
 
-    clickTicketDeleteButton(){
+    clickSecondTicketEditButton(){
 
-        cy.get(this.ticketDeleteButton).click({force:true});
+        cy.get(this.secondTicketEditButton).click({force:true});
     }
+
+
+    clickFirstTicketDeleteButton(){
+
+        cy.get(this.firstTicketDeleteButton).click({force:true});
+    }
+
+    clickSecondTicketDeleteButton(){
+
+        cy.get(this.secondTicketDeleteButton).click({force:true});
+    }
+
 
     clickTicketTab(){
 
@@ -188,9 +338,9 @@ class CreateEventTickets{
         cy.get(this.onlineToggleButton).click({force:true});
     }
 
-    selectOnlineTitle(onlinetitle){
+    selectOnlineURL(onlineurl){
 
-         cy.get(this.onlineDropDown).select(onlinetitle);
+         cy.get(this.onlineDropDown).select(onlineurl);
 
     }
     
@@ -242,19 +392,6 @@ class CreateEventTickets{
     saveAddon(){
 
         cy.get(this.saveAddonButton).click({force:true});
-    }
-
-    clickAddonEditButton(){
-
-        cy.get(this.addonEditButton).click({force:true});
-
-    }
-
-    
-    clickAddonDeleteButton(){
-
-        cy.get(this.addonDeleteButton).click({force:true});
-        
     }
 
 
