@@ -3,6 +3,13 @@
 
     "email": "aswanthm385@gmail.com",
     "password": "112233",
-    "eventtitle": "International Cherry Blossom Festival"
+    "eventtitle": "International Cherry Blossom Festival",
+    "eventlocation" :" New York, NY, USA",
+    "onlinetitle" : " Online Trading Course",
+    "ticketname1" :"Free Silver Ticket",
+    "addonname1" : "Books",
+    "ticketname2" :"Paid Ticket",
+    "addonname2" : "Pepsi",
+    "onlineticket" : "Online Trading Course Ticket"
 
 }

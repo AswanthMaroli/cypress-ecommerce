@@ -1,14 +1,14 @@
 class MyEvent {
 
-  homeurl = 'https://test.eventzet.com/#/Eventshell/Eventhome';
-  loginMenu = ':nth-child(2) > :nth-child(8) > #EventZetHomemenuLoginmenu';
+  loginMenuButton = ':nth-child(2) > :nth-child(8) > #EventZetHomemenuLoginmenu';
   userEmail = '#UserEmail';
   userPassword = '#UserPassword';
-  loginButton = '#EventLoginBtn';
+  login = '#EventLoginBtn';
+  createEventMenu = '#EventZetCreateEventMenu';
+  myEvents = ':nth-child(3) > .nav-link > .fs-4';
+  eventsDashboardMenu = '//*[@id="navbar"]/ul/li[2]/a';
   dashBoardMenu = '#navbar > :nth-child(2) > :nth-child(2) > .nav-link';
-  myEventsMenu = '.collapse > :nth-child(5) > .nav-link';
-  eventsDashboardMenu = '#menu > :nth-child(3) > .nav-link';
-  unpublishButton = '(//button[@class="btn btn-sm btn-outline-danger"][normalize-space()="Un Publish"])[1]';
+  unpublishButton = '//button[normalize-space()="Un Publish"]';
   publishButton = '//button[normalize-space()="Publish"]';
   searchBox = '//div[@id="myOwneventstab"]//input[@placeholder="Search"]';
   eventDeleteButton = '//*[@id="myOwneventstab"]/div[2]/div/div/table/tbody/tr[1]/td[7]/ul/li[3]/button';
@@ -20,6 +20,14 @@ class MyEvent {
   pastFilterButton = '[for="EventsStatusoption5"]';
   createEventButton = '.col-md-4 > .btn';
   bodySection = '.features > :nth-child(2)';
+  searchEventInputBox = '#myOwneventstab > :nth-child(1) > .col-md-4 > .input-group > .form-control';
+
+
+  searchEventName(eventname) {
+
+    cy.get(this.searchEventInputBox).clear().type(eventname);
+
+}
 
 
   deleteEvent() {
@@ -96,48 +104,44 @@ class MyEvent {
     cy.get(this.bodySection).should('be.visible').should('contain', eventtitle);
   }
 
-  myEventsMenuClick() {
-
-    cy.get(this.myEventsMenu).click();
-
-  }
-
-  eventsDashboardMenuClick() {
-
-    cy.get(this.eventsDashboardMenu).click();
-
-  }
-
-  clickLoginMenu() {
-
-    cy.get(this.loginMenu).click();
-
-  }
-
-  loginClick() {
-
-    cy.get(this.loginButton).should('exist').should('be.visible').click();
-
-  }
-
   inputEmail(useremail) {
 
-    cy.get(this.userEmail).click({ force: true }).clear().type(useremail);
+    cy.get(this.userEmail).click({ force: true }).type(useremail);
 
-  }
+}
 
-  inputPassword(password) {
+inputPassword(userepassword) {
 
-    cy.get(this.userPassword).click({ force: true }).clear().type(password);
+    cy.get(this.userPassword).click({ force: true }).type(userepassword);
 
-  }
+}
 
-  dashBoardMenuClick() {
+clickLoginMenu() {
 
-    cy.scrollTo(0, 0);
-    cy.get(this.dashBoardMenu).should('be.visible').click();
+    cy.get(this.loginMenuButton).click();
 
-  }
+}
+
+loginClick() {
+
+    cy.get(this.login).click();
+    cy.wait(6000);
+
+}
+
+
+eventsDashboardMenuClick() {
+
+    cy.xpath(this.eventsDashboardMenu).click();
+    cy.wait(4000);
+
+}
+
+clickMyEvents() {
+
+    cy.get(this.myEvents).click({ force: true });
+
+}
 
 
 

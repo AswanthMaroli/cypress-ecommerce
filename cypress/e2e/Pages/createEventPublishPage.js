@@ -23,16 +23,16 @@ class CreateEventPublish {
     eventPreviewCloseButton = '.modal-footer > .btn';
     serviceChargeEnableButton = '#ServiceChargesswitch';
     refundRequestButton = '#refundrequestsswitch';
-    saveEventButton = '.float-end.md-btn-lg-line';
+    saveEventButton = '.fixed_btm_div > :nth-child(2) > span';
     taxSettingsNoButton = '#tax0';
     taxSettingsYesButton = '#tax1';
     salesTaxId = ':nth-child(2) > .form-floating > #floatingInput';
     taxName = ':nth-child(3) > .form-floating > #floatingInput';
     taxRate = ':nth-child(4) > .form-floating > #floatingInput';
     taxState = '//*[@id="State01"]';
-    saveEventPopup = '//*[@id="maindashbrd"]/app-dashboardpublishevent/div[1]/div/div';
-    publishEventButton = '.col-md-12 > :nth-child(1) > .btn';
-    publishEventPopup = '[style="display: block;"] > .cardboxalert > .card';
+    saveEventPopup = "(//div[@class='card text-center p-4'])[1]";
+    publishEventButton = '.fixed_btm_div > :nth-child(1) > .btn';
+    publishEventPopup = '[style="display: block;"] > .cardboxalert > .card > .card-title > .text-secondary';
 
 
     loginMenuButton = ':nth-child(2) > :nth-child(8) > #EventZetHomemenuLoginmenu';
@@ -46,6 +46,21 @@ class CreateEventPublish {
     searchEventInputBox = '#myOwneventstab > :nth-child(1) > .col-md-4 > .input-group > .form-control';
     publishTab = ':nth-child(8) > .nav-link > .progressactive > .bi';
 
+
+
+    checkPublishPageDetails(eventname,eventlocation,onlinetitle,ticketname1,addonname1,ticketname2,addonname2,ticketname3){
+
+        cy.get('.row > :nth-child(1) > .mb-1').should('contain',eventname);
+        cy.get(':nth-child(1) > .p-1 > .h5 > small').should('contain',eventlocation);
+        cy.get(':nth-child(2) > .p-1 > .h5 > small').should('contain',onlinetitle);
+        cy.get('.col-md-4 > .w-100').should('be.visible');
+        cy.get(':nth-child(1) > .p-1 > :nth-child(2) > .p-2 > :nth-child(2) > :nth-child(1) > :nth-child(1) > .txt_blu').should('contain',ticketname1);
+        cy.get(':nth-child(1) > :nth-child(5) > .list-inline > .mr-3 > .txt_blu').should('contain',addonname1);
+        cy.get('.p-2 > :nth-child(2) > :nth-child(2) > :nth-child(1) > .txt_blu').should('contain',ticketname2);
+        cy.get(':nth-child(2) > :nth-child(5) > .list-inline > .mr-3 > .txt_blu').should('contain',addonname2);
+        cy.get(':nth-child(2) > .p-1 > :nth-child(2) > .p-2 > :nth-child(2) > :nth-child(1) > :nth-child(1) > .txt_blu').should('contain',ticketname3);
+
+    }
 
     clickPublishProgressTab(){
         
@@ -130,7 +145,7 @@ class CreateEventPublish {
     checkSaveEventPopup() {
 
         cy.xpath(this.saveEventPopup).should('be.visible').should('contain', 'Event saved successfully!');
-        cy.xpath('//*[@id="maindashbrd"]/app-dashboardpublishevent/div[1]/div/div/div[2]/button').click();
+        cy.xpath("(//button[@type='submit'][normalize-space()='Ok'])[1]").click();
 
     }
 

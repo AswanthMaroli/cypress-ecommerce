@@ -5,30 +5,22 @@ const filename = 'cypress/fixtures/createEventBasicInfoRead.json';
 
 const myEventsPage = new MyEvent();
 
-
-function performLogin(useremail,userpassword){
-
-      cy.visit(baseUrl);
-      cy.wait(4000);
-      cy.scrollTo(0, 0);
-      myEventsPage.clickLoginMenu();
-      cy.url().should('include', 'https://test.eventzet.com/#/Eventshell/Eventlogin');
-      myEventsPage.inputEmail(useremail);
-      myEventsPage.inputPassword(userpassword);
-      cy.wait(1000);
-      myEventsPage.loginClick();
-      cy.wait(4000);
-
+function performLogin(email, password) {
+  cy.visit(baseUrl);
+  cy.wait(4000);
+  myEventsPage.clickLoginMenu();
+  myEventsPage.inputEmail(email);
+  myEventsPage.inputPassword(password);
+  myEventsPage.loginClick();
 }
 
-function navigateToMyEvents(){
+function navigateToMyEvents() {
 
-      myEventsPage.dashBoardMenuClick();
-      cy.wait(2000);
-      myEventsPage.myEventsMenuClick();
-      cy.intercept('GET', '/api/Category/GetCategoryByTypeName?CategoryTypeName=SaleStatus').as('myEventsData');
-      cy.wait('@myEventsData', { timeout: 15000 });
-      cy.url().should('include', 'https://test.eventzet.com/#/events/Dashboard/Dashboardevents');
+  myEventsPage.eventsDashboardMenuClick();
+  myEventsPage.clickMyEvents();
+  cy.intercept('GET', '/api/DashboardEventList/GetDashboardEventList?UserID=*').as('myEventsData');
+  cy.wait('@myEventsData', { timeout: 25000 });
+  cy.url().should('include', 'https://test.eventzet.com/#/events/Dashboard/Dashboardevents');
 
 }
 
@@ -37,25 +29,22 @@ module.exports = {
   MyEventsTests: [
     // Test 1
     it('Test 1: Check whether my events page is visible or not', () => {
-      
+
       readDataFromFile(filename).then((list) => {
-        const userEmail = list.email;
-        const userPassword = list.password;
-        performLogin(userEmail,userPassword);
+
+        performLogin(list.email, list.password);
         navigateToMyEvents();
-       
+
       });
-     
+
     }),
 
     // Test 2
     it('Test 2: Event is visible or not', () => {
-     
-      myEventsPage.clickLoginMenu();
+
       readDataFromFile(filename).then((list) => {
-        const userEmail = list.email;
-        const userPassword = list.password;
-        performLogin(userEmail,userPassword);
+        
+        performLogin(list.email, list.password);
         navigateToMyEvents();
         myEventsPage.checkEvent(list.eventtitle);
       });
@@ -63,11 +52,11 @@ module.exports = {
 
     // Test 3
     it('Test 3: Event Saved alert message is visible or not', () => {
-     
+
       readDataFromFile(filename).then((list) => {
 
-        const userPassword = list.password;
-        performLogin(userEmail,userPassword);
+       
+        performLogin(list.email, list.password);
         navigateToMyEvents();
         myEventsPage.checkForSavedAlert();
       });
@@ -80,22 +69,23 @@ module.exports = {
 
       readDataFromFile(filename).then((list) => {
 
-        const userPassword = list.password;
-        performLogin(userEmail,userPassword);
+      
+        performLogin(list.email, list.password);
         navigateToMyEvents();
         myEventsPage.searchEvent(list.eventtitle);
       });
-        myEventsPage.clearSearchEvent();
+      myEventsPage.clearSearchEvent();
     }),
 
     // Test 5
     it('Test 5: Verify user can unpublish the event', () => {
-   
+
       readDataFromFile(filename).then((list) => {
 
-        const userPassword = list.password;
-        performLogin(userEmail,userPassword);
+        performLogin(list.email, list.password);
         navigateToMyEvents();
+        myEventsPage.searchEventName(list.eventtitle);
+        cy.wait(1000);
         myEventsPage.clickUnPublishButton();
         cy.wait(2000);
       });
@@ -104,12 +94,13 @@ module.exports = {
     // Test 6
     it('Test 6: Verify user can publish the event', () => {
 
-   
+
       readDataFromFile(filename).then((list) => {
 
-        const userPassword = list.password;
-        performLogin(userEmail,userPassword);
+        performLogin(list.email, list.password);
         navigateToMyEvents();
+        myEventsPage.searchEventName(list.eventtitle);
+        cy.wait(1000);
         myEventsPage.clickPublishButton();
         cy.wait(2000);
       });
@@ -120,8 +111,7 @@ module.exports = {
 
     //   readDataFromFile(filename).then((list) => {
 
-    //     const userPassword = list.password;
-    //     performLogin(userEmail,userPassword);
+    //     performLogin(list.email, list.password);
     //     navigateToMyEvents();
     //     myEventsPage.deleteEvent();
 
