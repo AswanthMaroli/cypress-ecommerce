@@ -1,93 +1,93 @@
 [
   {
     "Testname": "Test 1:Running signupSuccess",
-    "Name": "Nanni Hettie",
-    "Useremail": "jucoj@gmail.com",
-    "Userpassword": "jucoj@gmail.com",
-    "Confirmpassword": "xvCjOra7"
+    "Name": "Torelli Cody",
+    "Useremail": "zolora@gmail.com",
+    "Userpassword": "zolora@gmail.com",
+    "Confirmpassword": "bbTiEOHw"
   },
   {
     "Testname": "Test 2:Running signup With InvalidEmail",
-    "Name": "Ciobanu Kathryn",
+    "Name": "Watson Bess",
     "Useremail": "andrew",
     "Userpassword": "andrew",
-    "Confirmpassword": "u0gkKcuO"
+    "Confirmpassword": "u3VDQ4Fs"
   },
   {
     "Testname": "Test 3:Running signup With Existing Username",
-    "Name": "Evers Amelia",
+    "Name": "Paul Melvin",
     "Useremail": "aswanthm385@gmail.com",
     "Userpassword": "aswanthm385@gmail.com",
-    "Confirmpassword": "nBWXgJa3"
+    "Confirmpassword": "HIYrpFrw"
   },
   {
     "Testname": "Test 4:Running signup With Missing Firstname",
-    "Name": "Francis ",
-    "Useremail": "zumma@gmail.com",
-    "Userpassword": "zumma@gmail.com",
-    "Confirmpassword": "evci8itG"
+    "Name": "Kaur ",
+    "Useremail": "ajmo@gmail.com",
+    "Userpassword": "ajmo@gmail.com",
+    "Confirmpassword": "Oy7JTqSH"
   },
   {
     "Testname": "Test 5:Running signup With  Missing Lastname",
-    "Name": " Duane",
-    "Useremail": "ledejzuk@gmail.com",
-    "Userpassword": "ledejzuk@gmail.com",
-    "Confirmpassword": "LPeAssDO"
+    "Name": " Jayden",
+    "Useremail": "boszibusa@gmail.com",
+    "Userpassword": "boszibusa@gmail.com",
+    "Confirmpassword": "ZHS1KqYv"
   },
   {
     "Testname": "Test 6:Running signup With  Missing Password",
-    "Name": "Mellor Russell",
-    "Useremail": "geb@gmail.com",
-    "Userpassword": "geb@gmail.com",
+    "Name": "Bass Lily",
+    "Useremail": "ajomen@gmail.com",
+    "Userpassword": "ajomen@gmail.com",
     "Confirmpassword": " "
   },
   {
     "Testname": "Test 6:Running signup With  Missing Password",
-    "Name": "Mazzanti Carl",
-    "Useremail": "nulraj@gmail.com",
-    "Userpassword": "nulraj@gmail.com",
-    "Confirmpassword": "6I9pW742"
+    "Name": "Cavini Gavin",
+    "Useremail": "uw@gmail.com",
+    "Userpassword": "uw@gmail.com",
+    "Confirmpassword": "tTQR7Nvt"
   },
   {
     "Testname": "Test 9:Running signup With  Password And ConfirmPassword Mismatch",
-    "Name": "Robertson Matilda",
-    "Useremail": "tamafe@gmail.com",
-    "Userpassword": "tamafe@gmail.com",
-    "Confirmpassword": "D1FwDK6Z"
+    "Name": "Piccardi Aiden",
+    "Useremail": "gutiv@gmail.com",
+    "Userpassword": "gutiv@gmail.com",
+    "Confirmpassword": "XUZGj6OS"
   },
   {
     "Testname": "Test 10:Running signup With Missing Email",
-    "Name": "Capanni Callie",
+    "Name": "Capretti Hilda",
     "Useremail": " ",
-    "Userpassword": "iz@gmail.com",
-    "Confirmpassword": "5PKCYPgs"
+    "Userpassword": "dopziheh@gmail.com",
+    "Confirmpassword": "X7diKFIf"
   },
   {
     "Testname": "Test 13:Running signup With  n no of users",
-    "Name": "Diop Leroy",
-    "Useremail": "biw@gmail.com",
-    "Userpassword": "biw@gmail.com",
-    "Confirmpassword": "ds5pzdm1"
+    "Name": "Powell Dale",
+    "Useremail": "gufoak@gmail.com",
+    "Userpassword": "gufoak@gmail.com",
+    "Confirmpassword": "tnw16Wou"
   },
   {
     "Testname": "Test 13:Running signup With  n no of users",
-    "Name": "Rhodes Howard",
-    "Useremail": "kujit@gmail.com",
-    "Userpassword": "kujit@gmail.com",
-    "Confirmpassword": "wC6hzzIv"
+    "Name": "Panichi Victor",
+    "Useremail": "negig@gmail.com",
+    "Userpassword": "negig@gmail.com",
+    "Confirmpassword": "JkNG3sSB"
   },
   {
     "Testname": "Test 14:Running signup With  With LowerCase Password ",
-    "Name": "Baars Theresa",
-    "Useremail": "muaneop@gmail.com",
-    "Userpassword": "muaneop@gmail.com",
+    "Name": "Fabbrizzi Gavin",
+    "Useremail": "giro@gmail.com",
+    "Userpassword": "giro@gmail.com",
     "Confirmpassword": "password"
   },
   {
     "Testname": "Test 15:Running signup With  With UpperCase Password ",
-    "Name": "Tonini Jon",
-    "Useremail": "fezulac@gmail.com",
-    "Userpassword": "fezulac@gmail.com",
+    "Name": "Lefèvre Mabel",
+    "Useremail": "jakih@gmail.com",
+    "Userpassword": "jakih@gmail.com",
     "Confirmpassword": "PASSWORD"
   }
 ]

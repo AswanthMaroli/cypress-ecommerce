@@ -5,23 +5,27 @@ const baseUrl = Cypress.config('baseUrl');
 
 const sr = new SignupRegistration();
 
+function performLogin(email, password) {
+    cy.visit(baseUrl);
+    cy.wait(4000);
+    sr.clickLogin(email, password);
+}
+
+
 module.exports = {
     SignupRegistrationTests: [
 
         it('Test 1: Check whether all the details are present in the signup registration details page', () => {
-            cy.visit(baseUrl);
-            cy.wait(4000);
-            cy.scrollTo(0, 0);
-            cy.viewport(1400, 860);
             
             readDataFromFile(filename).then((list) => {
-                sr.clickLogin(list.useremail, list.userpassword);
+
+                performLogin(list.useremail, list.userpassword);
                 sr.clickVolunteerSignup();
                 cy.wait(4000);
 
                 sr.searchSignupName(list.signuptitle);
                 sr.clickSignup();
-                cy.wait(2000);
+                cy.wait(5000);
                 
                 // Check signup details
                 sr.checkSignupCreatorName(list.signupcreator);
@@ -46,13 +50,11 @@ module.exports = {
         }),
 
         it('Test 2: Check whether user can register first slot', () => {
-            cy.visit(baseUrl);
-            cy.wait(4000);
-            cy.scrollTo(0, 0);
-            cy.viewport(1400, 860);
+
             
             readDataFromFile(filename).then((list) => {
-                sr.clickLogin(list.useremail, list.userpassword);
+
+             performLogin(list.useremail, list.userpassword);
                 sr.clickVolunteerSignup();
                 cy.wait(4000);
 
@@ -105,13 +107,11 @@ module.exports = {
         }),
 
         it('Test 3: Check whether user can register both slots', () => {
-            cy.visit(baseUrl);
-            cy.wait(4000);
-            cy.scrollTo(0, 0);
-            cy.viewport(1400, 860);
+     
             
             readDataFromFile(filename).then((list) => {
-                sr.clickLogin(list.useremail, list.userpassword);
+
+                performLogin(list.useremail, list.userpassword);
                 sr.clickVolunteerSignup();
                 cy.wait(4000);
 

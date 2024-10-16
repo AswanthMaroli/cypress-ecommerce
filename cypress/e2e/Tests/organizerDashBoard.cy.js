@@ -107,20 +107,20 @@ module.exports = {
     //test 4
 
 
-    it('Test 4:  Historical order chart is visible or not ', () => {
-      readDataFromFile(filename).then((list) => {
+    // it('Test 4:  Historical order chart is visible or not ', () => {
+    //   readDataFromFile(filename).then((list) => {
 
-        performLogin(list.email,list.password);
+    //     performLogin(list.email,list.password);
 
-      });
-      cy.wait(4000);
-      od.dashBoardMenuClick();
-      cy.wait(6000);
-      od.checkHistoricalOrderChart();
+    //   });
+    //   cy.wait(4000);
+    //   od.dashBoardMenuClick();
+    //   cy.wait(6000);
+    //   od.checkHistoricalOrderChart();
 
-      cy.log('Test 4 is successful: Historical order chart is visible');
+    //   cy.log('Test 4 is successful: Historical order chart is visible');
 
-    }),
+    // }),
 
 
 

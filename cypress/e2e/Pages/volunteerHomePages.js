@@ -27,7 +27,7 @@ class VolunteerHome {
   signuUpButton1 = '(//input[@type="checkbox"])[1]';
   signupName = '.h3';
   userName = '.col-md-8 > :nth-child(2)';
-  signupDescription = '.col-md-8 > :nth-child(3)';
+  signupDescription = '.col-md-8 > div > :nth-child(2)';
 
 
   checkSignupCreatorName(username) {

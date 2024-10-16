@@ -130,7 +130,9 @@ class SearchFilter {
 
     checkEventLocation(eventlocation) {
 
-        cy.xpath(this.firstSearchResult).should('contain', eventlocation);
+
+
+        cy.get(':nth-child(4) > :nth-child(2) > .list-inline > :nth-child(1) > div').should('contain', eventlocation);
     }
 
 

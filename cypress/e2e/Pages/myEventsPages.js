@@ -11,7 +11,7 @@ class MyEvent {
   unpublishButton = '//button[normalize-space()="Un Publish"]';
   publishButton = '//button[normalize-space()="Publish"]';
   searchBox = '//div[@id="myOwneventstab"]//input[@placeholder="Search"]';
-  eventDeleteButton = '//*[@id="myOwneventstab"]/div[2]/div/div/table/tbody/tr[1]/td[7]/ul/li[3]/button';
+  eventDeleteButton = "(//button[@class='btn btn-sm btn-outline-danger'])[2]";
   eventDeletePopupButton = '//button[normalize-space()="Yes"]'; //confirmation button 'yes'
   optionButton = '(//button[@id="dropdownBasic1"])[1]';
   allFilterButton = '[for="EventsStatusoption1"]';

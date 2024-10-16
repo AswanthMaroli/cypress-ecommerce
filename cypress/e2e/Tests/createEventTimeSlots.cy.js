@@ -386,9 +386,11 @@ module.exports = {
                     const startDate = startDateTime.split('T')[0];
                     const endDate  =endDateTime.split('T')[0];
                     cy.log('Date:', startDate);
-                    timeslot.inputStartDate(endDate);
+                    const pastDate = new Date();
+                    pastDate.setDate(pastDate.getDate() - 2); // Yesterday  
+                    timeslot.inputStartDate(startDate);
                     timeslot.inputStartTime(list.starttime);
-                    timeslot.inputEndDate(startDate);
+                    timeslot.inputEndDate(pastDate.toISOString().split('T')[0]);
                     timeslot.inputEndTime(list.endtime);
                     timeslot.selectTimeZone(list.timezone);
                     timeslot.clickAddTimeSlotButton();
@@ -423,7 +425,7 @@ module.exports = {
 
                     // Input a past date for start date
                     const pastDate = new Date();
-                    pastDate.setDate(pastDate.getDate() - 1); // Yesterday
+                    pastDate.setDate(pastDate.getDate() - 2); // Yesterday
                     timeslot.inputStartDate(pastDate.toISOString().split('T')[0]);
                     timeslot.inputStartTime(list.starttime);
                     timeslot.inputEndDate(date);

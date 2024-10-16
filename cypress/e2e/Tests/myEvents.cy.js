@@ -106,16 +106,18 @@ module.exports = {
       });
     }),
 
-    // Test 7
-    // it('Test 7: Verify user can delete event', () => {
 
-    //   readDataFromFile(filename).then((list) => {
+    it('Test 7: Verify user can delete event', () => {
 
-    //     performLogin(list.email, list.password);
-    //     navigateToMyEvents();
-    //     myEventsPage.deleteEvent();
+      readDataFromFile(filename).then((list) => {
 
-    //   });
-    // });
+        performLogin(list.email, list.password);
+        navigateToMyEvents();
+        myEventsPage.searchEventName(list.eventtitle);
+        cy.wait(1000);
+        myEventsPage.deleteEvent();
+
+      });
+    })
   ]
 };

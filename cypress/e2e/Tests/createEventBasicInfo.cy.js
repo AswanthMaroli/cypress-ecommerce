@@ -26,177 +26,177 @@ module.exports = {
         //test 1
 
 
-        // it("Test1:Running Check validation is working or not ", () => {
+        it("Test1:Running Check validation is working or not ", () => {
      
-        //     readDataFromFile(filename).then((list) => {
+            readDataFromFile(filename).then((list) => {
 
-        //         performLogin(list.email,list.password);
-        //     });
+                performLogin(list.email,list.password);
+            });
 
-        //     bi.clickCreateEventMenu();
-        //     bi.clickSaveButton();
-        //     cy.wait(2000);
-        //     bi.checkTitleValidation();
-        //     bi.checkStartDateValidation();
-        //     bi.checkEndDateValidation();
-        //     bi.checkOrganizerEmailValidation();
-        //     cy.url().should('include', 'https://test.eventzet.com/#/events/Dashboard/EventzetEventsCreate/EventzetEventbasics');
-        //     cy.log('Test 1 is successful:Validation message is visible');
-        // }),
-        //  test 2
+            bi.clickCreateEventMenu();
+            bi.clickSaveButton();
+            cy.wait(2000);
+            bi.checkTitleValidation();
+            bi.checkStartDateValidation();
+            bi.checkEndDateValidation();
+            bi.checkOrganizerEmailValidation();
+            cy.url().should('include', 'https://test.eventzet.com/#/events/Dashboard/EventzetEventsCreate/EventzetEventbasics');
+            cy.log('Test 1 is successful:Validation message is visible');
+        }),
+        // test 2
 
 
-        // it("Test 2:Running Save the page without inputting the event name ", () => {
-        //     cy.visit(baseUrl);
-        //     cy.wait(3000);
-        //     bi.clickLoginMenu();
-        //     cy.wait(1000);
-        //     readDataFromFile(filename).then((list) => {
+        it("Test 2:Running Save the page without inputting the event name ", () => {
+            cy.visit(baseUrl);
+            cy.wait(3000);
+            bi.clickLoginMenu();
+            cy.wait(1000);
+            readDataFromFile(filename).then((list) => {
     
-        //         performLogin(list.email,list.password);
+                performLogin(list.email,list.password);
             
-        //     });
+            });
 
-        //     bi.clickCreateEventMenu();
+            bi.clickCreateEventMenu();
 
-        //     bi.selectType('2: 2');
-        //     bi.selectCategory('20: 41');
-        //     readDataFromFile(filename).then((list) => {
+            bi.selectType('2: 2');
+            bi.selectCategory('20: 41');
+            readDataFromFile(filename).then((list) => {
 
-        //         bi.inputTags(list.eventtag);
-        //         cy.wait(2000);
-        //         // const formattedStartDate = `${startDate.slice(4, 8)}-${startDate.slice(0, 2)}-${startDate.slice(2, 4)}`;
-        //         // const formattedEndDate = `${endDate.slice(4, 8)}-${endDate.slice(0, 2)}-${endDate.slice(2, 4)}`;
-        //         bi.selectEventStartDate(startDate);
-        //         bi.selectEventEndDate(endDate);
-        //         bi.inputOrganizerEmail(list.organizeremail);
-        //         bi.inputOrganizerPhone(list.organizerphone);
+                bi.inputTags(list.eventtag);
+                cy.wait(2000);
+                // const formattedStartDate = `${startDate.slice(4, 8)}-${startDate.slice(0, 2)}-${startDate.slice(2, 4)}`;
+                // const formattedEndDate = `${endDate.slice(4, 8)}-${endDate.slice(0, 2)}-${endDate.slice(2, 4)}`;
+                bi.selectEventStartDate(startDate);
+                bi.selectEventEndDate(endDate);
+                bi.inputOrganizerEmail(list.organizeremail);
+                bi.inputOrganizerPhone(list.organizerphone);
 
-        //     });
+            });
 
-        //     bi.clickSaveButton();
-        //     cy.wait(1000);
-        //     bi.checkTitleValidation();
+            bi.clickSaveButton();
+            cy.wait(1000);
+            bi.checkTitleValidation();
 
-        //     cy.log('Test 2 is successful:Unable to save the basic info page without inputting eventname');
+            cy.log('Test 2 is successful:Unable to save the basic info page without inputting eventname');
 
-        // }),
+        }),
     
-        // // test 3
+        // test 3
 
 
-        // it("Test 3:Running Save the page without inputting the event startdate and enddate ", () => {
+        it("Test 3:Running Save the page without inputting the event startdate and enddate ", () => {
        
-        //     readDataFromFile(filename).then((list) => {
+            readDataFromFile(filename).then((list) => {
 
-        //         performLogin(list.email,list.password);
+                performLogin(list.email,list.password);
 
-        //         bi.clickCreateEventMenu();
-        //         bi.selectType('2: 2');
-        //         bi.selectCategory('20: 41');
-        //         bi.inputEventTitle(list.eventtitle);
-        //         bi.inputTags(list.eventtag);
-        //         bi.inputOrganizerEmail(list.organizeremail);
-        //         bi.inputOrganizerPhone(list.organizerphone);
+                bi.clickCreateEventMenu();
+                bi.selectType('2: 2');
+                bi.selectCategory('20: 41');
+                bi.inputEventTitle(list.eventtitle);
+                bi.inputTags(list.eventtag);
+                bi.inputOrganizerEmail(list.organizeremail);
+                bi.inputOrganizerPhone(list.organizerphone);
 
-        //     });
+            });
 
-        //     bi.clickSaveButton();
-        //     cy.wait(1000);
-        //     bi.checkStartDateValidation();
-        //     bi.checkEndDateValidation();
-        //     cy.wait(2000);
-        //     cy.log('Test 3 is successful:Unable to save the basic info page without inputting event startdate and enddate');
+            bi.clickSaveButton();
+            cy.wait(1000);
+            bi.checkStartDateValidation();
+            bi.checkEndDateValidation();
+            cy.wait(2000);
+            cy.log('Test 3 is successful:Unable to save the basic info page without inputting event startdate and enddate');
 
-        // }),
-        // //test 4
+        }),
+        //test 4
 
 
 
-        // it("Test 4:Running Save the page without inputting the organizer email", () => {
+        it("Test 4:Running Save the page without inputting the organizer email", () => {
          
-        //     readDataFromFile(filename).then((list) => {
+            readDataFromFile(filename).then((list) => {
 
-        //         performLogin(list.email,list.password);
-        //         bi.clickCreateEventMenu();
+                performLogin(list.email,list.password);
+                bi.clickCreateEventMenu();
 
-        //         bi.selectType('2: 2');
-        //         bi.selectCategory('20: 41');
+                bi.selectType('2: 2');
+                bi.selectCategory('20: 41');
                 
-        //         bi.inputEventTitle(list.eventtitle);
-        //         bi.inputTags(list.eventtag);
-        //         // const formattedStartDate = `${startDate.slice(4, 8)}-${startDate.slice(0, 2)}-${startDate.slice(2, 4)}`;
-        //         // const formattedEndDate = `${endDate.slice(4, 8)}-${endDate.slice(0, 2)}-${endDate.slice(2, 4)}`;
-        //         bi.selectEventStartDate(startDate);
-        //         bi.selectEventEndDate(endDate); 
-        //         bi.inputOrganizerPhone(list.organizerphone);
+                bi.inputEventTitle(list.eventtitle);
+                bi.inputTags(list.eventtag);
+                // const formattedStartDate = `${startDate.slice(4, 8)}-${startDate.slice(0, 2)}-${startDate.slice(2, 4)}`;
+                // const formattedEndDate = `${endDate.slice(4, 8)}-${endDate.slice(0, 2)}-${endDate.slice(2, 4)}`;
+                bi.selectEventStartDate(startDate);
+                bi.selectEventEndDate(endDate); 
+                bi.inputOrganizerPhone(list.organizerphone);
 
-        //     });
+            });
 
-        //     bi.clickSaveButton();
-        //     cy.wait(1000);
-        //     bi.checkOrganizerEmailValidation();
-        //     cy.wait(2000);
-        //     cy.log('Test 4 is successful:Unable to save the basic info page without inputting organizer email');
-
-
-        // }),
-        // //test 5
+            bi.clickSaveButton();
+            cy.wait(1000);
+            bi.checkOrganizerEmailValidation();
+            cy.wait(2000);
+            cy.log('Test 4 is successful:Unable to save the basic info page without inputting organizer email');
 
 
+        }),
+        //test 5
 
-        // it("Test 5:Running Input invalid email in organizer email field", () => {
+
+
+        it("Test 5:Running Input invalid email in organizer email field", () => {
      
-        //     readDataFromFile(filename).then((list) => {
+            readDataFromFile(filename).then((list) => {
           
-        //         performLogin(list.email,list.password);
-        //         bi.clickCreateEventMenu();
+                performLogin(list.email,list.password);
+                bi.clickCreateEventMenu();
 
-        //         bi.selectType('2: 2');
-        //         bi.selectCategory('20: 41');
+                bi.selectType('2: 2');
+                bi.selectCategory('20: 41');
                 
-        //         bi.inputEventTitle(list.eventtitle);
-        //         bi.inputTags(list.eventtag);
-        //         cy.wait(2000);
-        //         // const formattedStartDate = `${startDate.slice(4, 8)}-${startDate.slice(0, 2)}-${startDate.slice(2, 4)}`;
-        //         // const formattedEndDate = `${endDate.slice(4, 8)}-${endDate.slice(0, 2)}-${endDate.slice(2, 4)}`;
-        //         bi.selectEventStartDate(startDate);
-        //         bi.selectEventEndDate(endDate);
-        //         bi.inputOrganizerEmail('alex');
-        //         bi.inputOrganizerPhone(list.organizerphone);
+                bi.inputEventTitle(list.eventtitle);
+                bi.inputTags(list.eventtag);
+                cy.wait(2000);
+                // const formattedStartDate = `${startDate.slice(4, 8)}-${startDate.slice(0, 2)}-${startDate.slice(2, 4)}`;
+                // const formattedEndDate = `${endDate.slice(4, 8)}-${endDate.slice(0, 2)}-${endDate.slice(2, 4)}`;
+                bi.selectEventStartDate(startDate);
+                bi.selectEventEndDate(endDate);
+                bi.inputOrganizerEmail('alex');
+                bi.inputOrganizerPhone(list.organizerphone);
 
-        //     });
-        //     bi.clickSaveButton();
-        //     cy.wait(3000);
-        //     cy.xpath('//div[@class="font_s7"]').should('contain', 'Please provide a valid email');
-        //     cy.url().should('not.include', 'https://test.eventzet.com/#/events/Dashboard/Addeventdetails');
+            });
+            bi.clickSaveButton();
+            cy.wait(3000);
+            cy.xpath('//div[@class="font_s7"]').should('contain', 'Please provide a valid email');
+            cy.url().should('not.include', 'https://test.eventzet.com/#/events/Dashboard/Addeventdetails');
 
-        //     cy.log('Test 5 is successful:Unable save basic info page if we give invalid email in the organizer email field');
+            cy.log('Test 5 is successful:Unable save basic info page if we give invalid email in the organizer email field');
 
-        // }),
-        // // test 6
+        }),
+        // test 6
 
 
-        // it("Test 6:Running Select Organization", () => {
+        it("Test 6:Running Select Organization", () => {
     
-        //     readDataFromFile(filename).then((list) => {
+            readDataFromFile(filename).then((list) => {
               
-        //         performLogin(list.email,list.password);
+                performLogin(list.email,list.password);
 
-        //     });
+            });
 
-        //     bi.clickCreateEventMenu();
-        //     cy.xpath('//input[@id="OrganizerTypeID1"]').click({ force: true });
-        //     cy.xpath('//input[@id="OrganizerTypeID1"]').should('be.checked');
-        //     cy.xpath('//span[contains(text(),"View Organizer Info")]').click({ force: true });
-        //     cy.wait(2000);
-        //     cy.url().should('include', 'https://test.eventzet.com/#/events/Dashboard/Organizationsettings');
-        //     cy.go(-1);
-        //     cy.wait(2000);
+            bi.clickCreateEventMenu();
+            cy.xpath('//input[@id="OrganizerTypeID1"]').click({ force: true });
+            cy.xpath('//input[@id="OrganizerTypeID1"]').should('be.checked');
+            cy.xpath('//span[contains(text(),"View Organizer Info")]').click({ force: true });
+            cy.wait(2000);
+            cy.url().should('include', 'https://test.eventzet.com/#/events/Dashboard/Organizationsettings');
+            cy.go(-1);
+            cy.wait(2000);
 
-        //     cy.log('Select Organization test is successful');
+            cy.log('Select Organization test is successful');
 
-        // }),
+        }),
         // //test 7
 
 

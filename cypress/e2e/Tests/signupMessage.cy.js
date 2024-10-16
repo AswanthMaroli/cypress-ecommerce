@@ -27,7 +27,7 @@ module.exports = {
             cy.intercept('GET', '/api/Category/GetCategoryByTypeName?CategoryTypeName=SignUpPrivacyStatus').as('signupDateData');
             cy.wait('@signupDateData', { timeout: 15000 });
             sm.clickSignupMessage();
-            cy.intercept('GET', '/api/MySignUps/GetSignUpList?UserID=7').as('signupMessageData');
+            cy.intercept('GET', '/api/MySignUps/GetSignUpList?UserID=*').as('signupMessageData');
             cy.wait('@signupMessageData', {timeout: 15000});
             sm.clickSendButton();
             cy.wait(2000);
@@ -50,7 +50,7 @@ module.exports = {
             cy.intercept('GET', '/api/Category/GetCategoryByTypeName?CategoryTypeName=SignUpPrivacyStatus').as('signupDateData');
             cy.wait('@signupDateData', { timeout: 15000 });
             sm.clickSignupMessage();
-            cy.intercept('GET', '/api/MySignUps/GetSignUpList?UserID=7').as('signupMessageData');
+            cy.intercept('GET', '/api/MySignUps/GetSignUpList?UserID=*').as('signupMessageData');
             cy.wait('@signupMessageData', {timeout: 15000});
             sm.selectSignupTitle(list.signuptitle);
             sm.inputInviteEmail(list.email);

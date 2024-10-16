@@ -15,17 +15,17 @@ class CreatedSignupList {
     unPublishButton = ':nth-child(4) > .btn';
     publishButton = '.list-inline > :nth-child(3) > .btn';
     signupEditButton = '.list-inline > :nth-child(1) > .btn';
-    signupDeleteButton = ':nth-child(2) > .btn > .bi';
+    signupDeleteButton = '//button[@class="btn btn-sm btn-outline-danger"]';
     dropDownButton = '#dropdownBasic1';
     signupTitle = '.col-md-6 > .list-inline > .mb-1';
     alertBox = '.alert';
     bodySection = '.card-body';
 
-    
+
 
     deleteSignup() {
 
-        cy.get(this.signupDeleteButton).click();
+        cy.xpath(this.signupDeleteButton).click();
         cy.wait(2000);
         cy.get('.btn-primary').click();
         cy.wait(2000);

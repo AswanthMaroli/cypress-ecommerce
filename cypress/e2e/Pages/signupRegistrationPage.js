@@ -12,7 +12,7 @@ class SignupRegistration {
   signup = '//*[@id="tab-1"]/main/div/div[1]/div[1]';
   signupName = '.h3';
   userName = '.col-md-8 > :nth-child(2)';
-  signupDescription = '.col-md-8 > :nth-child(3)';
+  signupDescription = '.col-md-8 > div > :nth-child(2)';
   firstSlotDate = ':nth-child(1) > .card > .card-body > .list-group > .list-group-item > :nth-child(1) > .col-md-12 > .d-flex > .flex-fill > .signupcrdTittlebody';
   firstSlotLocation = ':nth-child(1) > .card > .card-body > .list-group > .list-group-item > :nth-child(2) > :nth-child(1) > .row > .col-md-12 > .p-0';
   firstSlotTime = ':nth-child(1) > .card > .card-body > .list-group > .list-group-item > :nth-child(2) > :nth-child(1) > .row > .col-lg-3 > :nth-child(1) > .p-0';

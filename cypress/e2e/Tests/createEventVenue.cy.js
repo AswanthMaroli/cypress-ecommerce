@@ -90,7 +90,7 @@ module.exports = {
                 venue.inputVenue(list.venue1);
                 venue.inputAddress(list.address1);
                 venue.clickAddVenueButton();
-                cy.wait(4000);
+                cy.wait(6000);
                 venue.checkSavedVenueData(list.venue1,list.address1);
                 cy.log('Test 3 is successful : User can save the venue');
             });

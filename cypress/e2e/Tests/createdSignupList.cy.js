@@ -105,6 +105,8 @@ module.exports = {
         cs.clickSignupListMenu();
         cy.intercept('GET', '/api/Category/GetCategoryByTypeName?CategoryTypeName=SignUpStatus').as('signupListData');
         cy.wait('@signupListData', { timeout: 15000 });
+        cs.searchSignup(list.signuptitle);
+        cy.wait(3000);
         cs.clickUnPublishButton();
         cy.wait(3000);
       });
@@ -125,17 +127,18 @@ module.exports = {
         cs.clickSignupListMenu();
         cy.intercept('GET', '/api/Category/GetCategoryByTypeName?CategoryTypeName=SignUpStatus').as('signupListData');
         cy.wait('@signupListData', { timeout: 15000 });
+        cs.searchSignup(list.signuptitle);
+        cy.wait(3000);
         cs.clickPublishButton();
         cy.wait(3000);
       });
     }),
 
-    // Test 7
     // it('Test 7: Verify user can delete signup', () => {
     //   cy.visit(baseUrl);
     //   cy.wait(4000);
     //   readDataFromFile(filename).then((list) => {
-    
+
     //     cs.clickLogin(list.useremail,list.userpassword);
     //     cs.clickVolunteerSignup();
     //     cy.wait(4000);
@@ -145,6 +148,8 @@ module.exports = {
     //     cs.clickSignupListMenu();
     //     cy.intercept('GET', '/api/Category/GetCategoryByTypeName?CategoryTypeName=SignUpStatus').as('signupListData');
     //     cy.wait('@signupListData', { timeout: 15000 });
+    //     cs.searchSignup(list.signuptitle);
+    //     cy.wait(3000);
     //     cs.deleteSignup();
     //   });
     // })
