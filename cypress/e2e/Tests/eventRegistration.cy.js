@@ -26,201 +26,201 @@ module.exports = {
 
     EventRegistrationTests: [
 
-        //test 1
-
-        // it("Test 1:Check whether registration details page validation is working or not", () => {
 
 
-        //     readDataFromFile(filename).then((list) => {
-
-        //         performLogin(list.email, list.password);
-
-        //         eventRegistration.clickEvent(list.eventtitle);
-        //         cy.intercept('GET', '/api/EventDetails/GetEventVideoURL?EventID=*').as('eventDetails');
-        //         cy.wait('@eventDetails', { timeout: 25000 });
-        //         cy.url().should('include', 'https://test.eventzet.com/#/eventregistration/Eventshell/Eventdetails');
-        //         eventRegistration.clickGetTicketsButton();
-        //         eventRegistration.selectVenue();
-        //         eventRegistration.selectTimeSlot();
-        //         eventRegistration.selectFreeTicket(list.ticketquantity);
-        //         cy.wait(1000);
-        //         eventRegistration.clickContinueButton();
-        //         cy.intercept('GET', '/api/EventRegistration/GetEventRegistrationData?EventRegID=*').as('contactInformationPage');
-        //         cy.wait('@contactInformationPage', { timeout: 25000 });
-        //         eventRegistration.clickSaveAndContinueButton();
-
-        //     });
-
-        //     cy.get(':nth-child(3) > .form-floating > .small > .font_s7').should('contain', 'First name is required');
-        //     cy.get(':nth-child(1) > :nth-child(4) > .form-floating > .small > .font_s7').should('contain', 'Last name is required');
-        //     cy.get(':nth-child(1) > :nth-child(6) > .form-floating > .small > .font_s7').should('contain', 'Email is required');
-        //     cy.get(':nth-child(8) > .form-floating > .small > .font_s7').should('contain', 'Phone is required');
-        //     cy.get(':nth-child(2) > .form-floating > .small > .font_s7').should('contain', 'Address1 is required');
-        //     cy.get(':nth-child(2) > :nth-child(4) > .form-floating > .small > .font_s7').should('contain', 'City is required');
-        //     cy.get(':nth-child(5) > .form-floating > .small > .font_s7').should('contain', 'State is required');
-        //     cy.get(':nth-child(2) > :nth-child(6) > .form-floating > .small > .font_s7').should('contain', 'Zip code is required');
-        //     cy.get('.invalid-feedback > .font_s7').should('contain', 'Answer is Required');
-
-        //     cy.log('Registration details page validation is working');
-
-        // }),
+        it("Test 1:Check whether registration details page validation is working or not", () => {
 
 
-        // it("Test 2:Check whether add attendee validation is visible or not ", () => {
-        //     readDataFromFile(filename).then((list) => {
+            readDataFromFile(filename).then((list) => {
 
-        //         performLogin(list.email, list.password);
+                performLogin(list.email, list.password);
 
-        //         eventRegistration.clickEvent(list.eventtitle);
-        //         cy.intercept('GET', '/api/EventDetails/GetEventVideoURL?EventID=*').as('eventDetails');
-        //         cy.wait('@eventDetails', { timeout: 25000 });
-        //         cy.url().should('include', 'https://test.eventzet.com/#/eventregistration/Eventshell/Eventdetails');
-        //         eventRegistration.clickGetTicketsButton();
-        //         eventRegistration.selectVenue();
-        //         eventRegistration.selectTimeSlot();
-        //         eventRegistration.selectFreeTicket(list.ticketquantity);
-        //         cy.wait(1000);
-        //         eventRegistration.clickContinueButton();
-        //         cy.intercept('GET', '/api/EventRegistration/GetEventRegistrationData?EventRegID=*').as('contactInformationPage');
-        //         cy.wait('@contactInformationPage', { timeout: 25000 });
-        //         eventRegistration.inputPrefix(list.prefix);
-        //         eventRegistration.inputFirstName(list.buyerFirstName);
-        //         eventRegistration.inputLastName(list.buyerLastName);
-        //         eventRegistration.inputBuyerEmail(list.buyerEmail);
-        //         eventRegistration.selectGender(list.gender);
-        //         eventRegistration.inputBuyerPhone(list.buyerPhone);
-        //         eventRegistration.inputAddress(list.address);
-        //         eventRegistration.inputCity(list.city);
-        //         eventRegistration.selectState(list.state);
-        //         eventRegistration.inputZipCode(list.zipCode);
-        //         eventRegistration.inputAnswer(list.answer);
+                eventRegistration.clickEvent(list.eventtitle);
+                cy.intercept('GET', '/api/EventDetails/GetEventVideoURL?EventID=*').as('eventDetails');
+                cy.wait('@eventDetails', { timeout: 25000 });
+                cy.url().should('include', 'https://test.eventzet.com/#/eventregistration/Eventshell/Eventdetails');
+                eventRegistration.clickGetTicketsButton();
+                eventRegistration.selectVenue();
+                eventRegistration.selectTimeSlot();
+                eventRegistration.selectFreeTicket(list.ticketquantity);
+                cy.wait(1000);
+                eventRegistration.clickContinueButton();
+                cy.intercept('GET', '/api/EventRegistration/GetEventRegistrationData?EventRegID=*').as('contactInformationPage');
+                cy.wait('@contactInformationPage', { timeout: 25000 });
+                eventRegistration.clickSaveAndContinueButton();
 
-        //     });
+            });
 
-        //     eventRegistration.clickSaveAndContinueButton();
-        //     cy.wait(1000);
-        //     cy.get('.alert').should('contain', ' must fill attendees details ');
-        //     cy.wait(1000);
-        //     cy.log('Add attendee validation is visible ');
-        // }),
+            cy.get(':nth-child(3) > .form-floating > .small > .font_s7').should('contain', 'First name is required');
+            cy.get(':nth-child(1) > :nth-child(4) > .form-floating > .small > .font_s7').should('contain', 'Last name is required');
+            cy.get(':nth-child(1) > :nth-child(6) > .form-floating > .small > .font_s7').should('contain', 'Email is required');
+            cy.get(':nth-child(8) > .form-floating > .small > .font_s7').should('contain', 'Phone is required');
+            cy.get(':nth-child(2) > .form-floating > .small > .font_s7').should('contain', 'Address1 is required');
+            cy.get(':nth-child(2) > :nth-child(4) > .form-floating > .small > .font_s7').should('contain', 'City is required');
+            cy.get(':nth-child(5) > .form-floating > .small > .font_s7').should('contain', 'State is required');
+            cy.get(':nth-child(2) > :nth-child(6) > .form-floating > .small > .font_s7').should('contain', 'Zip code is required');
+            cy.get('.invalid-feedback > .font_s7').should('contain', 'Answer is Required');
+
+            cy.log('Registration details page validation is working');
+
+        }),
 
 
+        it("Test 2:Check whether add attendee validation is visible or not ", () => {
+            readDataFromFile(filename).then((list) => {
 
-        // it("Test 3:Check whether user can save registration details page", () => {
+                performLogin(list.email, list.password);
+
+                eventRegistration.clickEvent(list.eventtitle);
+                cy.intercept('GET', '/api/EventDetails/GetEventVideoURL?EventID=*').as('eventDetails');
+                cy.wait('@eventDetails', { timeout: 25000 });
+                cy.url().should('include', 'https://test.eventzet.com/#/eventregistration/Eventshell/Eventdetails');
+                eventRegistration.clickGetTicketsButton();
+                eventRegistration.selectVenue();
+                eventRegistration.selectTimeSlot();
+                eventRegistration.selectFreeTicket(list.ticketquantity);
+                cy.wait(1000);
+                eventRegistration.clickContinueButton();
+                cy.intercept('GET', '/api/EventRegistration/GetEventRegistrationData?EventRegID=*').as('contactInformationPage');
+                cy.wait('@contactInformationPage', { timeout: 25000 });
+                eventRegistration.inputPrefix(list.prefix);
+                eventRegistration.inputFirstName(list.buyerFirstName);
+                eventRegistration.inputLastName(list.buyerLastName);
+                eventRegistration.inputBuyerEmail(list.buyerEmail);
+                eventRegistration.selectGender(list.gender);
+                eventRegistration.inputBuyerPhone(list.buyerPhone);
+                eventRegistration.inputAddress(list.address);
+                eventRegistration.inputCity(list.city);
+                eventRegistration.selectState(list.state);
+                eventRegistration.inputZipCode(list.zipCode);
+                eventRegistration.inputAnswer(list.answer);
+
+            });
+
+            eventRegistration.clickSaveAndContinueButton();
+            cy.wait(1000);
+            cy.get('.alert').should('contain', ' must fill attendees details ');
+            cy.wait(1000);
+            cy.log('Add attendee validation is visible ');
+        }),
 
 
 
-        //     readDataFromFile(filename).then((list) => {
-
-        //         performLogin(list.email, list.password);
-
-        //         eventRegistration.clickEvent(list.eventtitle);
-        //         cy.intercept('GET', '/api/EventDetails/GetEventVideoURL?EventID=*').as('eventDetails');
-        //         cy.wait('@eventDetails', { timeout: 25000 });
-        //         cy.url().should('include', 'https://test.eventzet.com/#/eventregistration/Eventshell/Eventdetails');
-        //         eventRegistration.clickGetTicketsButton();
-        //         eventRegistration.selectVenue();
-        //         eventRegistration.selectTimeSlot();
-        //         eventRegistration.selectFreeTicket(list.ticketquantity);
-        //         eventRegistration.selectFreeTicketAddon(list.addonquantity);
-        //         eventRegistration.selectPaidTicket(list.ticketquantity);
-        //         eventRegistration.selectPaidTicketAddon(list.addonquantity);
-        //         cy.wait(1000);
-        //         eventRegistration.clickContinueButton();
-        //         cy.intercept('GET', '/api/EventRegistration/GetEventRegistrationData?EventRegID=*').as('contactInformationPage');
-        //         cy.wait('@contactInformationPage', { timeout: 25000 });
-        //         eventRegistration.inputPrefix(list.prefix);
-        //         eventRegistration.inputFirstName(list.buyerFirstName);
-        //         eventRegistration.inputLastName(list.buyerLastName);
-        //         eventRegistration.inputBuyerEmail(list.buyerEmail);
-        //         eventRegistration.selectGender(list.gender);
-        //         eventRegistration.inputBuyerPhone(list.buyerPhone);
-        //         eventRegistration.inputAddress(list.address);
-        //         eventRegistration.inputCity(list.city);
-        //         eventRegistration.selectState(list.state);
-        //         eventRegistration.inputZipCode(list.zipCode);
-        //         eventRegistration.inputAnswer(list.answer);
-        //         cy.scrollTo(0, 0);
-        //         cy.wait(1000);
-        //         eventRegistration.inputAttendeeFirstName1(list.attendeeFirstName1);
-        //         eventRegistration.inputAttendeeLastName1(list.attendeeLastName1);
-        //         eventRegistration.inputAttendeeEmail1(list.attendeeEmail1);
-
-        //         eventRegistration.inputAttendeeFirstName2(list.attendeeFirstName2);
-        //         eventRegistration.inputAttendeeLastName2(list.attendeeLastName2);
-        //         eventRegistration.inputAttendeeEmail2(list.attendeeEmail2);
-        //         cy.wait(1000);
-        //         eventRegistration.clickSaveAndContinueButton();
-        //     });
-        //     cy.intercept('GET', '/api/EventRegistration/GetEventRegPaymentInfo?EventRegID=*&EventID=*').as('billingInfoData');
-        //     cy.wait('@billingInfoData', { timeout: 25000 });
-
-        //     cy.url().should('include', 'https://test.eventzet.com/#/eventregistration/Eventshell/Billinginformation');
+        it("Test 3:Check whether user can save registration details page", () => {
 
 
-        //     cy.log('Registration details page saved successfuly');
-        // }),
 
-        // it("Test 4:Check whether billing info page validation is working or not", () => {
+            readDataFromFile(filename).then((list) => {
 
-        //     readDataFromFile(filename).then((list) => {
+                performLogin(list.email, list.password);
 
-        //         performLogin(list.email, list.password);
+                eventRegistration.clickEvent(list.eventtitle);
+                cy.intercept('GET', '/api/EventDetails/GetEventVideoURL?EventID=*').as('eventDetails');
+                cy.wait('@eventDetails', { timeout: 25000 });
+                cy.url().should('include', 'https://test.eventzet.com/#/eventregistration/Eventshell/Eventdetails');
+                eventRegistration.clickGetTicketsButton();
+                eventRegistration.selectVenue();
+                eventRegistration.selectTimeSlot();
+                eventRegistration.selectFreeTicket(list.ticketquantity);
+                eventRegistration.selectFreeTicketAddon(list.addonquantity);
+                eventRegistration.selectPaidTicket(list.ticketquantity);
+                eventRegistration.selectPaidTicketAddon(list.addonquantity);
+                cy.wait(1000);
+                eventRegistration.clickContinueButton();
+                cy.intercept('GET', '/api/EventRegistration/GetEventRegistrationData?EventRegID=*').as('contactInformationPage');
+                cy.wait('@contactInformationPage', { timeout: 25000 });
+                eventRegistration.inputPrefix(list.prefix);
+                eventRegistration.inputFirstName(list.buyerFirstName);
+                eventRegistration.inputLastName(list.buyerLastName);
+                eventRegistration.inputBuyerEmail(list.buyerEmail);
+                eventRegistration.selectGender(list.gender);
+                eventRegistration.inputBuyerPhone(list.buyerPhone);
+                eventRegistration.inputAddress(list.address);
+                eventRegistration.inputCity(list.city);
+                eventRegistration.selectState(list.state);
+                eventRegistration.inputZipCode(list.zipCode);
+                eventRegistration.inputAnswer(list.answer);
+                cy.scrollTo(0, 0);
+                cy.wait(1000);
+                eventRegistration.inputAttendeeFirstName1(list.attendeeFirstName1);
+                eventRegistration.inputAttendeeLastName1(list.attendeeLastName1);
+                eventRegistration.inputAttendeeEmail1(list.attendeeEmail1);
 
-        //         eventRegistration.clickEvent(list.eventtitle);
-        //         cy.intercept('GET', '/api/EventDetails/GetEventVideoURL?EventID=*').as('eventDetails');
-        //         cy.wait('@eventDetails', { timeout: 25000 });
-        //         cy.url().should('include', 'https://test.eventzet.com/#/eventregistration/Eventshell/Eventdetails');
-        //         eventRegistration.clickGetTicketsButton();
-        //         eventRegistration.selectVenue();
-        //         eventRegistration.selectTimeSlot();
-        //         eventRegistration.selectFreeTicket(list.ticketquantity);
-        //         eventRegistration.selectFreeTicketAddon(list.addonquantity);
-        //         eventRegistration.selectPaidTicket(list.ticketquantity);
-        //         eventRegistration.selectPaidTicketAddon(list.addonquantity);
-        //         cy.wait(1000);
-        //         eventRegistration.clickContinueButton();
-        //         cy.intercept('GET', '/api/EventRegistration/GetEventRegistrationData?EventRegID=*').as('contactInformationPage');
-        //         cy.wait('@contactInformationPage', { timeout: 25000 });
-        //         eventRegistration.inputPrefix(list.prefix);
-        //         eventRegistration.inputFirstName(list.buyerFirstName);
-        //         eventRegistration.inputLastName(list.buyerLastName);
-        //         eventRegistration.inputBuyerEmail(list.buyerEmail);
-        //         eventRegistration.selectGender(list.gender);
-        //         eventRegistration.inputBuyerPhone(list.buyerPhone);
-        //         eventRegistration.inputAddress(list.address);
-        //         eventRegistration.inputCity(list.city);
-        //         eventRegistration.selectState(list.state);
-        //         eventRegistration.inputZipCode(list.zipCode);
-        //         eventRegistration.inputAnswer(list.answer);
-        //         cy.scrollTo(0, 0);
-        //         cy.wait(1000);
-        //         eventRegistration.inputAttendeeFirstName1(list.attendeeFirstName1);
-        //         eventRegistration.inputAttendeeLastName1(list.attendeeLastName1);
-        //         eventRegistration.inputAttendeeEmail1(list.attendeeEmail1);
+                eventRegistration.inputAttendeeFirstName2(list.attendeeFirstName2);
+                eventRegistration.inputAttendeeLastName2(list.attendeeLastName2);
+                eventRegistration.inputAttendeeEmail2(list.attendeeEmail2);
+                cy.wait(1000);
+                eventRegistration.clickSaveAndContinueButton();
+            });
+            cy.intercept('GET', '/api/EventRegistration/GetEventRegPaymentInfo?EventRegID=*&EventID=*').as('billingInfoData');
+            cy.wait('@billingInfoData', { timeout: 25000 });
 
-        //         eventRegistration.inputAttendeeFirstName2(list.attendeeFirstName2);
-        //         eventRegistration.inputAttendeeLastName2(list.attendeeLastName2);
-        //         eventRegistration.inputAttendeeEmail2(list.attendeeEmail2);
-        //         cy.wait(1000);
-        //         eventRegistration.clickSaveAndContinueButton();
-        //     });
-        //     cy.intercept('GET', '/api/EventRegistration/GetEventRegPaymentInfo?EventRegID=*&EventID=*').as('billingInfoData');
-        //     cy.wait('@billingInfoData', { timeout: 25000 });
+            cy.url().should('include', 'https://test.eventzet.com/#/eventregistration/Eventshell/Billinginformation');
 
-        //     cy.url().should('include', 'https://test.eventzet.com/#/eventregistration/Eventshell/Billinginformation');
 
-        //     eventRegistration.clickMakePaymentButton();
+            cy.log('Registration details page saved successfuly');
+        }),
 
-        //     cy.get('#validationServerUsernameFeedback').should('contain', 'Card number is required');
-        //     cy.get(':nth-child(2) > .input > .small > .font_s7').should('contain', 'Name on card is required');
-        //     cy.get('span.small > .font_s7').should('contain', 'Month required');
-        //     cy.get('.text-right > .font_s7').should('contain', 'Year required');
-        //     cy.get('.col-md-4 > .input > .small > .font_s7').should('contain', 'CVV is required');
-        //     cy.get('.form-check > .mb-0').should('contain', 'You must agree to the terms.');
+        it("Test 4:Check whether billing info page validation is working or not", () => {
 
-        //     cy.log('Billing info page validation is working fine');
-        // }),
+            readDataFromFile(filename).then((list) => {
+
+                performLogin(list.email, list.password);
+
+                eventRegistration.clickEvent(list.eventtitle);
+                cy.intercept('GET', '/api/EventDetails/GetEventVideoURL?EventID=*').as('eventDetails');
+                cy.wait('@eventDetails', { timeout: 25000 });
+                cy.url().should('include', 'https://test.eventzet.com/#/eventregistration/Eventshell/Eventdetails');
+                eventRegistration.clickGetTicketsButton();
+                eventRegistration.selectVenue();
+                eventRegistration.selectTimeSlot();
+                eventRegistration.selectFreeTicket(list.ticketquantity);
+                eventRegistration.selectFreeTicketAddon(list.addonquantity);
+                eventRegistration.selectPaidTicket(list.ticketquantity);
+                eventRegistration.selectPaidTicketAddon(list.addonquantity);
+                cy.wait(1000);
+                eventRegistration.clickContinueButton();
+                cy.intercept('GET', '/api/EventRegistration/GetEventRegistrationData?EventRegID=*').as('contactInformationPage');
+                cy.wait('@contactInformationPage', { timeout: 25000 });
+                eventRegistration.inputPrefix(list.prefix);
+                eventRegistration.inputFirstName(list.buyerFirstName);
+                eventRegistration.inputLastName(list.buyerLastName);
+                eventRegistration.inputBuyerEmail(list.buyerEmail);
+                eventRegistration.selectGender(list.gender);
+                eventRegistration.inputBuyerPhone(list.buyerPhone);
+                eventRegistration.inputAddress(list.address);
+                eventRegistration.inputCity(list.city);
+                eventRegistration.selectState(list.state);
+                eventRegistration.inputZipCode(list.zipCode);
+                eventRegistration.inputAnswer(list.answer);
+                cy.scrollTo(0, 0);
+                cy.wait(1000);
+                eventRegistration.inputAttendeeFirstName1(list.attendeeFirstName1);
+                eventRegistration.inputAttendeeLastName1(list.attendeeLastName1);
+                eventRegistration.inputAttendeeEmail1(list.attendeeEmail1);
+
+                eventRegistration.inputAttendeeFirstName2(list.attendeeFirstName2);
+                eventRegistration.inputAttendeeLastName2(list.attendeeLastName2);
+                eventRegistration.inputAttendeeEmail2(list.attendeeEmail2);
+                cy.wait(1000);
+                eventRegistration.clickSaveAndContinueButton();
+            });
+            cy.intercept('GET', '/api/EventRegistration/GetEventRegPaymentInfo?EventRegID=*&EventID=*').as('billingInfoData');
+            cy.wait('@billingInfoData', { timeout: 25000 });
+
+            cy.url().should('include', 'https://test.eventzet.com/#/eventregistration/Eventshell/Billinginformation');
+
+            eventRegistration.clickMakePaymentButton();
+
+            cy.get('#validationServerUsernameFeedback').should('contain', 'Card number is required');
+            cy.get(':nth-child(2) > .input > .small > .font_s7').should('contain', 'Name on card is required');
+            cy.get('span.small > .font_s7').should('contain', 'Month required');
+            cy.get('.text-right > .font_s7').should('contain', 'Year required');
+            cy.get('.col-md-4 > .input > .small > .font_s7').should('contain', 'CVV is required');
+            cy.get('.form-check > .mb-0').should('contain', 'You must agree to the terms.');
+
+            cy.log('Billing info page validation is working fine');
+        }),
 
         it("Test 5:Check whether can user make payment or not", () => {
 
@@ -459,85 +459,85 @@ module.exports = {
 
 
 
-        // it("Test 10:Check Registration and order details page ", () => {
-        //     readDataFromFile(filename).then((list) => {
+        it("Test 6:Check Registration and order details page ", () => {
+            readDataFromFile(filename).then((list) => {
 
-        //         performLogin(list.email, list.password);
+                performLogin(list.email, list.password);
 
-        //         eventRegistration.clickEvent(list.eventtitle);
-        //         cy.intercept('GET', '/api/EventDetails/GetEventVideoURL?EventID=*').as('eventDetails');
-        //         cy.wait('@eventDetails', { timeout: 25000 });
-        //         cy.url().should('include', 'https://test.eventzet.com/#/eventregistration/Eventshell/Eventdetails');
-        //         eventRegistration.clickGetTicketsButton();
-        //         eventRegistration.selectVenue();
-        //         eventRegistration.selectTimeSlot();
-        //         eventRegistration.selectFreeTicket(list.ticketquantity);
-        //         eventRegistration.selectFreeTicketAddon(list.addonquantity);
-        //         eventRegistration.selectPaidTicket(list.ticketquantity);
-        //         eventRegistration.selectPaidTicketAddon(list.addonquantity);
-        //         cy.wait(1000);
-        //         eventRegistration.clickContinueButton();
-        //         cy.intercept('GET', '/api/EventRegistration/GetEventRegistrationData?EventRegID=*').as('contactInformationPage');
-        //         cy.wait('@contactInformationPage', { timeout: 25000 });
-        //         eventRegistration.inputPrefix(list.prefix);
-        //         eventRegistration.inputFirstName(list.buyerFirstName);
-        //         eventRegistration.inputLastName(list.buyerLastName);
-        //         eventRegistration.inputBuyerEmail(list.buyerEmail);
-        //         eventRegistration.selectGender(list.gender);
-        //         eventRegistration.inputBuyerPhone(list.buyerPhone);
-        //         eventRegistration.inputAddress(list.address);
-        //         eventRegistration.inputCity(list.city);
-        //         eventRegistration.selectState(list.state);
-        //         eventRegistration.inputZipCode(list.zipCode);
-        //         eventRegistration.inputAnswer(list.answer);
-        //         cy.scrollTo(0, 0);
-        //         cy.wait(1000);
-        //         eventRegistration.inputAttendeeFirstName1(list.attendeeFirstName1);
-        //         eventRegistration.inputAttendeeLastName1(list.attendeeLastName1);
-        //         eventRegistration.inputAttendeeEmail1(list.attendeeEmail1);
+                eventRegistration.clickEvent(list.eventtitle);
+                cy.intercept('GET', '/api/EventDetails/GetEventVideoURL?EventID=*').as('eventDetails');
+                cy.wait('@eventDetails', { timeout: 25000 });
+                cy.url().should('include', 'https://test.eventzet.com/#/eventregistration/Eventshell/Eventdetails');
+                eventRegistration.clickGetTicketsButton();
+                eventRegistration.selectVenue();
+                eventRegistration.selectTimeSlot();
+                eventRegistration.selectFreeTicket(list.ticketquantity);
+                eventRegistration.selectFreeTicketAddon(list.addonquantity);
+                eventRegistration.selectPaidTicket(list.ticketquantity);
+                eventRegistration.selectPaidTicketAddon(list.addonquantity);
+                cy.wait(1000);
+                eventRegistration.clickContinueButton();
+                cy.intercept('GET', '/api/EventRegistration/GetEventRegistrationData?EventRegID=*').as('contactInformationPage');
+                cy.wait('@contactInformationPage', { timeout: 25000 });
+                eventRegistration.inputPrefix(list.prefix);
+                eventRegistration.inputFirstName(list.buyerFirstName);
+                eventRegistration.inputLastName(list.buyerLastName);
+                eventRegistration.inputBuyerEmail(list.buyerEmail);
+                eventRegistration.selectGender(list.gender);
+                eventRegistration.inputBuyerPhone(list.buyerPhone);
+                eventRegistration.inputAddress(list.address);
+                eventRegistration.inputCity(list.city);
+                eventRegistration.selectState(list.state);
+                eventRegistration.inputZipCode(list.zipCode);
+                eventRegistration.inputAnswer(list.answer);
+                cy.scrollTo(0, 0);
+                cy.wait(1000);
+                eventRegistration.inputAttendeeFirstName1(list.attendeeFirstName1);
+                eventRegistration.inputAttendeeLastName1(list.attendeeLastName1);
+                eventRegistration.inputAttendeeEmail1(list.attendeeEmail1);
 
-        //         eventRegistration.inputAttendeeFirstName2(list.attendeeFirstName2);
-        //         eventRegistration.inputAttendeeLastName2(list.attendeeLastName2);
-        //         eventRegistration.inputAttendeeEmail2(list.attendeeEmail2);
-        //         cy.wait(1000);
-        //         eventRegistration.clickSaveAndContinueButton();
-        //         cy.intercept('GET', '/api/EventRegistration/GetEventRegPaymentInfo?EventRegID=*&EventID=*').as('billingInfoData');
-        //         cy.wait('@billingInfoData', { timeout: 25000 });
-        //         eventRegistration.inputCardNumber(list.cardNumber);
-        //         eventRegistration.inputCardOwnerName(list.cardOwnerName);
-        //         eventRegistration.inputMonth(list.month);
-        //         eventRegistration.inputYear(list.year);
-        //         eventRegistration.inputCvv(list.cvv);
-        //         eventRegistration.checkTermsAndCondition();
+                eventRegistration.inputAttendeeFirstName2(list.attendeeFirstName2);
+                eventRegistration.inputAttendeeLastName2(list.attendeeLastName2);
+                eventRegistration.inputAttendeeEmail2(list.attendeeEmail2);
+                cy.wait(1000);
+                eventRegistration.clickSaveAndContinueButton();
+                cy.intercept('GET', '/api/EventRegistration/GetEventRegPaymentInfo?EventRegID=*&EventID=*').as('billingInfoData');
+                cy.wait('@billingInfoData', { timeout: 25000 });
+                eventRegistration.inputCardNumber(list.cardNumber);
+                eventRegistration.inputCardOwnerName(list.cardOwnerName);
+                eventRegistration.inputMonth(list.month);
+                eventRegistration.inputYear(list.year);
+                eventRegistration.inputCvv(list.cvv);
+                eventRegistration.checkTermsAndCondition();
 
-        //     });
+            });
 
-        //     eventRegistration.clickMakePaymentButton();
+            eventRegistration.clickMakePaymentButton();
 
-        //     cy.intercept('GET', '/api/Category/GetCategoryByTypeName?CategoryTypeName=CancellationType').as('orderDetailsData');
-        //     cy.wait('@orderDetailsData', { timeout: 25000 });
-        //     //    cy.wait(25000);
-        //     cy.url().should('include', 'https://test.eventzet.com/#/eventregistration/Eventshell/Viewticketregistration');
+            cy.intercept('GET', '/api/Category/GetCategoryByTypeName?CategoryTypeName=CancellationType').as('orderDetailsData');
+            cy.wait('@orderDetailsData', { timeout: 25000 });
+            //    cy.wait(25000);
+            cy.url().should('include', 'https://test.eventzet.com/#/eventregistration/Eventshell/Viewticketregistration');
 
-        //     cy.get(':nth-child(1) > .md-raised').should('contain', ' Print Ticket');  //for checking print ticket,cancel order, contact event organizer
-        //     cy.get('[style="display: block;"]').should('contain', 'Cancel Order');
-        //     cy.get('[data-bs-target="#ModalContactOrganizer"]').should('contain', 'Contact Organizer');
-        //     cy.log('Print ticket , Cancel Order and Contact organizer button is present in the page');
+            cy.get(':nth-child(1) > .md-raised').should('contain', ' Print Ticket');  //for checking print ticket,cancel order, contact event organizer
+            cy.get('[style="display: block;"]').should('contain', 'Cancel Order');
+            cy.get('[data-bs-target="#ModalContactOrganizer"]').should('contain', 'Contact Organizer');
+            cy.log('Print ticket , Cancel Order and Contact organizer button is present in the page');
 
-        //     eventRegistration.clickPrintTicket();
-        //     cy.wait(2000);
-        //     cy.log('Print ticket is working');
-        //     eventRegistration.clickContactOrganizer();
-        //     cy.wait(2000);
-        //     eventRegistration.clickCancelOrder();
-        //     cy.wait(1000);
-        //     eventRegistration.selectCancelTicketTier();
-        //     eventRegistration.clickCancelOrderSubmitButton();
-        //     cy.wait(2000);
-        //     eventRegistration.checkCancelOrderSuccessPopup();
-        //     cy.log('Cancel Order is Successfuli:test is successful');
+            eventRegistration.clickPrintTicket();
+            cy.wait(2000);
+            cy.log('Print ticket is working');
+            eventRegistration.clickContactOrganizer();
+            cy.wait(2000);
+            eventRegistration.clickCancelOrder();
+            cy.wait(1000);
+            eventRegistration.selectCancelTicketTier();
+            eventRegistration.clickCancelOrderSubmitButton();
+            cy.wait(2000);
+            eventRegistration.checkCancelOrderSuccessPopup();
+            cy.log('Cancel Order is Successfuli:test is successful');
 
-        // }),
+        }),
 
 
 
