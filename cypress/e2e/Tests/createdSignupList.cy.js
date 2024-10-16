@@ -1,4 +1,4 @@
-import CreatedSignupList from '../Pages/createdSignupListPages.js'
+import CreatedSignupList from '../Pages/createdSignupListPage.js'
 const { readDataFromFile } = require('../ExternalFiles/fileOperations.js');
 const filename = 'cypress/fixtures/volunteerSignup.json';
 const baseUrl = Cypress.config('baseUrl');

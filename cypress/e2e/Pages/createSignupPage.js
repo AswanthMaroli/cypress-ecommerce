@@ -9,13 +9,13 @@ class CreateSignup {
   emailField = '#UserEmail';
   passwordField = '#UserPassword';
   loginButton = '#EventLoginBtn';
-  dateSaveButton = ':nth-child(3) > app-eventzetsignupdate > :nth-child(1) > .col-lg-9 > .card > .card-body > :nth-child(1) > :nth-child(1) > :nth-child(2) > .pt-3 > .md-raised';
-  addMultipleDateButton = ':nth-child(3) > app-eventzetsignupdate > :nth-child(1) > .col-lg-9 > .card > .card-body > :nth-child(1) > :nth-child(1) > :nth-child(2) > .pt-3 > .md-btn-lg-line';
-  signupTitleField = ':nth-child(3) > app-eventzetsignupdate > :nth-child(1) > .col-lg-9 > .card > .card-body > :nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(1) > .row > .col-lg-12 > .form-floating > #floatingInput';
-  signupDescriptionField = ':nth-child(3) > app-eventzetsignupdate > :nth-child(1) > .col-lg-9 > .card > .card-body > :nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(2) > .form-floating > #floatingTextarea';
-  locationField = ':nth-child(3) > app-eventzetsignupdate > :nth-child(1) > .col-lg-9 > .card > .card-body > :nth-child(1) > :nth-child(1) > :nth-child(2) > .col-lg-12 > #content > .content-inside > .col-md-6 > .form-floating > #LocationAddDate';
-  dateField = ':nth-child(3) > app-eventzetsignupdate > :nth-child(1) > .col-lg-9 > .card > .card-body > :nth-child(1) > :nth-child(1) > :nth-child(2) > .col-lg-12 > #content > .content-inside > .col-md-4 > .form-floating > #floatingInput';
-  dateDeleteButton = ':nth-child(3) > app-eventzetsignupdate > :nth-child(1) > .col-lg-9 > .card > .card-body > :nth-child(1) > :nth-child(1) > :nth-child(2) > .col-lg-12 > #content > .content-inside > .col-md-2 > span > .btn';
+  dateSaveButton = ':nth-child(3) > app-eventzetsignupdate > :nth-child(1) > .pb-2 > .card > .card-body > :nth-child(1) > :nth-child(1) > .mt-4 > .pt-3 > .md-raised';
+  addMultipleDateButton = ':nth-child(3) > app-eventzetsignupdate > :nth-child(1) > .pb-2 > .card > .card-body > :nth-child(1) > :nth-child(1) > .mt-4 > .pt-3 > .md-btn-lg-line';
+  signupTitleField = ':nth-child(3) > app-eventzetsignupdate > :nth-child(1) > .pb-2 > .card > .card-body > :nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(1) > .row > .col-lg-12 > .form-floating > #floatingInput';
+  signupDescriptionField = ':nth-child(3) > app-eventzetsignupdate > :nth-child(1) > .pb-2 > .card > .card-body > :nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(2) > .form-floating > #floatingTextarea';
+  locationField = ':nth-child(3) > app-eventzetsignupdate > :nth-child(1) > .pb-2 > .card > .card-body > :nth-child(1) > :nth-child(1) > .mt-4 > .col-lg-12 > #content > .content-inside > .col-md-6 > .form-floating > #LocationAddDate';
+  dateField = ':nth-child(3) > app-eventzetsignupdate > :nth-child(1) > .pb-2 > .card > .card-body > :nth-child(1) > :nth-child(1) > .mt-4 > .col-lg-12 > #content > .content-inside > .col-md-4 > .form-floating > #floatingInput';
+  dateDeleteButton = ':nth-child(3) > app-eventzetsignupdate > :nth-child(1) > .pb-2 > .card > .card-body > :nth-child(1) > :nth-child(1) > .mt-4 > .col-lg-12 > #content > .content-inside > .col-md-2 > span > .btn';
   slotTab = '//a[@href="#SlotTabSignup"]';
   timeTab = '//a[@href="#SignupTimeTabSignup"]';
   settingsTab = '//a[@href="#SettingsTabSignup"]';
@@ -28,24 +28,24 @@ class CreateSignup {
   signupEditButton = ':nth-child(1) > td > .card > .card-body > .row > :nth-child(3) > .list-inline > :nth-child(1) > .btn > .bi';
   dateField2 = ':nth-child(2) > .content-inside > .col-md-4 > .form-floating > #floatingInput';
   locationField2 = ':nth-child(2) > .content-inside > .col-md-6 > .form-floating > #LocationAddDate';
-  slotSaveButton = ':nth-child(3) > app-eventzetsignupslot > :nth-child(1) > .col-lg-9 > .card > .card-body > :nth-child(1) > .mt-3 > .md-raised';
-  addMultipleSlotButton = ':nth-child(3) > app-eventzetsignupslot > :nth-child(1) > .col-lg-9 > .card > .card-body > :nth-child(1) > .mt-3 > .md-btn-lg-line';
-  slotDeleteButton1 = ':nth-child(3) > app-eventzetsignupslot > :nth-child(1) > .col-lg-9 > .card > .card-body > :nth-child(1) > :nth-child(2) > .content-inside > .col-md-2 > span > .btn';
-  slotCountField1 = ':nth-child(3) > app-eventzetsignupslot > :nth-child(1) > .col-lg-9 > .card > .card-body > :nth-child(1) > :nth-child(2) > .content-inside > .col-md-3 > #Number_Wanted';
-  slotNameField1 = ':nth-child(3) > app-eventzetsignupslot > :nth-child(1) > .col-lg-9 > .card > .card-body > :nth-child(1) > :nth-child(2) > .content-inside > .col-md-6 > #Slot_Title';
+  slotSaveButton = ':nth-child(3) > app-eventzetsignupslot > :nth-child(1) > .col-lg-12 > .card > .card-body > :nth-child(1) > .mt-3 > .md-raised';
+  addMultipleSlotButton = ':nth-child(3) > app-eventzetsignupslot > :nth-child(1) > .col-lg-12 > .card > .card-body > :nth-child(1) > .mt-3 > .md-btn-lg-line';
+  slotDeleteButton1 = ':nth-child(3) > app-eventzetsignupslot > :nth-child(1) > .col-lg-12 > .card > .card-body > :nth-child(1) > :nth-child(2) > .content-inside > .col-md-2 > span > .btn';
+  slotCountField1 = ':nth-child(3) > app-eventzetsignupslot > :nth-child(1) > .col-lg-12 > .card > .card-body > :nth-child(1) > :nth-child(2) > .content-inside > .col-md-3 > #Number_Wanted';
+  slotNameField1 = ':nth-child(3) > app-eventzetsignupslot > :nth-child(1) > .col-lg-12 > .card > .card-body > :nth-child(1) > :nth-child(2) > .content-inside > .col-md-6 > #Slot_Title';
   slotCountValidation = '.col-md-3 > .invalid-feedback > .font_s7';
   slotTitleValidation = '.col-md-6 > .invalid-feedback > .font_s7';
   slotDeleteButton2 = ':nth-child(3) > app-eventzetsignupslot > :nth-child(1) > .col-lg-9 > .card > .card-body > :nth-child(1) > :nth-child(3) > .content-inside > .col-md-2 > span > .btn';
-  slotCountField2 = ':nth-child(3) > app-eventzetsignupslot > :nth-child(1) > .col-lg-9 > .card > .card-body > :nth-child(1) > :nth-child(3) > .content-inside > .col-md-3 > #Number_Wanted';
-  slotNameField2 = ':nth-child(3) > app-eventzetsignupslot > :nth-child(1) > .col-lg-9 > .card > .card-body > :nth-child(1) > :nth-child(3) > .content-inside > .col-md-6 > #Slot_Title';
+  slotCountField2 = ':nth-child(3) > .content-inside > .col-md-3 > #Number_Wanted';
+  slotNameField2 = ':nth-child(3) > .content-inside > .col-md-6 > #Slot_Title';
   slotDeleteButton2 = ':nth-child(3) > app-eventzetsignupslot > :nth-child(1) > .col-lg-9 > .card > .card-body > :nth-child(1) > :nth-child(3) > .content-inside > .col-md-2 > span > .btn';
-  startTime1 = '//body/app-root/app-volunteersignup/div/div/div/main/app-eventzetsignup/div/div/div/section/div/div/div/div/app-eventzetsignuptime/div/div/div/div/div/div/div/div[1]/app-marzet-tp[1]/div[1]/input[1]';
+  startTime1 = ':nth-child(3) > app-eventzetsignuptime > :nth-child(2) > :nth-child(1) > .card > .card-body > :nth-child(1) > :nth-child(2) > .content-inside > :nth-child(1) > app-marzet-tp > .form-floating > #martime_0_tp';
   endTime1 = ':nth-child(3) > app-eventzetsignuptime > :nth-child(2) > :nth-child(1) > .card > .card-body > :nth-child(1) > :nth-child(2) > .content-inside > :nth-child(2) > app-marzet-tp > .form-floating > #martime_0_tp';
   selectSlotDropdown1 = '(//select[@aria-label="Default select example"])[2]';
   selectDateCheckBox1 = '//body/app-root/app-volunteersignup/div/div/div/main/app-eventzetsignup/div/div/div/section/div/div/div/div/app-eventzetsignuptime/div/div/div/div/div/div/div/div/app-multiselect/div/div/button[1]';
-  timeDeleteButton1 = ':nth-child(3) > app-eventzetsignuptime > :nth-child(2) > :nth-child(1) > .card > .card-body > :nth-child(1) > :nth-child(2) > .content-inside > .col-md-2 > span > .btn > .bi';
+  timeDeleteButton1 =':nth-child(3) > app-eventzetsignuptime > :nth-child(2) > :nth-child(1) > .card > .card-body > :nth-child(1) > :nth-child(2) > .content-inside > .col-md-2 > span > .btn';
   timeSaveButton = ':nth-child(3) > app-eventzetsignuptime > :nth-child(2) > :nth-child(1) > .card > .card-body > :nth-child(1) > .mt-3 > .md-raised';
-  addMultipleTimeButton = '(//button[@class="btn md-button md-btn-lg-line d-inline mx-1 my-1"][normalize-space()="Add multiple Time"])[2]';
+  addMultipleTimeButton = ':nth-child(3) > app-eventzetsignuptime > :nth-child(2) > :nth-child(1) > .card > .card-body > :nth-child(1) > .mt-3 > .md-btn-lg-line';
   startTimeValidation = ':nth-child(1) > app-marzet-tp > .form-floating > .invalid-feedback > div';
   endTimeValidation = ':nth-child(2) > app-marzet-tp > .form-floating > .invalid-feedback > div';
   slotValidation = '.col-lg-3 > .small > .font_s8';
@@ -57,19 +57,19 @@ class CreateSignup {
   questionBox1 = '#floatingInputQuestion';
   settingsCheckBox = '#flexCheckDefault';
   questionDeleteButton1 = '#contentInsideSignupSettings0 > .col-md-2 > span > .btn';
-  addMultipleQuestionButton = '.my-2 > .col-md-12 > .md-btn-lg-line';
+  addMultipleQuestionButton ='.my-2 > .col-md-12 > .md-btn-lg-line';
   settingsSaveButton = '.my-2 > .col-md-12 > .md-raised';
   questionBox2 = '#contentInsideSignupSettings1 > .col-md-6 > .form-floating > #floatingInputQuestion';
   designSaveButton = '.col-md-12 > span > .btn';
   uploadImageButton = '#formFileTemplateimg';
   blackColorPellet = '.col-lg-7 > .card > .card-body > .g-3 > :nth-child(2)';
   imageDeleteButton = '.position-absolute > .bi';
-  copyURLButton = ':nth-child(3) > app-eventzetsignuppublish > :nth-child(2) > :nth-child(1) > :nth-child(1) > .card > .card-body > .my-1 > :nth-child(2) > .list-inline > .list-inline-item > .btn';
-  publishButton = ':nth-child(3) > app-eventzetsignuppublish > :nth-child(3) > :nth-child(1) > :nth-child(1) > .card > .card-body > .my-2 > .col-md-6 > :nth-child(1)';
-  saveDraftButton = ':nth-child(3) > app-eventzetsignuppublish > :nth-child(3) > :nth-child(1) > :nth-child(1) > .card > .card-body > .my-2 > .col-md-6 > .d-inline';
-  privateSignupButton = ':nth-child(3) > app-eventzetsignuppublish > :nth-child(2) > :nth-child(1) > :nth-child(1) > .card > .card-body > .g-3 > :nth-child(2) > .form-check > #flexSwitchCheckDefault';
+  copyURLButton = ':nth-child(3) > app-eventzetsignuppublish > :nth-child(3) > :nth-child(1) > :nth-child(1) > .card > .card-body > .my-1 > :nth-child(2) > .list-inline > .list-inline-item > .btn';
+  publishButton = ':nth-child(3) > app-eventzetsignuppublish > :nth-child(3) > :nth-child(1) > :nth-child(1) > .card > .card-body > .my-2 > .col-md-6 > .md-raised';
+  saveDraftButton = '//button[@id="Save Draft"]';
+  privateSignupButton = ':nth-child(3) > app-eventzetsignuppublish > :nth-child(3) > :nth-child(1) > :nth-child(1) > .card > .card-body > .g-3 > :nth-child(2) > .form-check > #flexSwitchCheckDefault';
   unPublishButton = ':nth-child(1) > td > .card > .card-body > .row > :nth-child(3) > .list-inline > :nth-child(4) > .btn > .px-1';
-  inviteButton = ':nth-child(3) > app-eventzetsignuppublish > :nth-child(3) > :nth-child(1) > :nth-child(1) > .card > .card-body > .my-2 > .col-md-6 > [tabindex="0"]';
+  inviteButton = ':nth-child(3) > app-eventzetsignuppublish > :nth-child(3) > :nth-child(1) > :nth-child(1) > .card > .card-body > .my-2 > .col-md-6 > .btn';
 
   clickSignupInviteButton() {
 
@@ -89,7 +89,7 @@ class CreateSignup {
 
   clickSignupSaveButton() {
 
-    cy.get(this.saveDraftButton).click();
+    cy.xpath(this.saveDraftButton).click();
     cy.wait(3000);
     cy.get('[style="display: block;"] > .cardboxalert > .card > .w-100 > .btn').click({ force: true });
 
@@ -106,20 +106,20 @@ class CreateSignup {
 
   checkSignupCreatorName(username) {
 
-    cy.get(':nth-child(3) > app-eventzetsignuppublish > :nth-child(3) > :nth-child(2) > .col-lg-12 > .border-0 > :nth-child(1) > .container-fluid > .py-1 > .text-left > :nth-child(2)')
+    cy.get(':nth-child(3) > app-eventzetsignuppublish > :nth-child(3) > :nth-child(2) > .col-lg-12 > .container-fluid > .row.py-1 > .text-left > :nth-child(2)')
       .should('be.visible').should('contain', username);
   }
 
   checkSignupDescription() {
 
-    cy.get(':nth-child(3) > app-eventzetsignuppublish > :nth-child(3) > :nth-child(2) > .col-lg-12 > .border-0 > :nth-child(1) > .container-fluid > .py-1 > .text-left > :nth-child(3)')
+    cy.get(':nth-child(3) > app-eventzetsignuppublish > :nth-child(3) > :nth-child(2) > .col-lg-12 > .container-fluid > .row.py-1 > .text-left > :nth-child(3)')
       .should('be.visible').should('exist');
 
   }
 
   checkSignUPName(signupname) {
 
-    cy.get(':nth-child(3) > app-eventzetsignuppublish > :nth-child(3) > :nth-child(2) > .col-lg-12 > .border-0 > :nth-child(1) > .container-fluid > .py-1 > .text-left > .h3')
+    cy.get(':nth-child(3) > app-eventzetsignuppublish > :nth-child(3) > :nth-child(2) > .col-lg-12 > .container-fluid > .row.py-1 > .text-left > .h3')
       .should('contain', signupname);
 
   }
@@ -233,7 +233,7 @@ class CreateSignup {
 
   checkTimeDeleteValue(starttime, endtime, slot, date) {
 
-    cy.xpath(this.startTime1).should('not.have.value', starttime);
+    cy.get(this.startTime1).should('not.have.value', starttime);
     cy.get(this.endTime1).should('not.have.value', endtime);
     cy.xpath(this.selectSlotDropdown1).should('not.have.value', slot);
     cy.xpath(this.selectDateCheckBox1).should('not.have.value', date);
@@ -242,7 +242,7 @@ class CreateSignup {
 
   checkSavedTimeData(starttime1, endtime1, slot1, date1, starttime2, endtime2, slot2, date2) {
 
-    cy.xpath(this.startTime1).should('have.value', starttime1);
+    cy.get(this.startTime1).should('have.value', starttime1);
     cy.get(this.endTime1).should('have.value', endtime1);
     cy.xpath('(//select[@aria-label="Default select example"])[2]/option[2]').should('contain', slot1);
     cy.xpath('(//div[@class="items-container"])[3]').should('have.text', date1);
@@ -262,7 +262,7 @@ class CreateSignup {
 
   clickAddMultipleTimeButton() {
 
-    cy.xpath(this.addMultipleTimeButton).click();
+    cy.get(this.addMultipleTimeButton).click();
 
   }
 
@@ -274,7 +274,7 @@ class CreateSignup {
 
   inputStartTime1(starttime) {
 
-    cy.xpath(this.startTime1).type(starttime)
+    cy.get(this.startTime1).type(starttime)
   }
 
   inputEndTime1(endtime) {

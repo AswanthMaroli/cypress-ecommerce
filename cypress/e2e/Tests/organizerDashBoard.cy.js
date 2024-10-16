@@ -1,9 +1,19 @@
 import OrganizerDashboard from '../Pages/organizerDashBoardPages';
 const { readDataFromFile, writeDataToFile, clearDataInFile } = require('.././ExternalFiles/fileOperations.js');
 const baseUrl = Cypress.config('baseUrl');
-const filename = 'cypress/fixtures/createEventAddTicketRead.json';
+const filename = 'cypress/fixtures/createEventBasicInfoRead.json';
 
 const od = new OrganizerDashboard();
+
+function performLogin(email, password) {
+  cy.visit(baseUrl);
+  cy.wait(4000);
+  od.clickLoginMenu();
+  od.inputEmail(email);
+  od.inputPassword(password);
+  od.loginClick();
+}
+
 
 module.exports = {
 
@@ -26,19 +36,13 @@ module.exports = {
 
 
     it('Test 2: logined user can access organizer dashboard or not ', () => {
-      cy.visit(baseUrl);
-      cy.wait(3000);
-      cy.scrollTo(0, 0);
-      od.clickLoginMenu();
-      cy.url().should('include', 'https://test.eventzet.com/#/Eventshell/Eventlogin');
+
       readDataFromFile(filename).then((list) => {
 
-        od.inputEmail(list.useremail);
-        od.inputPassword(list.userpassword);
+        performLogin(list.email,list.password);
 
       });
-      cy.wait(1000);
-      od.loginClick();
+  
       cy.wait(4000);
       od.dashBoardMenuClick();
       cy.wait(3000);
@@ -51,19 +55,11 @@ module.exports = {
 
 
     it('Test 3: Menu buttons in the organizer dashboard working fine or not ', () => {
-      cy.visit(baseUrl);
-      cy.wait(3000);
-      cy.scrollTo(0, 0);
-      od.clickLoginMenu();
-      cy.url().should('include', 'https://test.eventzet.com/#/Eventshell/Eventlogin');
       readDataFromFile(filename).then((list) => {
 
-        od.inputEmail(list.useremail);
-        od.inputPassword(list.userpassword);
+        performLogin(list.email,list.password);
 
       });
-      cy.wait(1000);
-      od.loginClick();
       cy.wait(6000);
       od.dashBoardMenuClick();
       cy.wait(4000);
@@ -112,19 +108,11 @@ module.exports = {
 
 
     it('Test 4:  Historical order chart is visible or not ', () => {
-      cy.visit(baseUrl);
-      cy.wait(3000);
-      cy.scrollTo(0, 0);
-      od.clickLoginMenu();
-      cy.url().should('include', 'https://test.eventzet.com/#/Eventshell/Eventlogin');
       readDataFromFile(filename).then((list) => {
 
-        od.inputEmail(list.useremail);
-        od.inputPassword(list.userpassword);
+        performLogin(list.email,list.password);
 
       });
-      cy.wait(1000);
-      od.loginClick();
       cy.wait(4000);
       od.dashBoardMenuClick();
       cy.wait(6000);

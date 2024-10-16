@@ -34,8 +34,6 @@ class EventDetails {
 
         cy.get(this.continueButton).should('be.visible').click({force:true});
         cy.wait(1000);
-        cy.url().should('include','https://test.eventzet.com/#/eventregistration/Eventshell/Eventregistration');
-
     }
 
     clickGetTicketsButton(){

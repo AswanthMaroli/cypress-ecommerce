@@ -38,123 +38,123 @@ module.exports = {
 
         //test 1
 
-        // it("Test 1:Check Publish page details", () => {
+        it("Test 1:Check Publish page details", () => {
 
-        //     readDataFromFile(filename).then((list) => {
+            readDataFromFile(filename).then((list) => {
 
-        //         performLogin(list.email, list.password);
-        //         navigateToPublishPage();
-        //         publish.checkPublishPageDetails(
-        //             list.eventtitle,
-        //             list.eventlocation,
-        //             list.onlinetitle,
-        //             list.ticketname1,
-        //             list.addonname1,
-        //             list.ticketname2,
-        //             list.addonname2,
-        //             list.onlineticket
-        //         );
+                performLogin(list.email, list.password);
+                navigateToPublishPage();
+                publish.checkPublishPageDetails(
+                    list.eventtitle,
+                    list.eventlocation,
+                    list.onlinetitle,
+                    list.ticketname1,
+                    list.addonname1,
+                    list.ticketname2,
+                    list.addonname2,
+                    list.onlineticket
+                );
 
 
-        //     });
-        // }),
+            });
+        }),
 
 
       
 
-        // it("Test 2:Check user can enable service charge is given by the event creator button", () => {
+        it("Test 2:Check user can enable service charge is given by the event creator button", () => {
 
-        //     readDataFromFile(filename).then((list) => {
+            readDataFromFile(filename).then((list) => {
 
-        //         performLogin(list.email, list.password);
-        //         navigateToPublishPage();
-        //         publish.clickServiceChargeButton();
-        //         cy.wait(2000);
+                performLogin(list.email, list.password);
+                navigateToPublishPage();
+                publish.clickServiceChargeButton();
+                cy.wait(2000);
 
-        //     });
+            });
 
-        //     cy.log('Service charge is given by the event creator button is enabled');
-        // }),
+            cy.log('Service charge is given by the event creator button is enabled');
+        }),
        
 
-        // it("Test 3:Check user can enable accept refund requests button", () => {
+        it("Test 3:Check user can enable accept refund requests button", () => {
 
             
-        //     readDataFromFile(filename).then((list) => {
+            readDataFromFile(filename).then((list) => {
 
-        //         performLogin(list.email, list.password);
-        //         navigateToPublishPage();
-        //         publish.clickRefundRequestButton();
-        //         cy.wait(2000);
+                performLogin(list.email, list.password);
+                navigateToPublishPage();
+                publish.clickRefundRequestButton();
+                cy.wait(2000);
 
-        //     });
-        //     cy.log('Accept refund request button is enabled');
-        // }),
+            });
+            cy.log('Accept refund request button is enabled');
+        }),
      
 
 
-        // it("Test 4:Check user can save publish page without selecting refund policy in dropdown", () => {
+        it("Test 4:Check user can save publish page without selecting refund policy in dropdown", () => {
 
-        //     readDataFromFile(filename).then((list) => {
+            readDataFromFile(filename).then((list) => {
 
-        //         performLogin(list.email, list.password);
-        //         navigateToPublishPage();
-        //         publish.clickRefundRequestButton();
-        //         cy.wait(2000);
-        //         publish.saveEvent();
-        //         cy.wait(3000);
-        //         cy.get('.invalid-feedback').should('be.visible').should('contain', ' Please select Refund Policy');
+                performLogin(list.email, list.password);
+                navigateToPublishPage();
+                publish.clickRefundRequestButton();
+                cy.wait(2000);
+                publish.saveEvent();
+                cy.wait(3000);
+                cy.get('.invalid-feedback').should('be.visible').should('contain', ' Please select Refund Policy');
 
-        //     });
-        //     cy.log(' Please select Refund Policy validation is visible: Test is successful');
-        // }),
+            });
+            cy.log(' Please select Refund Policy validation is visible: Test is successful');
+        }),
         
 
 
-        // it("Test 5:Check user can disable service charge is given by the event creator button", () => {
+        it("Test 5:Check user can disable service charge is given by the event creator button", () => {
 
-        //     readDataFromFile(filename).then((list) => {
+            readDataFromFile(filename).then((list) => {
 
-        //         performLogin(list.email, list.password);
-        //         navigateToPublishPage();
-        //         publish.clickServiceChargeButton();
-        //         cy.wait(3000);
-        //         publish.unCheckServiceChargeButton();
+                performLogin(list.email, list.password);
+                navigateToPublishPage();
+                publish.clickServiceChargeButton();
+                cy.wait(3000);
+                publish.unCheckServiceChargeButton();
 
-        //     });
-        //     cy.log('Service charge is given by the event creator button is disabled');
-        // }),
+            });
+            cy.log('Service charge is given by the event creator button is disabled');
+        }),
       
 
-        // it("Test 6:Check user can disable accept refund requests button", () => {
+        it("Test 6:Check user can disable accept refund requests button", () => {
  
-        //     readDataFromFile(filename).then((list) => {
+            readDataFromFile(filename).then((list) => {
 
-        //         performLogin(list.email, list.password);
-        //         navigateToPublishPage();
-        //         publish.clickRefundRequestButton();
-        //         cy.wait(3000);
-        //         publish.unCheckRefundRequestButton();
+                performLogin(list.email, list.password);
+                navigateToPublishPage();
+                publish.clickRefundRequestButton();
+                cy.wait(3000);
+                publish.unCheckRefundRequestButton();
 
-        //     });
-        //     cy.log('Accept refund request button is disabled');
-        // }),
+            });
+            cy.log('Accept refund request button is disabled');
+        }),
        
 
-        // it("Test 7:Check whether user can save publish page", () => {
+        it("Test 7:Check whether user can save publish page", () => {
             
-        //     readDataFromFile(filename).then((list) => {
+            readDataFromFile(filename).then((list) => {
 
-        //         performLogin(list.email, list.password);
-        //         navigateToPublishPage();
-        //         cy.wait(3000);
-        //         publish.saveEvent();
-        //         cy.wait(10000);
-        //         publish.checkSaveEventPopup();
+                performLogin(list.email, list.password);
+                navigateToPublishPage();
+                cy.wait(3000);
+                publish.saveEvent();
+                cy.wait(10000);
+                publish.checkSaveEventPopup();
 
-        //     });
-        //     cy.log('Event saved successfuly');
-        // }),
+            });
+            cy.log('Event saved successfuly');
+        }),
   
         it("Test 8:Check whether user can publish the event ", () => {
             readDataFromFile(filename).then((list) => {

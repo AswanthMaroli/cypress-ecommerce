@@ -1,10 +1,9 @@
 class OrganizerDashboard {
 
-    homeurl = 'https://test.eventzet.com/#/Eventshell/Eventhome';
-    loginMenu =':nth-child(2) > :nth-child(8) > #EventZetHomemenuLoginmenu';
+    loginMenuButton = ':nth-child(2) > :nth-child(8) > #EventZetHomemenuLoginmenu';
     userEmail = '#UserEmail';
     userPassword = '#UserPassword';
-    loginButton = '#EventLoginBtn';
+    login = '#EventLoginBtn';
     dashBoardMenu = '#navbar > :nth-child(2) > :nth-child(2) > .nav-link';
     myEventsMenu = ':nth-child(2) > .card > .card-block > .list-inline';
     bookingListMenu = ':nth-child(3) > .card > .card-block > .list-inline';
@@ -62,27 +61,28 @@ class OrganizerDashboard {
 
     }
 
+   inputEmail(useremail) {
+
+        cy.get(this.userEmail).click({ force: true }).type(useremail);
+
+    }
+
+    inputPassword(userepassword) {
+
+        cy.get(this.userPassword).click({ force: true }).type(userepassword);
+
+    }
+
     clickLoginMenu() {
 
-        cy.get(this.loginMenu).click();
+        cy.get(this.loginMenuButton).click();
 
     }
 
     loginClick() {
 
-        cy.get(this.loginButton).should('exist').should('be.visible').click();
-
-    }
-
-    inputEmail(useremail) {
-
-        cy.get(this.userEmail).click({ force: true }).clear().type(useremail);
-
-    }
-
-    inputPassword(password) {
-
-        cy.get(this.userPassword).click({ force: true }).clear().type(password);
+        cy.get(this.login).click();
+        cy.wait(6000);
 
     }
 

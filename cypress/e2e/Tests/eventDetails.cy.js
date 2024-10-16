@@ -129,10 +129,33 @@ module.exports = {
                 eventDetails.selectPaidTicket(list.ticketquantity);
                 eventDetails.selectPaidTicketAddon(list.addonquantity);
                 eventDetails.clickContinueButton();
+                cy.url().should('include','https://test.eventzet.com/#/eventregistration/Eventshell/Eventregistration');
             });
 
             cy.log('Test 4 is successful and user is navigated to the contact information page');
         }),
+
+        it("Test 5:Verify that  select ticket validation is visible or not ", () => {
+
+            readDataFromFile(filename).then((list) => {
+
+                performLogin(list.email, list.password);
+                eventDetails.clickEvent(list.eventtitle);
+                cy.intercept('GET', '/api/EventDetails/GetEventVideoURL?EventID=*').as('eventDetails');
+                cy.wait('@eventDetails', { timeout: 25000 });
+                cy.url().should('include', 'https://test.eventzet.com/#/eventregistration/Eventshell/Eventdetails');
+                eventDetails.clickGetTicketsButton();
+                cy.wait(1000);
+                eventDetails.selectVenue();
+                eventDetails.selectTimeSlot();
+                eventDetails.clickContinueButton();
+                cy.get(':nth-child(4) > .row > .col-md-12 > .text-danger').should('be.visible').should('contain','Select Atleast One Ticket!');
+                cy.url().should('include','https://test.eventzet.com/#/eventregistration/Eventshell/Eventdetails');
+            });
+
+            cy.log('Test 5 is successful andvalidation message is visible for selecting the ticket');
+        }),
+
 
 
     ]

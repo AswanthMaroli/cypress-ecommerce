@@ -169,7 +169,9 @@ module.exports = {
             cy.wait(4000);
 
             cs.clickCreateVolunteerSignupButton();
-            cy.wait(5000);
+            cy.intercept('GET', ' /api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=*&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDate');
+            cy.wait('@signupDate', { timeout: 25000 });
+        
 
             readDataFromFile(filename).then((list) => {
 
@@ -206,11 +208,12 @@ module.exports = {
             cy.wait(4000);
 
             cs.clickCreateVolunteerSignupButton();
-            cy.wait(5000);
+            cy.intercept('GET', ' /api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=*&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDate');
+            cy.wait('@signupDate', { timeout: 25000 });
 
             cs.clickSignupListMenu();
-            cy.wait(4000);
-
+            cy.intercept('GET', ' /api/Category/GetCategoryByTypeName?CategoryTypeName=SignUpStatus').as('signupListPage');
+            cy.wait('@signupListPage', { timeout: 25000 });
             readDataFromFile(filename).then((list) => {
 
                 cs.searchSignupName(list.signuptitle);
@@ -243,10 +246,12 @@ module.exports = {
             cy.wait(4000);
 
             cs.clickCreateVolunteerSignupButton();
-            cy.wait(5000);
+            cy.intercept('GET', ' /api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=*&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDate');
+            cy.wait('@signupDate', { timeout: 25000 });
 
             cs.clickSignupListMenu();
-            cy.wait(4000);
+            cy.intercept('GET', ' /api/Category/GetCategoryByTypeName?CategoryTypeName=SignUpStatus').as('signupListPage');
+            cy.wait('@signupListPage', { timeout: 25000 });
 
             readDataFromFile(filename).then((list) => {
 
@@ -301,10 +306,12 @@ module.exports = {
             cy.wait(4000);
 
             cs.clickCreateVolunteerSignupButton();
-            cy.wait(5000);
+            cy.intercept('GET', ' /api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=*&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDate');
+            cy.wait('@signupDate', { timeout: 25000 });
 
             cs.clickSignupListMenu();
-            cy.wait(4000);
+            cy.intercept('GET', ' /api/Category/GetCategoryByTypeName?CategoryTypeName=SignUpStatus').as('signupListPage');
+            cy.wait('@signupListPage', { timeout: 25000 });
 
             readDataFromFile(filename).then((list) => {
 
@@ -332,10 +339,12 @@ module.exports = {
             cy.wait(4000);
 
             cs.clickCreateVolunteerSignupButton();
-            cy.wait(5000);
+            cy.intercept('GET', ' /api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=*&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDate');
+            cy.wait('@signupDate', { timeout: 25000 });
 
             cs.clickSignupListMenu();
-            cy.wait(4000);
+            cy.intercept('GET', ' /api/Category/GetCategoryByTypeName?CategoryTypeName=SignUpStatus').as('signupListPage');
+            cy.wait('@signupListPage', { timeout: 25000 });
 
             readDataFromFile(filename).then((list) => {
 
@@ -366,10 +375,12 @@ module.exports = {
             cy.wait(4000);
 
             cs.clickCreateVolunteerSignupButton();
-            cy.wait(5000);
+            cy.intercept('GET', ' /api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=*&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDate');
+            cy.wait('@signupDate', { timeout: 25000 });
 
             cs.clickSignupListMenu();
-            cy.wait(4000);
+            cy.intercept('GET', ' /api/Category/GetCategoryByTypeName?CategoryTypeName=SignUpStatus').as('signupListPage');
+            cy.wait('@signupListPage', { timeout: 25000 });
 
             readDataFromFile(filename).then((list) => {
 
@@ -399,10 +410,12 @@ module.exports = {
             cy.wait(4000);
 
             cs.clickCreateVolunteerSignupButton();
-            cy.wait(5000);
+            cy.intercept('GET', ' /api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=*&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDate');
+            cy.wait('@signupDate', { timeout: 25000 });
 
             cs.clickSignupListMenu();
-            cy.wait(4000);
+            cy.intercept('GET', ' /api/Category/GetCategoryByTypeName?CategoryTypeName=SignUpStatus').as('signupListPage');
+            cy.wait('@signupListPage', { timeout: 25000 });
 
             readDataFromFile(filename).then((list) => {
 
@@ -434,10 +447,12 @@ module.exports = {
             cy.wait(4000);
 
             cs.clickCreateVolunteerSignupButton();
-            cy.wait(5000);
+            cy.intercept('GET', ' /api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=*&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDate');
+            cy.wait('@signupDate', { timeout: 25000 });
 
             cs.clickSignupListMenu();
-            cy.wait(4000);
+            cy.intercept('GET', ' /api/Category/GetCategoryByTypeName?CategoryTypeName=SignUpStatus').as('signupListPage');
+            cy.wait('@signupListPage', { timeout: 25000 });
 
             readDataFromFile(filename).then((list) => {
 
@@ -471,10 +486,12 @@ module.exports = {
             cy.wait(4000);
 
             cs.clickCreateVolunteerSignupButton();
-            cy.wait(5000);
+            cy.intercept('GET', ' /api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=*&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDate');
+            cy.wait('@signupDate', { timeout: 25000 });
 
             cs.clickSignupListMenu();
-            cy.wait(4000);
+            cy.intercept('GET', ' /api/Category/GetCategoryByTypeName?CategoryTypeName=SignUpStatus').as('signupListPage');
+            cy.wait('@signupListPage', { timeout: 25000 });
 
             readDataFromFile(filename).then((list) => {
 
@@ -512,7 +529,7 @@ module.exports = {
             cy.wait(4000);
 
             cs.clickCreateVolunteerSignupButton();
-            cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=0&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDateData');
+            cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=*&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDateData');
             cy.wait('@signupDateData', { timeout: 20000 });
 
             cs.clickSignupListMenu();
@@ -549,7 +566,7 @@ module.exports = {
             cy.wait(4000);
 
             cs.clickCreateVolunteerSignupButton();
-            cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=0&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDateData');
+            cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=*&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDateData');
             cy.wait('@signupDateData', { timeout: 20000 });
 
             cs.clickSignupListMenu();
@@ -586,7 +603,7 @@ module.exports = {
             cy.wait(4000);
 
             cs.clickCreateVolunteerSignupButton();
-            cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=0&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDateData');
+            cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=*&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDateData');
             cy.wait('@signupDateData', { timeout: 20000 });
 
             cs.clickSignupListMenu();
@@ -623,7 +640,7 @@ module.exports = {
             cy.wait(4000);
 
             cs.clickCreateVolunteerSignupButton();
-            cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=0&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDateData');
+            cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=*&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDateData');
             cy.wait('@signupDateData', { timeout: 20000 });
 
             cs.clickSignupListMenu();
@@ -661,7 +678,7 @@ module.exports = {
             cy.wait(4000);
 
             cs.clickCreateVolunteerSignupButton();
-            cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=0&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDateData');
+            cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=*&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDateData');
             cy.wait('@signupDateData', { timeout: 20000 });
 
             cs.clickSignupListMenu();
@@ -699,7 +716,7 @@ module.exports = {
             cy.wait(4000);
 
             cs.clickCreateVolunteerSignupButton();
-            cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=0&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDateData');
+            cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=*&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDateData');
             cy.wait('@signupDateData', { timeout: 20000 });
 
             cs.clickSignupListMenu();
@@ -738,7 +755,7 @@ module.exports = {
             cy.wait(4000);
 
             cs.clickCreateVolunteerSignupButton();
-            cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=0&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDateData');
+            cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=*&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDateData');
             cy.wait('@signupDateData', { timeout: 20000 });
 
             cs.clickSignupListMenu();
@@ -779,7 +796,7 @@ module.exports = {
             cy.wait(4000);
 
             cs.clickCreateVolunteerSignupButton();
-            cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=0&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDateData');
+            cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=*&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDateData');
             cy.wait('@signupDateData', { timeout: 20000 });
 
             cs.clickSignupListMenu();
@@ -826,7 +843,7 @@ module.exports = {
         }),
 
 
-        //Settings page  tests
+       // Settings page  tests
 
         it('Test 23: Check whether user can save the settings page', () => {
 
@@ -842,7 +859,7 @@ module.exports = {
             cy.wait(4000);
 
             cs.clickCreateVolunteerSignupButton();
-            cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=0&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDateData');
+            cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=*&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDateData');
             cy.wait('@signupDateData', { timeout: 20000 });
 
             cs.clickSignupListMenu();
@@ -979,7 +996,7 @@ module.exports = {
 
         }),
 
-        //design page tests
+      //  design page tests
 
         it('Test 27: Check whether user can save the design page ', () => {
 
@@ -1095,7 +1112,7 @@ module.exports = {
 
         }),
 
-         // publish page tests
+       //  publish page tests
 
         it('Test 30: Check whether publish page contain all the details', () => {
 
@@ -1221,7 +1238,10 @@ module.exports = {
                 cs.clickPublishTab();
                 cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=*&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupPublishData');
                 cy.wait('@signupPublishData', { timeout: 20000 });
-                // cy.wait(6000);
+                cy.wait(6000);
+                cy.xpath("(//input[@id='flexSwitchCheckDefault'])[2]")
+                .click({ force: true });
+                cy.wait(3000);
                 cs.clickSignupSaveButton();
                 cy.wait(1000);
                 cs.clickSignupPublishButton();
