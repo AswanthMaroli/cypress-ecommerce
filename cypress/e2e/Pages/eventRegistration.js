@@ -1,10 +1,9 @@
 class EventRegistration {
 
-    homeurl = 'https://test.eventzet.com/#/Eventshell/Eventhome';
-    loginMenu = ':nth-child(2) > :nth-child(8) > #EventZetHomemenuLoginmenu';
+    loginMenuButton = ':nth-child(2) > :nth-child(8) > #EventZetHomemenuLoginmenu';
     userEmail = '#UserEmail';
     userPassword = '#UserPassword';
-    loginButton = '#EventLoginBtn';
+    login = '#EventLoginBtn';
     searchEventButton = '#SearchEventHome';
     allEvents = '#targetFilterEvent';
     eventName = '.h4';
@@ -25,17 +24,16 @@ class EventRegistration {
     state = '#ddState';
     zipCode = '#txtZipCode';
     addAttendeesButton = '[data-bs-toggle="modal"]';
-    saveAndContinueButton = '.col-md-12 > .d-none';
-    attendeeFirstName1 = ':nth-child(2) > :nth-child(1) > .form-floating > #txtAttndFirstName';
-    attendeeLastName1 = ':nth-child(2) > :nth-child(2) > .form-floating > #txtAttndLastName';
-    attendeeEmail1 = ':nth-child(2) > :nth-child(3) > .form-floating > #txtAttndEmail';
-    attendeeFirstName2 = ':nth-child(3) > :nth-child(1) > .form-floating > #txtAttndFirstName';
-    attendeeLastName2 = ':nth-child(3) > :nth-child(2) > .form-floating > #txtAttndLastName';
-    attendeeEmail2 = ':nth-child(3) > :nth-child(3) > .form-floating > #txtAttndEmail';
+    saveAndContinueButton ='#SaveAttendeesAndBuyerInformation';
+    attendeeFirstName1 =':nth-child(2) > .row > :nth-child(1) > .form-floating > #txtAttndFirstName';
+    attendeeLastName1 =':nth-child(2) > .row > :nth-child(2) > .form-floating > #txtAttndLastName';
+    attendeeEmail1 = ':nth-child(2) > .row > :nth-child(3) > .form-floating > #txtAttndEmail';
+    attendeeFirstName2 =':nth-child(4) > .row > :nth-child(1) > .form-floating > #txtAttndFirstName';
+    attendeeLastName2 = ':nth-child(4) > .row > :nth-child(2) > .form-floating > #txtAttndLastName';
+    attendeeEmail2 = ':nth-child(4) > .row > :nth-child(3) > .form-floating > #txtAttndEmail';
     ticketTier1 = ':nth-child(2) > :nth-child(4) > .form-floating > #txtAttndEmail'
     ticketTier2 = ':nth-child(3) > :nth-child(4) > .form-floating > #txtAttndEmail';
-    attendeeCloseButton = '#btnCloseAttendeefooter';
-    attendeeSaveButton = '#AddAttendeesInformationPopup';
+    
     registrationPageBackButton = '[tabindex="0"] > .text-primary';
     paymentMethod = '//*[@id="rdoPaymentType+0"]';
     cardNumberField = '#txtCardNumber';
@@ -45,12 +43,75 @@ class EventRegistration {
     cvvField = '#txtCVV';
     termsAndCondition = '#flexCheckDefault';
     makePaymentButton = '#BillingInfoMakePaymentId';
-    printTicketButton = '.col-md-12 > .md-raised';
+    printTicketButton = ':nth-child(1) > .md-raised';
     cancelOrderButton = '[style="display: block;"]';
     contactOrganizerButton = '[data-bs-target="#ModalContactOrganizer"]';
     cancelOrderCloseButton = '#EvenViewRegCloseCancelOrder';
     cancelOrderSubmitButton = '#EvenViewRegCancelOrderSubmit';
 
+    continueButton ='#EventDetailsRegistrBtn';
+    getTicketsButton = '#EventDetailsRegisterNowBtn';
+    eventVenue = ':nth-child(2) > .col-md-12 > .btn > .justify-content-between';
+    eventTitle =  '.section-title > .clr_base';
+    onlineTitle = ':nth-child(8) > .col-md-12 > .btn > .justify-content-between';
+    timeSlot ='.btn > .justify-content-between';
+    answerInputBox = '#Question';
+
+
+
+    selectFreeTicket(quantity){
+
+        cy.get(':nth-child(2) > .d-flex.bd-highlight > :nth-child(4) > .input-group > #ticket_number')
+        .should('be.visible')
+        .clear()
+        .type(quantity);
+
+    }
+
+    selectFreeTicketAddon(quantity){
+
+        cy.get(':nth-child(2) > .bg_lightash > :nth-child(3) > .input-group > #addon_number').should('be.visible')
+        .clear()
+        .type(quantity);
+
+    }
+
+    selectPaidTicket(quantity){
+
+        cy.get(':nth-child(3) > .d-flex.bd-highlight > :nth-child(4) > .input-group > #ticket_number')
+        .should('be.visible')
+        .clear().type(quantity);
+
+    }
+
+    selectPaidTicketAddon(quantity){
+
+        cy.get(':nth-child(3) > .bg_lightash > :nth-child(3) > .input-group > #addon_number')
+        .should('be.visible')
+        .clear().type(quantity);
+
+    }
+
+    selectVenue(){
+
+        cy.get(this.eventVenue).should('be.visible').click({force:true});
+    }
+
+    selectTimeSlot(){
+
+        cy.get(this.timeSlot).should('be.visible').click({force:true});
+    }
+
+    clickGetTicketsButton(){
+
+        cy.get(this.getTicketsButton).scrollIntoView().should('be.visible').click();
+    }
+
+    clickContinueButton(){
+
+        cy.get(this.continueButton).should('be.visible').click({force:true});
+        cy.wait(1000);
+    }
 
     checkCancelOrderSuccessPopup() {
 
@@ -80,7 +141,7 @@ class EventRegistration {
 
         cy.get(this.printTicketButton).should('be.visible').click();
         cy.wait(1000);
-        cy.get('#ModalTicketPrintEvent > .modal-dialog > .modal-content > .modal-body').should('be.visible');
+        cy.get('#ticketprint').should('be.visible');
         cy.wait(1000);
         cy.xpath('//button[normalize-space()="Download"]').click();
 
@@ -92,6 +153,7 @@ class EventRegistration {
         cy.get(this.cancelOrderButton).click();
 
         cy.get('#ViewRegCancelOrderYes').should('be.visible').click();
+        cy.wait(1000);
         cy.get('#ModalTicketCancelOrder > .modal-dialog > .modal-content > .modal-body').should('be.visible');
 
     }
@@ -99,17 +161,12 @@ class EventRegistration {
     clickContactOrganizer() {
 
         cy.get(this.contactOrganizerButton).click();
-        cy.get('#ModalContactOrganizer > .modal-dialog > .modal-content > .modal-body').should('be.visible');
+        cy.wait(1000);
+        cy.get('#ModalContactOrganizer > .modal-dialog > .modal-content > .modal-header').should('be.visible');
         cy.wait(2000);
         cy.xpath('//*[@id="ModalContactOrganizer"]/div/div/div[3]/button').click();
 
     }
-
-
-
-
-
-
 
 
     clickMakePaymentButton() {
@@ -212,7 +269,11 @@ class EventRegistration {
 
     }
 
+    inputAnswer(answer){
 
+        cy.get(this.answerInputBox).clear().type(answer);
+
+    }
 
 
 
@@ -223,22 +284,6 @@ class EventRegistration {
 
     }
 
-    clickAttendeeSaveButton() {
-
-        cy.get(this.attendeeSaveButton).click({ force: true });
-
-    }
-
-    clickAddAttendeeButton() {
-
-        cy.get(this.addAttendeesButton).click({ force: true });
-
-    }
-
-    clickAddAttendeesButton() {
-
-        cy.get(this.saveAndContinueButton).click({ force: true });
-    }
 
 
     inputPrefix(prefix) {
@@ -369,12 +414,14 @@ class EventRegistration {
 
     clickEvent(eventname) {
 
-        cy.get('#targetFilterEvent')
-            .contains(eventname)
-            .click({ force: true });
+        cy.get('#Eventssection > :nth-child(1)').scrollIntoView();
+        cy.wait(2000);
+        cy.get('#Eventssection > :nth-child(1)')
+        .should('be.visible')
+        .contains(eventname)
+        .click();
 
     }
-
     clickSearchEvent() {
 
         cy.get(this.searchEventButton).click();
@@ -383,28 +430,34 @@ class EventRegistration {
 
     inputEmail(useremail) {
 
-        cy.get(this.userEmail).click({ force: true }).clear().type(useremail);
+        cy.get(this.userEmail).click({ force: true }).type(useremail);
 
     }
 
-    inputPassword(password) {
+    inputPassword(userepassword) {
 
-        cy.get(this.userPassword).click({ force: true }).clear().type(password);
+        cy.get(this.userPassword).click({ force: true }).type(userepassword);
+
+    }
+
+    clickLoginMenu() {
+
+        cy.get(this.loginMenuButton).click();
 
     }
 
     loginClick() {
 
-        cy.get(this.loginButton).click({ force: true });
+        cy.get(this.login).click();
+        cy.wait(6000);
+
     }
 
-    clickLoginMenu() {
+    clickBookingFees(){
 
-        cy.get(this.loginMenu).click({ force: true });
+        cy.get('[aria-expanded="false"] > :nth-child(1) > .mb-0').click();
+
     }
-
-
-
 
 
 

@@ -1,8 +1,6 @@
 {
 
-   "eventTitle"         :"International Cherry Blossom Festival ",
-   "ticketname1"        :"Regular",
-   "ticketname2"        :"Gold",
+   "eventtitle"         :"International Cherry Blossom Festival ",
    "inputTicket1"       :"1",
    "inputTicket2"       :"1",
    "prefix"             :"jr",
@@ -27,8 +25,21 @@
    "cardOwnerName"      :"david luca",
    "month"              :"10",
    "year"               :"2030",
-   "cvv"                :"234"
-
+   "cvv"                :"234",
+   "eventlocation1": " New York, NY, USA",
+   "onlinetitle": " Online Trading Course",
+   "ticketname1": "Free Silver Ticket",
+   "addonname1": "Books",
+   "ticketname2": "Paid Ticket",
+   "addonname2": "Pepsi",
+   "onlineticket": "Online Trading Course Ticket",
+   "timeslotdate" : "10/14/24 - 10/14/24",
+   "timeslottime" : " 9:00 AM - 10:00 AM ",
+   "timezone" :"(GMT-10:00) Hawaii",
+   "ticketquantity" : "1",
+   "addonquantity" : "1",
+   "email" : "aswanthm385@gmail.com",
+   "password" : "112233",
+   "answer" : "This is my ph no: 9087898908"
    
-
 }
