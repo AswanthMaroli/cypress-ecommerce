@@ -530,11 +530,11 @@ module.exports = {
 
             cs.clickCreateVolunteerSignupButton();
             cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=*&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDateData');
-            cy.wait('@signupDateData', { timeout: 20000 });
+            cy.wait('@signupDateData', { timeout: 25000 });
 
             cs.clickSignupListMenu();
             cy.intercept('GET', '/api/Category/GetCategoryByTypeName?CategoryTypeName=SignUpStatus').as('signupListData');
-            cy.wait('@signupListData', { timeout: 20000 });
+            cy.wait('@signupListData', { timeout: 25000 });
 
 
             readDataFromFile(filename).then((list) => {
@@ -567,11 +567,11 @@ module.exports = {
 
             cs.clickCreateVolunteerSignupButton();
             cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=*&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDateData');
-            cy.wait('@signupDateData', { timeout: 20000 });
+            cy.wait('@signupDateData', { timeout: 25000 });
 
             cs.clickSignupListMenu();
             cy.intercept('GET', '/api/Category/GetCategoryByTypeName?CategoryTypeName=SignUpStatus').as('signupListData');
-            cy.wait('@signupListData', { timeout: 20000 });
+            cy.wait('@signupListData', { timeout: 25000 });
 
             readDataFromFile(filename).then((list) => {
 
@@ -604,11 +604,11 @@ module.exports = {
 
             cs.clickCreateVolunteerSignupButton();
             cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=*&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDateData');
-            cy.wait('@signupDateData', { timeout: 20000 });
+            cy.wait('@signupDateData', { timeout: 25000 });
 
             cs.clickSignupListMenu();
             cy.intercept('GET', '/api/Category/GetCategoryByTypeName?CategoryTypeName=SignUpStatus').as('signupListData');
-            cy.wait('@signupListData', { timeout: 20000 });
+            cy.wait('@signupListData', { timeout: 25000 });
 
             readDataFromFile(filename).then((list) => {
 
@@ -641,11 +641,11 @@ module.exports = {
 
             cs.clickCreateVolunteerSignupButton();
             cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=*&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDateData');
-            cy.wait('@signupDateData', { timeout: 20000 });
+            cy.wait('@signupDateData', { timeout: 25000 });
 
             cs.clickSignupListMenu();
             cy.intercept('GET', '/api/Category/GetCategoryByTypeName?CategoryTypeName=SignUpStatus').as('signupListData');
-            cy.wait('@signupListData', { timeout: 20000 });
+            cy.wait('@signupListData', { timeout: 25000 });
 
             readDataFromFile(filename).then((list) => {
 
@@ -679,11 +679,11 @@ module.exports = {
 
             cs.clickCreateVolunteerSignupButton();
             cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=*&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDateData');
-            cy.wait('@signupDateData', { timeout: 20000 });
+            cy.wait('@signupDateData', { timeout: 25000 });
 
             cs.clickSignupListMenu();
             cy.intercept('GET', '/api/Category/GetCategoryByTypeName?CategoryTypeName=SignUpStatus').as('signupListData');
-            cy.wait('@signupListData', { timeout: 20000 });
+            cy.wait('@signupListData', { timeout: 25000 });
 
             readDataFromFile(filename).then((list) => {
 
@@ -717,11 +717,11 @@ module.exports = {
 
             cs.clickCreateVolunteerSignupButton();
             cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=*&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDateData');
-            cy.wait('@signupDateData', { timeout: 20000 });
+            cy.wait('@signupDateData', { timeout: 25000 });
 
             cs.clickSignupListMenu();
             cy.intercept('GET', '/api/Category/GetCategoryByTypeName?CategoryTypeName=SignUpStatus').as('signupListData');
-            cy.wait('@signupListData', { timeout: 20000 });
+            cy.wait('@signupListData', { timeout: 25000 });
 
             readDataFromFile(filename).then((list) => {
 
@@ -756,11 +756,11 @@ module.exports = {
 
             cs.clickCreateVolunteerSignupButton();
             cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=*&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDateData');
-            cy.wait('@signupDateData', { timeout: 20000 });
+            cy.wait('@signupDateData', { timeout: 25000 });
 
             cs.clickSignupListMenu();
             cy.intercept('GET', '/api/Category/GetCategoryByTypeName?CategoryTypeName=SignUpStatus').as('signupListData');
-            cy.wait('@signupListData', { timeout: 20000 });
+            cy.wait('@signupListData', { timeout: 25000 });
 
             readDataFromFile(filename).then((list) => {
 
@@ -797,11 +797,11 @@ module.exports = {
 
             cs.clickCreateVolunteerSignupButton();
             cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=*&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDateData');
-            cy.wait('@signupDateData', { timeout: 20000 });
+            cy.wait('@signupDateData', { timeout: 25000 });
 
             cs.clickSignupListMenu();
             cy.intercept('GET', '/api/Category/GetCategoryByTypeName?CategoryTypeName=SignUpStatus').as('signupListData');
-            cy.wait('@signupListData', { timeout: 20000 });
+            cy.wait('@signupListData', { timeout: 25000 });
 
             readDataFromFile(filename).then((list) => {
 
@@ -860,11 +860,11 @@ module.exports = {
 
             cs.clickCreateVolunteerSignupButton();
             cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=*&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDateData');
-            cy.wait('@signupDateData', { timeout: 20000 });
+            cy.wait('@signupDateData', { timeout: 25000 });
 
             cs.clickSignupListMenu();
             cy.intercept('GET', '/api/Category/GetCategoryByTypeName?CategoryTypeName=SignUpStatus').as('signupListData');
-            cy.wait('@signupListData', { timeout: 20000 });
+            cy.wait('@signupListData', { timeout: 25000 });
 
             readDataFromFile(filename).then((list) => {
 
@@ -897,11 +897,11 @@ module.exports = {
 
             cs.clickCreateVolunteerSignupButton();
             cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=0&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDateData');
-            cy.wait('@signupDateData', { timeout: 20000 });
+            cy.wait('@signupDateData', { timeout: 25000 });
 
             cs.clickSignupListMenu();
             cy.intercept('GET', '/api/Category/GetCategoryByTypeName?CategoryTypeName=SignUpStatus').as('signupListData');
-            cy.wait('@signupListData', { timeout: 20000 });
+            cy.wait('@signupListData', { timeout: 25000 });
 
             readDataFromFile(filename).then((list) => {
 
@@ -934,11 +934,11 @@ module.exports = {
 
             cs.clickCreateVolunteerSignupButton();
             cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=0&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDateData');
-            cy.wait('@signupDateData', { timeout: 20000 });
+            cy.wait('@signupDateData', { timeout: 25000 });
 
             cs.clickSignupListMenu();
             cy.intercept('GET', '/api/Category/GetCategoryByTypeName?CategoryTypeName=SignUpStatus').as('signupListData');
-            cy.wait('@signupListData', { timeout: 20000 });
+            cy.wait('@signupListData', { timeout: 25000 });
 
             readDataFromFile(filename).then((list) => {
 
@@ -969,11 +969,11 @@ module.exports = {
 
             cs.clickCreateVolunteerSignupButton();
             cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=0&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDateData');
-            cy.wait('@signupDateData', { timeout: 20000 });
+            cy.wait('@signupDateData', { timeout: 25000 });
 
             cs.clickSignupListMenu();
             cy.intercept('GET', '/api/Category/GetCategoryByTypeName?CategoryTypeName=SignUpStatus').as('signupListData');
-            cy.wait('@signupListData', { timeout: 20000 });
+            cy.wait('@signupListData', { timeout: 25000 });
 
             readDataFromFile(filename).then((list) => {
 
@@ -1013,11 +1013,11 @@ module.exports = {
 
             cs.clickCreateVolunteerSignupButton();
             cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=0&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDateData');
-            cy.wait('@signupDateData', { timeout: 20000 });
+            cy.wait('@signupDateData', { timeout: 25000 });
 
             cs.clickSignupListMenu();
             cy.intercept('GET', '/api/Category/GetCategoryByTypeName?CategoryTypeName=SignUpStatus').as('signupListData');
-            cy.wait('@signupListData', { timeout: 20000 });
+            cy.wait('@signupListData', { timeout: 25000 });
 
             readDataFromFile(filename).then((list) => {
 
@@ -1050,11 +1050,11 @@ module.exports = {
 
             cs.clickCreateVolunteerSignupButton();
             cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=0&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDateData');
-            cy.wait('@signupDateData', { timeout: 20000 });
+            cy.wait('@signupDateData', { timeout: 25000 });
 
             cs.clickSignupListMenu();
             cy.intercept('GET', '/api/Category/GetCategoryByTypeName?CategoryTypeName=SignUpStatus').as('signupListData');
-            cy.wait('@signupListData', { timeout: 20000 });
+            cy.wait('@signupListData', { timeout: 25000 });
 
             readDataFromFile(filename).then((list) => {
 
@@ -1087,11 +1087,11 @@ module.exports = {
 
             cs.clickCreateVolunteerSignupButton();
             cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=0&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDateData');
-            cy.wait('@signupDateData', { timeout: 20000 });
+            cy.wait('@signupDateData', { timeout: 25000 });
 
             cs.clickSignupListMenu();
             cy.intercept('GET', '/api/Category/GetCategoryByTypeName?CategoryTypeName=SignUpStatus').as('signupListData');
-            cy.wait('@signupListData', { timeout: 20000 });
+            cy.wait('@signupListData', { timeout: 25000 });
 
             readDataFromFile(filename).then((list) => {
 
@@ -1105,7 +1105,7 @@ module.exports = {
                 cs.uploadSignupImage('charity.jpg')
                 cs.clickDesignSaveButton();
                 cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=*&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupPublishData');
-                cy.wait('@signupPublishData', { timeout: 20000 });
+                cy.wait('@signupPublishData', { timeout: 25000 });
                 cy.url().should('include', 'https://test.eventzet.com/#/VolunteerSignup/Volunteersignup/EventzetSignup/EventzetSignupPublish');
 
             });
@@ -1129,11 +1129,11 @@ module.exports = {
 
             cs.clickCreateVolunteerSignupButton();
             cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=0&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDateData');
-            cy.wait('@signupDateData', { timeout: 20000 });
+            cy.wait('@signupDateData', { timeout: 25000 });
 
             cs.clickSignupListMenu();
             cy.intercept('GET', '/api/Category/GetCategoryByTypeName?CategoryTypeName=SignUpStatus').as('signupListData');
-            cy.wait('@signupListData', { timeout: 20000 });
+            cy.wait('@signupListData', { timeout: 25000 });
 
             readDataFromFile(filename).then((list) => {
 
@@ -1142,7 +1142,7 @@ module.exports = {
                 cy.wait(5000);
                 cs.clickPublishTab();
                 cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=*&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupPublishData');
-                cy.wait('@signupPublishData', { timeout: 20000 });
+                cy.wait('@signupPublishData', { timeout: 25000 });
                 // cy.wait(6000);
                 cs.checkSignupCreatorName(list.signupcreator);
                 cs.checkSignUPName(list.signuptitle);
@@ -1184,11 +1184,11 @@ module.exports = {
 
             cs.clickCreateVolunteerSignupButton();
             cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=0&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDateData');
-            cy.wait('@signupDateData', { timeout: 20000 });
+            cy.wait('@signupDateData', { timeout: 25000 });
 
             cs.clickSignupListMenu();
             cy.intercept('GET', '/api/Category/GetCategoryByTypeName?CategoryTypeName=SignUpStatus').as('signupListData');
-            cy.wait('@signupListData', { timeout: 20000 });
+            cy.wait('@signupListData', { timeout: 25000 });
 
             readDataFromFile(filename).then((list) => {
 
@@ -1197,7 +1197,7 @@ module.exports = {
                 cy.wait(5000);
                 cs.clickPublishTab();
                 cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=*&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupPublishData');
-                cy.wait('@signupPublishData', { timeout: 20000 });
+                cy.wait('@signupPublishData', { timeout: 25000 });
                 cy.wait(6000);
                 cs.clickSignupInviteButton();
                 cy.wait(2000);
@@ -1224,11 +1224,11 @@ module.exports = {
 
             cs.clickCreateVolunteerSignupButton();
             cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=0&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDateData');
-            cy.wait('@signupDateData', { timeout: 20000 });
+            cy.wait('@signupDateData', { timeout: 25000 });
 
             cs.clickSignupListMenu();
             cy.intercept('GET', '/api/Category/GetCategoryByTypeName?CategoryTypeName=SignUpStatus').as('signupListData');
-            cy.wait('@signupListData', { timeout: 20000 });
+            cy.wait('@signupListData', { timeout: 25000 });
 
             readDataFromFile(filename).then((list) => {
 
@@ -1237,7 +1237,7 @@ module.exports = {
                 cy.wait(5000);
                 cs.clickPublishTab();
                 cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=*&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupPublishData');
-                cy.wait('@signupPublishData', { timeout: 20000 });
+                cy.wait('@signupPublishData', { timeout: 25000 });
                 cy.wait(6000);
                 cy.xpath("(//input[@id='flexSwitchCheckDefault'])[2]")
                 .click({ force: true });

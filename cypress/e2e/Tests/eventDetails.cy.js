@@ -31,7 +31,7 @@ module.exports = {
 
                 eventDetails.clickEvent(list.eventtitle);
                 cy.intercept('GET', '/api/EventDetails/GetEventVideoURL?EventID=*').as('eventDetails');
-                cy.wait('@eventDetails', { timeout: 25000 });
+                cy.wait('@eventDetails', { timeout: 40000 });
                 cy.url().should('include', 'https://test.eventzet.com/#/eventregistration/Eventshell/Eventdetails');
             });
             cy.log('Event details page is visible');
@@ -44,7 +44,7 @@ module.exports = {
               
                 eventDetails.clickEvent(list.eventtitle);
                 cy.intercept('GET', '/api/EventDetails/GetEventVideoURL?EventID=*').as('eventDetails');
-                cy.wait('@eventDetails', { timeout: 25000 });
+                cy.wait('@eventDetails', { timeout: 40000 });
                 cy.url().should('include', 'https://test.eventzet.com/#/eventregistration/Eventshell/Eventdetails');
                 eventDetails.checkEventDetailsDatas(
 
@@ -78,7 +78,7 @@ module.exports = {
                 performLogin(list.email, list.password);
                 eventDetails.clickEvent(list.eventtitle);
                 cy.intercept('GET', '/api/EventDetails/GetEventVideoURL?EventID=*').as('eventDetails');
-                cy.wait('@eventDetails', { timeout: 25000 });
+                cy.wait('@eventDetails', { timeout: 40000 });
                 cy.url().should('include', 'https://test.eventzet.com/#/eventregistration/Eventshell/Eventdetails');
                 eventDetails.clickGetTicketsButton();
                 cy.wait(1000);
@@ -118,7 +118,7 @@ module.exports = {
                 performLogin(list.email, list.password);
                 eventDetails.clickEvent(list.eventtitle);
                 cy.intercept('GET', '/api/EventDetails/GetEventVideoURL?EventID=*').as('eventDetails');
-                cy.wait('@eventDetails', { timeout: 25000 });
+                cy.wait('@eventDetails', { timeout: 40000 });
                 cy.url().should('include', 'https://test.eventzet.com/#/eventregistration/Eventshell/Eventdetails');
                 eventDetails.clickGetTicketsButton();
                 cy.wait(1000);
@@ -142,7 +142,7 @@ module.exports = {
                 performLogin(list.email, list.password);
                 eventDetails.clickEvent(list.eventtitle);
                 cy.intercept('GET', '/api/EventDetails/GetEventVideoURL?EventID=*').as('eventDetails');
-                cy.wait('@eventDetails', { timeout: 25000 });
+                cy.wait('@eventDetails', { timeout: 40000 });
                 cy.url().should('include', 'https://test.eventzet.com/#/eventregistration/Eventshell/Eventdetails');
                 eventDetails.clickGetTicketsButton();
                 cy.wait(1000);

@@ -134,24 +134,24 @@ module.exports = {
       });
     }),
 
-    // it('Test 7: Verify user can delete signup', () => {
-    //   cy.visit(baseUrl);
-    //   cy.wait(4000);
-    //   readDataFromFile(filename).then((list) => {
+    it('Test 7: Verify user can delete signup', () => {
+      cy.visit(baseUrl);
+      cy.wait(4000);
+      readDataFromFile(filename).then((list) => {
 
-    //     cs.clickLogin(list.useremail,list.userpassword);
-    //     cs.clickVolunteerSignup();
-    //     cy.wait(4000);
-    //     cs.clickCreateVolunteerSignupButton(); 
-    //     cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=0&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDateData');
-    //     cy.wait('@signupDateData', { timeout: 15000 });
-    //     cs.clickSignupListMenu();
-    //     cy.intercept('GET', '/api/Category/GetCategoryByTypeName?CategoryTypeName=SignUpStatus').as('signupListData');
-    //     cy.wait('@signupListData', { timeout: 15000 });
-    //     cs.searchSignup(list.signuptitle);
-    //     cy.wait(3000);
-    //     cs.deleteSignup();
-    //   });
-    // })
+        cs.clickLogin(list.useremail,list.userpassword);
+        cs.clickVolunteerSignup();
+        cy.wait(4000);
+        cs.clickCreateVolunteerSignupButton(); 
+        cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=0&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupDateData');
+        cy.wait('@signupDateData', { timeout: 15000 });
+        cs.clickSignupListMenu();
+        cy.intercept('GET', '/api/Category/GetCategoryByTypeName?CategoryTypeName=SignUpStatus').as('signupListData');
+        cy.wait('@signupListData', { timeout: 15000 });
+        cs.searchSignup(list.signuptitle);
+        cy.wait(3000);
+        cs.deleteSignup();
+      });
+    })
   ]
 };

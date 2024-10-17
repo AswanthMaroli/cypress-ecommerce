@@ -165,7 +165,6 @@ describe('EventZet End to End Test', () => {
   const { EventDetailsTests } = require('./eventDetails.cy');
   const { EventRegistrationTests } = require('./eventRegistration.cy');
   const { OrganizerDashboardTests } = require('./organizerDashBoard.cy');
-
   const { SignupListTests }  = require('./createdSignupList.cy');
   const { CreateSignupTests } = require('./createSignup.cy');
   const { VolunteerHomeTests } = require('./volunteerHome.cy');

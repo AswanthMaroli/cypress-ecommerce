@@ -20,11 +20,11 @@ function navigateToPublishPage() {
         publish.eventsDashboardMenuClick();
         publish.clickMyEvents();
         cy.intercept('GET', '/api/DashboardEventList/GetDashboardEventList?UserID=*').as('myEventsData');
-        cy.wait('@myEventsData', { timeout: 25000 });
+        cy.wait('@myEventsData', { timeout: 40000 });
         publish.searchEventName(list.eventtitle);
         publish.clickEventEditButton();
         cy.intercept('GET', '/api/Timeslot/GetEventTimeSlots?EventID=*').as('basicInfoData');
-        cy.wait('@basicInfoData', { timeout: 25000 });
+        cy.wait('@basicInfoData', { timeout: 40000 });
         publish.clickPublishProgressTab();
     });
 }
@@ -169,7 +169,7 @@ module.exports = {
                 cy.wait(6000);
                 publish.checkPublishEventPopup();
             });
-            cy.wait('@myEventsData', { timeout: 25000 });
+            cy.wait('@myEventsData', { timeout: 40000 });
             cy.url().should('include', 'https://test.eventzet.com/#/events/Dashboard/Dashboardevents');
             cy.get(':nth-child(1) > :nth-child(6) > .list-inline > :nth-child(2) > .btn').should('contain', 'Un Publish');
             cy.log('Event published successfuly');

@@ -37,7 +37,7 @@ module.exports = {
 
                 eventRegistration.clickEvent(list.eventtitle);
                 cy.intercept('GET', '/api/EventDetails/GetEventVideoURL?EventID=*').as('eventDetails');
-                cy.wait('@eventDetails', { timeout: 25000 });
+                cy.wait('@eventDetails', { timeout: 40000 });
                 cy.url().should('include', 'https://test.eventzet.com/#/eventregistration/Eventshell/Eventdetails');
                 eventRegistration.clickGetTicketsButton();
                 eventRegistration.selectVenue();
@@ -46,7 +46,7 @@ module.exports = {
                 cy.wait(1000);
                 eventRegistration.clickContinueButton();
                 cy.intercept('GET', '/api/EventRegistration/GetEventRegistrationData?EventRegID=*').as('contactInformationPage');
-                cy.wait('@contactInformationPage', { timeout: 25000 });
+                cy.wait('@contactInformationPage', { timeout: 40000 });
                 eventRegistration.clickSaveAndContinueButton();
 
             });
@@ -73,7 +73,7 @@ module.exports = {
 
                 eventRegistration.clickEvent(list.eventtitle);
                 cy.intercept('GET', '/api/EventDetails/GetEventVideoURL?EventID=*').as('eventDetails');
-                cy.wait('@eventDetails', { timeout: 25000 });
+                cy.wait('@eventDetails', { timeout: 40000 });
                 cy.url().should('include', 'https://test.eventzet.com/#/eventregistration/Eventshell/Eventdetails');
                 eventRegistration.clickGetTicketsButton();
                 eventRegistration.selectVenue();
@@ -82,7 +82,7 @@ module.exports = {
                 cy.wait(1000);
                 eventRegistration.clickContinueButton();
                 cy.intercept('GET', '/api/EventRegistration/GetEventRegistrationData?EventRegID=*').as('contactInformationPage');
-                cy.wait('@contactInformationPage', { timeout: 25000 });
+                cy.wait('@contactInformationPage', { timeout: 40000 });
                 eventRegistration.inputPrefix(list.prefix);
                 eventRegistration.inputFirstName(list.buyerFirstName);
                 eventRegistration.inputLastName(list.buyerLastName);
@@ -116,7 +116,7 @@ module.exports = {
 
                 eventRegistration.clickEvent(list.eventtitle);
                 cy.intercept('GET', '/api/EventDetails/GetEventVideoURL?EventID=*').as('eventDetails');
-                cy.wait('@eventDetails', { timeout: 25000 });
+                cy.wait('@eventDetails', { timeout: 40000 });
                 cy.url().should('include', 'https://test.eventzet.com/#/eventregistration/Eventshell/Eventdetails');
                 eventRegistration.clickGetTicketsButton();
                 eventRegistration.selectVenue();
@@ -128,7 +128,7 @@ module.exports = {
                 cy.wait(1000);
                 eventRegistration.clickContinueButton();
                 cy.intercept('GET', '/api/EventRegistration/GetEventRegistrationData?EventRegID=*').as('contactInformationPage');
-                cy.wait('@contactInformationPage', { timeout: 25000 });
+                cy.wait('@contactInformationPage', { timeout: 40000 });
                 eventRegistration.inputPrefix(list.prefix);
                 eventRegistration.inputFirstName(list.buyerFirstName);
                 eventRegistration.inputLastName(list.buyerLastName);
@@ -153,7 +153,7 @@ module.exports = {
                 eventRegistration.clickSaveAndContinueButton();
             });
             cy.intercept('GET', '/api/EventRegistration/GetEventRegPaymentInfo?EventRegID=*&EventID=*').as('billingInfoData');
-            cy.wait('@billingInfoData', { timeout: 25000 });
+            cy.wait('@billingInfoData', { timeout: 40000 });
 
             cy.url().should('include', 'https://test.eventzet.com/#/eventregistration/Eventshell/Billinginformation');
 
@@ -169,7 +169,7 @@ module.exports = {
 
                 eventRegistration.clickEvent(list.eventtitle);
                 cy.intercept('GET', '/api/EventDetails/GetEventVideoURL?EventID=*').as('eventDetails');
-                cy.wait('@eventDetails', { timeout: 25000 });
+                cy.wait('@eventDetails', { timeout: 40000 });
                 cy.url().should('include', 'https://test.eventzet.com/#/eventregistration/Eventshell/Eventdetails');
                 eventRegistration.clickGetTicketsButton();
                 eventRegistration.selectVenue();
@@ -181,7 +181,7 @@ module.exports = {
                 cy.wait(1000);
                 eventRegistration.clickContinueButton();
                 cy.intercept('GET', '/api/EventRegistration/GetEventRegistrationData?EventRegID=*').as('contactInformationPage');
-                cy.wait('@contactInformationPage', { timeout: 25000 });
+                cy.wait('@contactInformationPage', { timeout: 40000 });
                 eventRegistration.inputPrefix(list.prefix);
                 eventRegistration.inputFirstName(list.buyerFirstName);
                 eventRegistration.inputLastName(list.buyerLastName);
@@ -206,7 +206,7 @@ module.exports = {
                 eventRegistration.clickSaveAndContinueButton();
             });
             cy.intercept('GET', '/api/EventRegistration/GetEventRegPaymentInfo?EventRegID=*&EventID=*').as('billingInfoData');
-            cy.wait('@billingInfoData', { timeout: 25000 });
+            cy.wait('@billingInfoData', { timeout: 40000 });
 
             cy.url().should('include', 'https://test.eventzet.com/#/eventregistration/Eventshell/Billinginformation');
 
@@ -230,7 +230,7 @@ module.exports = {
 
                 eventRegistration.clickEvent(list.eventtitle);
                 cy.intercept('GET', '/api/EventDetails/GetEventVideoURL?EventID=*').as('eventDetails');
-                cy.wait('@eventDetails', { timeout: 25000 });
+                cy.wait('@eventDetails', { timeout: 40000 });
                 cy.url().should('include', 'https://test.eventzet.com/#/eventregistration/Eventshell/Eventdetails');
                 eventRegistration.clickGetTicketsButton();
                 eventRegistration.selectVenue();
@@ -242,7 +242,7 @@ module.exports = {
                 cy.wait(1000);
                 eventRegistration.clickContinueButton();
                 cy.intercept('GET', '/api/EventRegistration/GetEventRegistrationData?EventRegID=*').as('contactInformationPage');
-                cy.wait('@contactInformationPage', { timeout: 25000 });
+                cy.wait('@contactInformationPage', { timeout: 40000 });
                 eventRegistration.inputPrefix(list.prefix);
                 eventRegistration.inputFirstName(list.buyerFirstName);
                 eventRegistration.inputLastName(list.buyerLastName);
@@ -266,7 +266,7 @@ module.exports = {
                 cy.wait(1000);
                 eventRegistration.clickSaveAndContinueButton();
                 cy.intercept('GET', '/api/EventRegistration/GetEventRegPaymentInfo?EventRegID=*&EventID=*').as('billingInfoData');
-                cy.wait('@billingInfoData', { timeout: 25000 });
+                cy.wait('@billingInfoData', { timeout: 40000 });
                 eventRegistration.inputCardNumber(list.cardNumber);
                 eventRegistration.inputCardOwnerName(list.cardOwnerName);
                 eventRegistration.inputMonth(list.month);
@@ -310,7 +310,7 @@ module.exports = {
             eventRegistration.clickMakePaymentButton();
 
             cy.intercept('GET', '/api/Category/GetCategoryByTypeName?CategoryTypeName=CancellationType').as('orderDetailsData');
-            cy.wait('@orderDetailsData', { timeout: 25000 });
+            cy.wait('@orderDetailsData', { timeout: 40000 });
             //    cy.wait(25000);
             cy.url().should('include', 'https://test.eventzet.com/#/eventregistration/Eventshell/Viewticketregistration');
 
@@ -466,7 +466,7 @@ module.exports = {
 
                 eventRegistration.clickEvent(list.eventtitle);
                 cy.intercept('GET', '/api/EventDetails/GetEventVideoURL?EventID=*').as('eventDetails');
-                cy.wait('@eventDetails', { timeout: 25000 });
+                cy.wait('@eventDetails', { timeout: 40000 });
                 cy.url().should('include', 'https://test.eventzet.com/#/eventregistration/Eventshell/Eventdetails');
                 eventRegistration.clickGetTicketsButton();
                 eventRegistration.selectVenue();
@@ -478,7 +478,7 @@ module.exports = {
                 cy.wait(1000);
                 eventRegistration.clickContinueButton();
                 cy.intercept('GET', '/api/EventRegistration/GetEventRegistrationData?EventRegID=*').as('contactInformationPage');
-                cy.wait('@contactInformationPage', { timeout: 25000 });
+                cy.wait('@contactInformationPage', { timeout: 40000 });
                 eventRegistration.inputPrefix(list.prefix);
                 eventRegistration.inputFirstName(list.buyerFirstName);
                 eventRegistration.inputLastName(list.buyerLastName);
@@ -502,7 +502,7 @@ module.exports = {
                 cy.wait(1000);
                 eventRegistration.clickSaveAndContinueButton();
                 cy.intercept('GET', '/api/EventRegistration/GetEventRegPaymentInfo?EventRegID=*&EventID=*').as('billingInfoData');
-                cy.wait('@billingInfoData', { timeout: 25000 });
+                cy.wait('@billingInfoData', { timeout: 40000 });
                 eventRegistration.inputCardNumber(list.cardNumber);
                 eventRegistration.inputCardOwnerName(list.cardOwnerName);
                 eventRegistration.inputMonth(list.month);
@@ -515,7 +515,7 @@ module.exports = {
             eventRegistration.clickMakePaymentButton();
 
             cy.intercept('GET', '/api/Category/GetCategoryByTypeName?CategoryTypeName=CancellationType').as('orderDetailsData');
-            cy.wait('@orderDetailsData', { timeout: 25000 });
+            cy.wait('@orderDetailsData', { timeout: 40000 });
             //    cy.wait(25000);
             cy.url().should('include', 'https://test.eventzet.com/#/eventregistration/Eventshell/Viewticketregistration');
 

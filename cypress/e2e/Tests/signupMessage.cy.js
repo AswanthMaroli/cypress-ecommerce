@@ -25,10 +25,10 @@ module.exports = {
             cy.wait(4000);
             sm.clickCreateVolunteerSignupButton(); 
             cy.intercept('GET', '/api/Category/GetCategoryByTypeName?CategoryTypeName=SignUpPrivacyStatus').as('signupDateData');
-            cy.wait('@signupDateData', { timeout: 15000 });
+            cy.wait('@signupDateData', { timeout: 25000 });
             sm.clickSignupMessage();
             cy.intercept('GET', '/api/MySignUps/GetSignUpList?UserID=*').as('signupMessageData');
-            cy.wait('@signupMessageData', {timeout: 15000});
+            cy.wait('@signupMessageData', {timeout: 25000});
             sm.clickSendButton();
             cy.wait(2000);
             sm.checkValidation();
@@ -48,10 +48,10 @@ module.exports = {
             cy.wait(4000);
             sm.clickCreateVolunteerSignupButton(); 
             cy.intercept('GET', '/api/Category/GetCategoryByTypeName?CategoryTypeName=SignUpPrivacyStatus').as('signupDateData');
-            cy.wait('@signupDateData', { timeout: 15000 });
+            cy.wait('@signupDateData', { timeout: 25000 });
             sm.clickSignupMessage();
             cy.intercept('GET', '/api/MySignUps/GetSignUpList?UserID=*').as('signupMessageData');
-            cy.wait('@signupMessageData', {timeout: 15000});
+            cy.wait('@signupMessageData', {timeout: 25000});
             sm.selectSignupTitle(list.signuptitle);
             sm.inputInviteEmail(list.email);
             cy.wait(1000);

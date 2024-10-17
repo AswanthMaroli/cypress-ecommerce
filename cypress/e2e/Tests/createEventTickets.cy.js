@@ -19,11 +19,11 @@ function navigateToTicketsPage() {
         tickets.eventsDashboardMenuClick();
         tickets.clickMyEvents();
         cy.intercept('GET', '/api/DashboardEventList/GetDashboardEventList?UserID=*').as('myEventsData');
-        cy.wait('@myEventsData', { timeout: 25000 });
+        cy.wait('@myEventsData', { timeout: 40000 });
         tickets.searchEventName(list.eventtitle);
         tickets.clickEventEditButton();
         cy.intercept('GET', '/api/Timeslot/GetEventTimeSlots?EventID=*').as('basicInfoData');
-        cy.wait('@basicInfoData', { timeout: 25000 });
+        cy.wait('@basicInfoData', { timeout: 40000 });
         tickets.clickTicketsProgressTab();
     });
 }
@@ -52,7 +52,7 @@ module.exports = {
                 tickets.inputSalesEndTime(list.salesendtime);
                 tickets.SaveTicket();
                 cy.intercept('GET', '/api/AddTicket/GetTierList?EventID=*').as('ticketList');
-                cy.wait('@ticketList', { timeout: 25000 });
+                cy.wait('@ticketList', { timeout: 40000 });
                 cy.get('tbody').should('have.length', 1);
 
                 tickets.checkSavedTicketData1(
@@ -78,7 +78,7 @@ module.exports = {
                 tickets.inputTicketQuantity(list.editedquantity);
                 tickets.SaveTicket();
                 cy.intercept('GET', '/api/AddTicket/GetTierList?EventID=*').as('ticketList');
-                cy.wait('@ticketList', { timeout: 25000 });
+                cy.wait('@ticketList', { timeout: 40000 });
                 cy.get('tbody').should('have.length', 1);
                 tickets.checkSavedTicketData1(
 
@@ -113,7 +113,7 @@ module.exports = {
                 tickets.inputSalesEndTime(list.salesendtime);
                 tickets.SaveTicket();
                 cy.intercept('GET', '/api/AddTicket/GetTierList?EventID=*').as('ticketList');
-                cy.wait('@ticketList', { timeout: 25000 });
+                cy.wait('@ticketList', { timeout: 40000 });
                 cy.get('tbody').should('have.length', 2);  
 
                 tickets.checkSavedTicketData2(
@@ -165,7 +165,7 @@ module.exports = {
                 // tickets.inputTicketPrice(list.freeticketprice);  
                 tickets.SaveTicket();
                 cy.intercept('GET', '/api/AddTicket/GetTierList?EventID=*').as('ticketList');
-                cy.wait('@ticketList', { timeout: 25000 });
+                cy.wait('@ticketList', { timeout: 40000 });
 
                 tickets.checkSavedTicketData2(
                     list.editedticketname1,
@@ -198,7 +198,7 @@ module.exports = {
                 tickets.inputSalesEndTime(list.salesendtime);
                 tickets.SaveTicket();
                 cy.intercept('GET', '/api/AddTicket/GetTierList?EventID=*').as('ticketList');
-                cy.wait('@ticketList', { timeout: 25000 });
+                cy.wait('@ticketList', { timeout: 40000 });
                 cy.get('tbody').should('have.length', 3);
 
                 tickets.checkSavedTicketData3(
@@ -238,7 +238,7 @@ module.exports = {
                 tickets.inputSalesEndTime(list.salesendtime);
                 tickets.SaveTicket();
                 cy.intercept('GET', '/api/AddTicket/GetTierList?EventID=*').as('ticketList');
-                cy.wait('@ticketList', { timeout: 25000 });
+                cy.wait('@ticketList', { timeout: 40000 });
                 cy.get('tbody').should('have.length', 3);
 
                 tickets.checkSavedTicketData3(

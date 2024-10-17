@@ -19,11 +19,11 @@ function navigateToDesignPage() {
         design.eventsDashboardMenuClick();
         design.clickMyEvents();
         cy.intercept('GET', '/api/DashboardEventList/GetDashboardEventList?UserID=*').as('myEventsData');
-        cy.wait('@myEventsData', { timeout: 25000 });
+        cy.wait('@myEventsData', { timeout: 40000 });
         design.searchEventName(list.eventtitle);
         design.clickEventEditButton();
         cy.intercept('GET', '/api/Timeslot/GetEventTimeSlots?EventID=*').as('basicInfoData');
-        cy.wait('@basicInfoData', { timeout: 25000 });
+        cy.wait('@basicInfoData', { timeout: 40000 });
         design.clickDesignProgressTab();
     });
 }

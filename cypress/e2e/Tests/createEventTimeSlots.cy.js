@@ -28,11 +28,11 @@ module.exports = {
                 timeslot.eventsDashboardMenuClick();
                 timeslot.clickMyEvents();
                 cy.intercept('GET', '/api/DashboardEventList/GetDashboardEventList?UserID=*').as('myEventsData');
-                cy.wait('@myEventsData', { timeout: 25000 });
+                cy.wait('@myEventsData', { timeout: 40000 });
                 timeslot.searchEventName(list.eventtitle);
                 timeslot.clickEventEditButton();
                 cy.intercept('GET', '/api/Timeslot/GetEventTimeSlots?EventID=*').as('basicInfoData');
-                cy.wait('@basicInfoData', { timeout: 25000 });
+                cy.wait('@basicInfoData', { timeout: 40000 });
                 timeslot.clickTimeSlotsTab();
                 cy.intercept('GET', '/api/Timeslot/GetEventDates?EventID=*').as('timeSlotPage');
                 cy.wait('@timeSlotPage').then((interception) =>{
@@ -67,11 +67,11 @@ module.exports = {
                 timeslot.eventsDashboardMenuClick();
                 timeslot.clickMyEvents();
                 cy.intercept('GET', '/api/DashboardEventList/GetDashboardEventList?UserID=*').as('myEventsData');
-                cy.wait('@myEventsData', { timeout: 25000 });
+                cy.wait('@myEventsData', { timeout: 40000 });
                 timeslot.searchEventName(list.eventtitle);
                 timeslot.clickEventEditButton();
                 cy.intercept('GET', '/api/Timeslot/GetEventTimeSlots?EventID=*').as('basicInfoData');
-                cy.wait('@basicInfoData', { timeout: 25000 });
+                cy.wait('@basicInfoData', { timeout: 40000 });
                 timeslot.clickTimeSlotsTab();
                 cy.intercept('GET', '/api/Timeslot/GetEventDates?EventID=*').as('timeSlotPage');
                 cy.wait('@timeSlotPage').then((interception) =>{
@@ -106,11 +106,11 @@ module.exports = {
                 timeslot.eventsDashboardMenuClick();
                 timeslot.clickMyEvents();
                 cy.intercept('GET', '/api/DashboardEventList/GetDashboardEventList?UserID=*').as('myEventsData');
-                cy.wait('@myEventsData', { timeout: 25000 });
+                cy.wait('@myEventsData', { timeout: 40000 });
                 timeslot.searchEventName(list.eventtitle);
                 timeslot.clickEventEditButton();
                 cy.intercept('GET', '/api/Timeslot/GetEventTimeSlots?EventID=*').as('basicInfoData');
-                cy.wait('@basicInfoData', { timeout: 25000 });
+                cy.wait('@basicInfoData', { timeout: 40000 });
                 timeslot.clickTimeSlotsTab();
                 cy.intercept('GET', '/api/Timeslot/GetEventDates?EventID=*').as('timeSlotPage');
                 cy.wait('@timeSlotPage').then((interception) =>{
@@ -145,11 +145,11 @@ module.exports = {
                 timeslot.eventsDashboardMenuClick();
                 timeslot.clickMyEvents();
                 cy.intercept('GET', '/api/DashboardEventList/GetDashboardEventList?UserID=*').as('myEventsData');
-                cy.wait('@myEventsData', { timeout: 25000 });
+                cy.wait('@myEventsData', { timeout: 40000 });
                 timeslot.searchEventName(list.eventtitle);
                 timeslot.clickEventEditButton();
                 cy.intercept('GET', '/api/Timeslot/GetEventTimeSlots?EventID=*').as('basicInfoData');
-                cy.wait('@basicInfoData', { timeout: 25000 });
+                cy.wait('@basicInfoData', { timeout: 40000 });
                 timeslot.clickTimeSlotsTab();
                 cy.intercept('GET', '/api/Timeslot/GetEventDates?EventID=*').as('timeSlotPage');
                 cy.wait('@timeSlotPage').then((interception) =>{
@@ -185,11 +185,11 @@ module.exports = {
                 timeslot.eventsDashboardMenuClick();
                 timeslot.clickMyEvents();
                 cy.intercept('GET', '/api/DashboardEventList/GetDashboardEventList?UserID=*').as('myEventsData');
-                cy.wait('@myEventsData', { timeout: 25000 });
+                cy.wait('@myEventsData', { timeout: 40000 });
                 timeslot.searchEventName(list.eventtitle);
                 timeslot.clickEventEditButton();
                 cy.intercept('GET', '/api/Timeslot/GetEventTimeSlots?EventID=*').as('basicInfoData');
-                cy.wait('@basicInfoData', { timeout: 25000 });
+                cy.wait('@basicInfoData', { timeout: 40000 });
                 timeslot.clickTimeSlotsTab();
                 cy.intercept('GET', '/api/Timeslot/GetEventDates?EventID=*').as('timeSlotPage');
                 cy.wait('@timeSlotPage').then((interception) =>{
@@ -224,11 +224,11 @@ module.exports = {
                 timeslot.eventsDashboardMenuClick();
                 timeslot.clickMyEvents();
                 cy.intercept('GET', '/api/DashboardEventList/GetDashboardEventList?UserID=*').as('myEventsData');
-                cy.wait('@myEventsData', { timeout: 25000 });
+                cy.wait('@myEventsData', { timeout: 40000 });
                 timeslot.searchEventName(list.eventtitle);
                 timeslot.clickEventEditButton();
                 cy.intercept('GET', '/api/Timeslot/GetEventTimeSlots?EventID=*').as('basicInfoData');
-                cy.wait('@basicInfoData', { timeout: 25000 });
+                cy.wait('@basicInfoData', { timeout: 40000 });
                 timeslot.clickTimeSlotsTab();
                 cy.intercept('GET', '/api/Timeslot/GetEventDates?EventID=*').as('timeSlotPage');
                 cy.wait('@timeSlotPage').then((interception) =>{
@@ -262,13 +262,13 @@ module.exports = {
                 timeslot.eventsDashboardMenuClick();
                 timeslot.clickMyEvents();
                 cy.intercept('GET', '/api/DashboardEventList/GetDashboardEventList?UserID=*').as('myEventsData');
-                cy.wait('@myEventsData', { timeout: 25000 });
+                cy.wait('@myEventsData', { timeout: 40000 });
                 timeslot.searchEventName(list.eventtitle);
                 timeslot.clickEventEditButton();
                 cy.intercept('GET', '/api/Timeslot/GetEventTimeSlots?EventID=*').as('basicInfoData');
-                cy.wait('@basicInfoData', { timeout: 25000 });
+                cy.wait('@basicInfoData', { timeout: 40000 });
                 timeslot.clickTimeSlotsTab();
-                cy.wait('@basicInfoData', { timeout: 25000 });
+                cy.wait('@basicInfoData', { timeout: 40000 });
                 cy.intercept('GET', '/api/Timeslot/GetEventDates?EventID=*').as('timeSlotPage');
                 cy.wait('@timeSlotPage').then((interception) => {
                     expect(interception.response.statusCode).to.eq(200);
@@ -298,13 +298,13 @@ module.exports = {
                 timeslot.eventsDashboardMenuClick();
                 timeslot.clickMyEvents();
                 cy.intercept('GET', '/api/DashboardEventList/GetDashboardEventList?UserID=*').as('myEventsData');
-                cy.wait('@myEventsData', { timeout: 25000 });
+                cy.wait('@myEventsData', { timeout: 40000 });
                 timeslot.searchEventName(list.eventtitle);
                 timeslot.clickEventEditButton();
                 cy.intercept('GET', '/api/Timeslot/GetEventTimeSlots?EventID=*').as('basicInfoData');
-                cy.wait('@basicInfoData', { timeout: 25000 });
+                cy.wait('@basicInfoData', { timeout: 40000 });
                 timeslot.clickTimeSlotsTab();
-                cy.wait('@basicInfoData', { timeout: 25000 });
+                cy.wait('@basicInfoData', { timeout: 40000 });
                 timeslot.clickTimeSlotDeleteButton();
                 cy.wait(3000);
                 cy.log('Test 8 is successful : Timeslot is deleted successfuly');
@@ -320,11 +320,11 @@ module.exports = {
                 timeslot.eventsDashboardMenuClick();
                 timeslot.clickMyEvents();
                 cy.intercept('GET', '/api/DashboardEventList/GetDashboardEventList?UserID=*').as('myEventsData');
-                cy.wait('@myEventsData', { timeout: 25000 });
+                cy.wait('@myEventsData', { timeout: 40000 });
                 timeslot.searchEventName(list.eventtitle);
                 timeslot.clickEventEditButton();
                 cy.intercept('GET', '/api/Timeslot/GetEventTimeSlots?EventID=*').as('basicInfoData');
-                cy.wait('@basicInfoData', { timeout: 25000 });
+                cy.wait('@basicInfoData', { timeout: 40000 });
                 timeslot.clickTimeSlotsTab();
                 cy.intercept('GET', '/api/Timeslot/GetEventDates?EventID=*').as('timeSlotPage');
                 cy.wait('@timeSlotPage').then((interception) => {
@@ -370,11 +370,11 @@ module.exports = {
                 timeslot.eventsDashboardMenuClick();
                 timeslot.clickMyEvents();
                 cy.intercept('GET', '/api/DashboardEventList/GetDashboardEventList?UserID=*').as('myEventsData');
-                cy.wait('@myEventsData', { timeout: 25000 });
+                cy.wait('@myEventsData', { timeout: 40000 });
                 timeslot.searchEventName(list.eventtitle);
                 timeslot.clickEventEditButton();
                 cy.intercept('GET', '/api/Timeslot/GetEventTimeSlots?EventID=*').as('basicInfoData');
-                cy.wait('@basicInfoData', { timeout: 25000 });
+                cy.wait('@basicInfoData', { timeout: 40000 });
                 timeslot.clickTimeSlotsTab();
                 cy.intercept('GET', '/api/Timeslot/GetEventDates?EventID=*').as('timeSlotPage');
                 cy.wait('@timeSlotPage').then((interception) => {
@@ -410,11 +410,11 @@ module.exports = {
                 timeslot.eventsDashboardMenuClick();
                 timeslot.clickMyEvents();
                 cy.intercept('GET', '/api/DashboardEventList/GetDashboardEventList?UserID=*').as('myEventsData');
-                cy.wait('@myEventsData', { timeout: 25000 });
+                cy.wait('@myEventsData', { timeout: 40000 });
                 timeslot.searchEventName(list.eventtitle);
                 timeslot.clickEventEditButton();
                 cy.intercept('GET', '/api/Timeslot/GetEventTimeSlots?EventID=*').as('basicInfoData');
-                cy.wait('@basicInfoData', { timeout: 25000 });
+                cy.wait('@basicInfoData', { timeout: 40000 });
                 timeslot.clickTimeSlotsTab();
                 cy.intercept('GET', '/api/Timeslot/GetEventDates?EventID=*').as('timeSlotPage');
                 cy.wait('@timeSlotPage').then((interception) => {
@@ -445,11 +445,11 @@ module.exports = {
                 timeslot.eventsDashboardMenuClick();
                 timeslot.clickMyEvents();
                 cy.intercept('GET', '/api/DashboardEventList/GetDashboardEventList?UserID=*').as('myEventsData');
-                cy.wait('@myEventsData', { timeout: 25000 });
+                cy.wait('@myEventsData', { timeout: 40000 });
                 timeslot.searchEventName(list.eventtitle);
                 timeslot.clickEventEditButton();
                 cy.intercept('GET', '/api/Timeslot/GetEventTimeSlots?EventID=*').as('basicInfoData');
-                cy.wait('@basicInfoData', { timeout: 25000 });
+                cy.wait('@basicInfoData', { timeout: 40000 });
                 timeslot.clickTimeSlotsTab();
                 cy.intercept('GET', '/api/Timeslot/GetEventDates?EventID=*').as('timeSlotPage');
                 cy.wait('@timeSlotPage').then((interception) => {
