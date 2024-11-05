@@ -19,7 +19,7 @@ module.exports = {
 
   BookingListTests: [
     // Test 1
-    it('Test 1: Check whether booking list page is visible or not', () => {
+    it('Test 1: Check whether event creator can cancel all the bookings ', () => {
    
       readDataFromFile(filename).then((list) => {
     
