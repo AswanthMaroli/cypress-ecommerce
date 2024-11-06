@@ -2,7 +2,10 @@ import CreateEventTickets from '../../e2e/Pages/CreateEventTicketsPage.js';
 const { readDataFromFile, writeDataToFile, clearDataInFile } = require('../ExternalFiles/fileOperations.js');
 const baseUrl = Cypress.config('baseUrl');
 const filename = 'cypress/fixtures/createEventTicketsRead.json';
+const registrationFile = 'cypress/fixtures/eventRegistrationRead.json';
 const tickets = new CreateEventTickets();
+let date;
+
 
 
 function performLogin(email, password) {
@@ -27,6 +30,15 @@ function navigateToTicketsPage() {
         tickets.clickTicketsProgressTab();
     });
 }
+
+function formatDateToMMDDYY(dateStr) {
+    const date = new Date(dateStr);  // Convert to Date object
+    const options = { year: '2-digit', month: '2-digit', day: '2-digit' };
+    return date.toLocaleDateString('en-US', options);  // Format as 'MM/DD/YY'
+}
+
+
+
 
 module.exports = {
 
@@ -378,7 +390,32 @@ module.exports = {
             });
         }),
 
+        it("Test 13: Delete an existing add-on", () => {
+            readDataFromFile(filename).then((list) => {
+                performLogin(list.email, list.password);
+                navigateToTicketsPage();
+                cy.wait(2000);
+                tickets.clickTimeSlotsTab();
+                cy.intercept('GET', '/api/Timeslot/GetEventDates?EventID=*').as('timeSlotPage');
+                cy.wait('@timeSlotPage').then((interception) => {
+                    expect(interception.response.statusCode).to.eq(200);
+                    const body = interception.response.body[0];
+                    const dateTime = body.StartDate;
+                    cy.log('Date before splitting:', dateTime);
+                    date = dateTime.split('T')[0];
+                    cy.log('Date:', date);
+                    const formattedDate = formatDateToMMDDYY(date);
+                    const timeslotDate = `${formattedDate} - ${formattedDate}`; 
+                    readDataFromFile(registrationFile).then((existingData)=>{
 
+                        existingData.timeslotdate = timeslotDate;
+                        writeDataToFile(registrationFile, existingData);
+                        
+                    })
+
+                });
+            });
+        })
 
 
     ]

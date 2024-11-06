@@ -43,7 +43,13 @@ class CreateEventTickets{
     onlineDropDown = ':nth-child(1) > .col-md-3 > .form-floating > .form-select';
     firstAddonEditButton = ':nth-child(6) > .list-inline > :nth-child(1) > .btn > small > .bi';
     firstAddonDeleteButton = ':nth-child(6) > .list-inline > :nth-child(2) > .btn > small > .bi';
+    timeSlotsTab = ':nth-child(4) > .nav-link > .progressactive > .bi';
 
+    clickTimeSlotsTab() {
+
+        cy.get(this.timeSlotsTab).click();
+
+    }
 
 
     checkSavedTicketData1(ticketname,levelname,tickettype,stockquantity,ticketprice,tickettax){

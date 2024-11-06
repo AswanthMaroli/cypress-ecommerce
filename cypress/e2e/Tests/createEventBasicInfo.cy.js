@@ -4,6 +4,11 @@ const baseUrl = Cypress.config('baseUrl');
 var dateCalculations = require('../ExternalFiles/dateCalculations.js');
 const filename = 'cypress/fixtures/createEventBasicInfoRead.json';
 const bi = new CreateEventBasicInfo();
+const moment = require('moment');  // Import moment.js
+
+function formatDate(dateStr) {
+    return moment(dateStr).format('MM/DD/YY');  // Format date to MM/DD/YY
+}
 
 const startDate = dateCalculations.calculateSevenDaysLater();
 const endDate = dateCalculations.calculateSevenDaysLater();
@@ -211,12 +216,19 @@ module.exports = {
                 bi.selectCategory('20: 41');
                 bi.inputEventTitle(list.eventtitle);
                 bi.inputTags(list.eventtag);
-                // const formattedStartDate = `${startDate.slice(4, 8)}-${startDate.slice(0, 2)}-${startDate.slice(2, 4)}`;
-                // const formattedEndDate = `${endDate.slice(4, 8)}-${endDate.slice(0, 2)}-${endDate.slice(2, 4)}`;
                 bi.selectEventStartDate(startDate);
                 bi.selectEventEndDate(endDate);
                 bi.inputOrganizerEmail(list.email);
                 bi.inputOrganizerPhone(list.organizerphone);
+                const formattedStartDate = formatDate(startDate);
+                const formattedEndDate = formatDate(endDate);
+                const timeslotDate = `${formattedStartDate} - ${formattedEndDate}`;
+                
+                readDataFromFile(filename).then(existingData => {
+                  
+                    existingData.timeslotdate =timeslotDate;
+                    writeDataToFile(filename, existingData);
+                });
             });
             cy.wait(3000);
             bi.clickSaveButton();

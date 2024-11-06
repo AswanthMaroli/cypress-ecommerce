@@ -2,6 +2,7 @@ import CreateEventTimeSlots from '../../e2e/Pages/createEventTimeSlotsPage.js';
 const { readDataFromFile, writeDataToFile, clearDataInFile } = require('../ExternalFiles/fileOperations.js');
 const baseUrl = Cypress.config('baseUrl');
 const filename = 'cypress/fixtures/createEventTimeSlotRead.json'
+const ticketfile ='cypress/fixtures/createEventTicketsRead.json'
 const timeslot = new CreateEventTimeSlots();
 
 let date;
@@ -14,6 +15,33 @@ function performLogin(email, password) {
     timeslot.inputPassword(password);
     timeslot.loginClick();
 }
+
+
+function convertTo12HourFormat(timeStr) {
+    const hour = parseInt(timeStr.substring(0, 2), 10);
+    const minute = timeStr.substring(2, 4);
+    
+    let period = "AM";
+    let newHour = hour;
+    
+    if (hour >= 12) {
+        period = "PM";
+        if (hour > 12) {
+            newHour = hour - 12;
+        }
+    } else if (hour === 0) {
+        newHour = 12;  // Midnight case
+    }
+
+    return `${newHour}:${minute} ${period}`;
+}
+
+function formatDateToMMMDDYYYY(dateStr) {
+    const date = new Date(dateStr); // Convert to Date object
+    const options = { year: 'numeric', month: 'short', day: 'numeric' };
+    return date.toLocaleDateString('en-US', options); // Format as 'MMM DD, YYYY'
+}
+
 
 
 module.exports = {
@@ -350,6 +378,20 @@ module.exports = {
                     timeslot.selectTimeZone(list.timezone2);
                     timeslot.clickAddTimeSlotButton();
                     cy.wait(2000);
+                    const timeslot1Start = convertTo12HourFormat(list.starttime);
+                    const timeslot1End = convertTo12HourFormat(list.endtime);
+                    const timeslot2Start = convertTo12HourFormat(list.starttime1);
+                    const timeslot2End = convertTo12HourFormat(list.endtime1);
+                    const formattedDate = formatDateToMMMDDYYYY(date);
+                    const timeslot1 = `${formattedDate} at ${timeslot1Start} - ${formattedDate} at ${timeslot1End}`;
+                    const timeslot2 = `${formattedDate} at ${timeslot2Start} - ${formattedDate} at ${timeslot2End}`;
+                    readDataFromFile(ticketfile).then((existingData) =>{
+
+                        existingData.timeslot1 = timeslot1;
+                        existingData.timeslot2 = timeslot2;
+                        writeDataToFile(ticketfile, existingData);
+                    });
+                    
                     // Verify both time slots are added
                     cy.get('tbody tr').should('have.length', 2);
 
@@ -479,17 +521,6 @@ module.exports = {
                 });
             });
         }),
-
-
-
-
-
-
-
-
-
-
-
 
 
 

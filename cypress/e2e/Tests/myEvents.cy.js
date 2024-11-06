@@ -85,7 +85,7 @@ module.exports = {
         performLogin(list.email, list.password);
         navigateToMyEvents();
         myEventsPage.searchEventName(list.eventtitle);
-        cy.wait(1000);
+        cy.wait(3000);
         myEventsPage.clickUnPublishButton();
         cy.wait(2000);
       });
