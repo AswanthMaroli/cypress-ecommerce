@@ -79,12 +79,12 @@ class SignupRegistration {
 
   checkRegistrationConfirm(firstslot, quantity1, datetime1, location1, secondslot, quantity2, datetime2, location2) {
 
-    cy.xpath('//div[@class="row"][2]/div').then(($rows) => {
+    cy.xpath('(//div[@class="row"])[2]/div').then(($rows) => {
       if ($rows.length === 1) {
 
         cy.xpath('//*[@id="servicessection"]/div/div[2]/div[1]/div/div[1]/div/div/div/span').should('contain', firstslot);
         cy.xpath('//*[@id="servicessection"]/div/div[2]/div[1]/div/div[2]/ul/li/div/div/label/p').should('contain', quantity1);
-        cy.xpath('//*[@id="servicessection"]/div/div[2]/div[1]/div/div[2]/ul/li/div/div/div[1]').should('contain', datetime1);
+        cy.xpath('//*[@id="servicessection"]/div/div[2]/div/div/div[2]/ul/li/div/div/div[1]/p').should('contain', datetime1);
         cy.xpath('//*[@id="servicessection"]/div/div[2]/div[1]/div/div[2]/ul/li/div/div/div[2]/p').should('contain', location1);
       } else if ($rows.length === 2) {
 

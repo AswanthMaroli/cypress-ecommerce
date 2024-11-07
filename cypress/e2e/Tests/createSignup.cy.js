@@ -1,11 +1,129 @@
 import CreateSignup from "../Pages/createSignupPage.js";
-const { readDataFromFile } = require('../ExternalFiles/fileOperations.js');
+const { readDataFromFile,writeDataToFile } = require('../ExternalFiles/fileOperations.js');
 const baseUrl = Cypress.config('baseUrl');
 const cs = new CreateSignup();
 const filename = 'cypress\\fixtures\\volunteerSignup.json'
 var dateCalculations = require('../ExternalFiles/dateCalculations.js');
 const signupDate = dateCalculations.calculateSevenDaysLater();
 const signupDate2 = dateCalculations.getCurrentDate();
+
+function formatDate(dateString) {
+    const date = new Date(dateString);
+
+    // Array of weekday names
+    const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+
+    // Extract the weekday, day, month, and year components
+    const weekday = weekdays[date.getDay()];  // Get the day of the week (0 - 6)
+    const month = months[date.getMonth()];    // Get the month (0 - 11)
+    const day = String(date.getDate()); // Get the day of the month (01 - 31)
+    const year = String(date.getFullYear()).slice(2); // Get last 2 digits of the year
+
+    return `${weekday},${month}/${day}/${year}`;
+}
+
+function formatDateWithDateZero(dateString) {
+    const date = new Date(dateString);
+
+    // Extract the month, day, and year
+    const month = String(date.getMonth() + 1).padStart(2, '0');  // Months are 0-indexed, so we add 1
+    const day = String(date.getDate()).padStart(2,'0');  // Ensure day is 2 digits
+    const year = String(date.getFullYear()); // Get the last 2 digits of the year
+
+   
+    return `${month}/${day}/${year}`;
+}
+
+
+function dateFormat(dateString) {
+    const date = new Date(dateString);
+
+    // Extract the month, day, and year
+    const month = String(date.getMonth() + 1).padStart(2, '0');  // Months are 0-indexed, so we add 1
+    const day = String(date.getDate());  // Ensure day is 2 digits
+    const year = String(date.getFullYear()).slice(2); // Get the last 2 digits of the year
+
+   
+    return `${month}/${day}/${year}`;
+}
+
+
+function formatDateWithWeekday(dateString) {
+    const date = new Date(dateString);
+
+    // Array of weekday names
+    const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    
+    // Extract the month, day, and year
+    const month = String(date.getMonth() + 1).padStart(2, '0');  // Months are 0-indexed, so we add 1
+    const day = String(date.getDate());  // Ensure day is 2 digits
+    const year = String(date.getFullYear()).slice(2); // Get the last 2 digits of the year
+
+    // Get the weekday name
+    const weekday = weekdays[date.getDay()];
+
+    // Return in "mm/dd/yy, Weekday - location" format
+    return `${month}/${day}/${year},${weekday}`;
+}
+
+function signupDetailsPageDateFormat(dateString) {
+    const date = new Date(dateString);
+
+    // Array of weekday names
+    const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    
+    // Extract the month, day, and year
+    const month = String(date.getMonth() + 1).padStart(2, '0');  // Months are 0-indexed, so we add 1
+    const day = String(date.getDate());  // Ensure day is 2 digits
+    const year = String(date.getFullYear()).slice(2); // Get the last 2 digits of the year
+
+    // Get the weekday name
+    const weekday = weekdays[date.getDay()];
+
+    // Return in "mm/dd/yy, Weekday - location" format
+    return `${month}/${day}/${year}, ${weekday}`;
+}
+
+
+function formatDatetime(startDateString, startTime, endTime) {
+    const startDate = new Date(startDateString);
+
+    // Format the date as "Month dd, yyyy"
+    const month = startDate.toLocaleString('default', { month: 'long' }); // Full month name
+    const day = String(startDate.getDate()); // Ensure day is 2 digits
+    const year = startDate.getFullYear(); // Full year (yyyy)
+
+    // Helper function to convert time to 12-hour format with AM/PM
+    function formatTime(timeString) {
+        // Trim any existing am/pm or AM/PM from the string
+        timeString = timeString.trim().toLowerCase().replace(/(am|pm)$/, '').trim();
+        
+        const timeParts = timeString.split(':'); // Assuming time is in HH:mm format (24-hour)
+        let hour = parseInt(timeParts[0], 10);  // Convert to integer
+        const minute = timeParts[1].padStart(2, '0'); // Ensure minute is 2 digits
+        let suffix = hour >= 12 ? 'PM' : 'AM'; // Determine AM/PM
+    
+        // Convert hour to 12-hour format
+        hour = hour % 12 || 12; // Convert hour to 12-hour format (handles 12:00 PM and 12:00 AM)
+    
+        // Return the hour without leading zero (by directly converting it to a string)
+        const formattedHour = String(hour);
+    
+        return `${formattedHour}:${minute} ${suffix}`;
+    }
+
+    // Format the start and end times to 12-hour AM/PM format
+    const formattedStartTime = formatTime(startTime);
+    const formattedEndTime = formatTime(endTime);
+
+    // Format the datetime as "Month dd, yyyy & starttime - endtime"
+    const formattedDate = `${month} ${day}, ${year} & ${formattedStartTime} - ${formattedEndTime}`;
+
+    return formattedDate;
+}
+
+
 
 
 module.exports = {
@@ -278,6 +396,29 @@ module.exports = {
                 cy.wait(5000);
                 cs.clickDateTab();
                 cy.wait(5000);
+                const signupDateFormatted = formatDate(signupDate);
+                const signupDate2Formatted = formatDate(signupDate2);
+                list.firstslotdate =`${signupDateFormatted} - ${list.signuplocation}`;
+                list.secondslotdate =`${signupDate2Formatted} - ${list.signuplocation2}`;
+                const formatDate1= dateFormat(signupDate); 
+                const formatDate2 = dateFormat(signupDate2); 
+                list.date1 =`${formatDate1} - ${list.signuplocation}`;
+                list.date2 =`${formatDate2} - ${list.signuplocation2}`;
+                const publishDate1 =formatDateWithDateZero(signupDate);
+                const publishdate2 =formatDateWithDateZero(signupDate2);
+                list.publishdate1 = publishDate1;
+                list.publishdate2 = publishdate2;
+                const slotDateFormat1 = signupDetailsPageDateFormat(signupDate);
+                const slotDateFormat2 = signupDetailsPageDateFormat(signupDate2);
+                const regSlorDate1 = formatDateWithWeekday(signupDate);
+                const regSlorDate2 = formatDateWithWeekday(signupDate2);
+                list.slotdate1 = `  ${slotDateFormat1} `;
+                list.slotdate2 = `  ${slotDateFormat2} `;
+                list.regslotdate1 = `  ${regSlorDate1} `;
+                list.regslotdate2 = `  ${regSlorDate2} `;
+
+                writeDataToFile(filename,list);
+
                 cs.checkMultipleDates(
 
                     list.signuplocation,
@@ -285,7 +426,6 @@ module.exports = {
                     list.signuplocation2,
                     signupDate2
                 );
-
             });
 
         }),
@@ -821,7 +961,12 @@ module.exports = {
                 cs.inputEndTime2(list.endtime2);
                 cs.selectSlot2(list.slottext2);
                 cs.checkDate2(list.secondslotdate);
-
+                const datetime1 = formatDatetime(signupDate, list.starttime1, list.endtime1); // e.g., "October 24, 2024 & 9:00 AM - 10:00 AM"
+                const datetime2 = formatDatetime(signupDate2, list.starttime2, list.endtime2); // e.g., "October 17, 2024 & 10:00 AM - 11:00 AM"
+                list.datetime1 =datetime1;
+                list.datetime2 =datetime2;
+                writeDataToFile(filename,list);
+                cy.wait(1000);
                 cs.clickTimeSaveButton();
                 cy.wait(6000);
                 cy.url().should('include', 'https://test.eventzet.com/#/VolunteerSignup/Volunteersignup/EventzetSignup/EventzetSignupSetting');
