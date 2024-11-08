@@ -28,10 +28,6 @@ function performLogin(email, password) {
               cy.wait(1000);
               ms.clickMyVoulunteerSignupMenu();
               cy.wait(3000);
-              ms.searchSignupName(list.searchname);
-              cy.wait(1000);
-              ms.clearSearchBox();
-              cy.wait(1000);
               ms.cancelAllSignupRegistration(list.searchname);
       
             });

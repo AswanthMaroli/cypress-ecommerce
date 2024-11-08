@@ -60,35 +60,54 @@ export class MyVolunteerSignup{
     
     }
 
-    cancelAllSignupRegistration(signupName){
+    cancelAllSignupRegistration(signupName) {
 
+        this.searchSignupName(signupName);
+        cy.wait(1000);
         cy.xpath('//*[@id="pricing"]/div/div[2]/div[2]/div')
-       .its('length')  
-       .then(count => {
-         cy.log(`Number of registration: ${count}`);
-     
-         for(let i=1;i<=count;i++){
-             cy.wait(1000);
-             this.searchSignupName(signupName);
-             cy.wait(1000);
-             cy.xpath(`//*[@id="pricing"]/div/div[2]/div[2]/div[${i}]`).click();
-             cy.wait(3000);
-             cy.xpath('//button[normalize-space()="Cancel Sign Up"]').then($cancelButton => {
-                 if ($cancelButton.is(':visible')) {
-                   cy.xpath('//button[normalize-space()="Cancel Sign Up"]').click();
-                   cy.wait(1000);
-                   cy.xpath('//button[normalize-space()="Yes"]').click();
-                   cy.wait(3000);
-                   cy.xpath('//button[normalize-space()="Ok"]').click();
-                 } else {
-                   
-                   cy.log(`Cancel Order button not visible for row ${i}`);
-                   cy.xpath("(//button[normalize-space()='Back']").click(); 
-                   cy.wait(3000);
-                 }
-               });
-             }
-       });
-   }
+            .should('exist')
+            .its('length')
+            .then(count => {
+                cy.log(`Number of registrations: ${count}`);
+                this.clearSearchBox();
+                cy.wait(1000);
 
+                for (let i = 1; i <= count; i++) {
+                    this.searchSignupName(signupName);
+                    cy.wait(1000);
+                    cy.xpath(`//*[@id="pricing"]/div/div[2]/div[2]/div[${i}]`)
+                        .should('be.visible')
+                        .click();
+                        cy.wait(3000);
+    
+                    // Check if the Cancel button exists
+                    cy.document().then(($document) => {
+                        const cancelButton = $document.evaluate(
+                            '//button[normalize-space()="Cancel Sign Up"]',
+                            $document,
+                            null,
+                            XPathResult.FIRST_ORDERED_NODE_TYPE,
+                            null
+                        ).singleNodeValue;
+    
+                        if (cancelButton && cancelButton.offsetParent !== null) {  // Check existence and visibility
+                            cy.xpath('//button[normalize-space()="Cancel Sign Up"]').click();
+                            cy.xpath('//button[normalize-space()="Yes"]')
+                                .should('be.visible')
+                                .click();
+                            cy.xpath('//button[normalize-space()="Ok"]')
+                                .should('be.visible')
+                                .click();
+                        } else {
+                            cy.log(`Registration ${i} is already cancelled or not cancellable`);
+                            cy.xpath('//button[normalize-space()="Back"]')
+                                .should('be.visible')
+                                .click();
+                        }
+                    });
+    
+                    cy.wait(2000);
+                }
+            });
+    }
 }
