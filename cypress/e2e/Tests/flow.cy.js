@@ -149,29 +149,29 @@
 
 describe('EventZet End to End Test', () => {
 
-  // const { HomeTests } = require('./home.cy');
-  // const { SignupTests } = require('./signUp.cy');
-  // const { LoginTests } = require('./login.cy');
-  // const { SearchFilterTests } = require('./searchFilter.cy');
-  // const { BookingListTests } = require('./bookingList.cy');
-  // const { MyEventsTests } = require('./myEvents.cy');
-  // const { CreateEventBasicInfoTests } = require('./createEventBasicInfo.cy');
-  // const { CreateEventVenueTests } = require('./createEventVenue.cy');
-  // const { CreateEventLevelTests } = require('./createEventLevel.cy');
-  // const { CreateEventTimeSlotsTests } = require('./createEventTimeSlots.cy');
-  // const { CreateEventTicketsTests } = require('./createEventTickets.cy');
-  // const { CreateEventDesignTests } = require('./createEventDesign.cy');
-  // const { CreateEventSettingsTests } = require('./createEventSettings.cy');
-  // const { CreateEventPublishTests } = require('./createEventPublish.cy');
-  // const { EventDetailsTests } = require('./eventDetails.cy');
-  // const { EventRegistrationTests } = require('./eventRegistration.cy');
-  // const { OrganizerDashboardTests } = require('./organizerDashBoard.cy');
+  const { HomeTests } = require('./home.cy');
+  const { SignupTests } = require('./signUp.cy');
+  const { LoginTests } = require('./login.cy');
+  const { SearchFilterTests } = require('./searchFilter.cy');
+  const { BookingListTests } = require('./bookingList.cy');
+  const { MyEventsTests } = require('./myEvents.cy');
+  const { CreateEventBasicInfoTests } = require('./createEventBasicInfo.cy');
+  const { CreateEventVenueTests } = require('./createEventVenue.cy');
+  const { CreateEventLevelTests } = require('./createEventLevel.cy');
+  const { CreateEventTimeSlotsTests } = require('./createEventTimeSlots.cy');
+  const { CreateEventTicketsTests } = require('./createEventTickets.cy');
+  const { CreateEventDesignTests } = require('./createEventDesign.cy');
+  const { CreateEventSettingsTests } = require('./createEventSettings.cy');
+  const { CreateEventPublishTests } = require('./createEventPublish.cy');
+  const { EventDetailsTests } = require('./eventDetails.cy');
+  const { EventRegistrationTests } = require('./eventRegistration.cy');
+  const { OrganizerDashboardTests } = require('./organizerDashBoard.cy');
    const { MyVolunteerSignupTests } = require('./myVolunteerSignup.cy');
-  // const { SignupListTests }  = require('./createdSignupList.cy');
-  // const { CreateSignupTests } = require('./createSignup.cy');
-  // const { VolunteerHomeTests } = require('./volunteerHome.cy');
-  // const { SignupRegistrationTests } =require('./signupRegistration.cy');
-  // const { SignupMessageTests } = require('./signupMessage.cy');
+  const { SignupListTests }  = require('./createdSignupList.cy');
+  const { CreateSignupTests } = require('./createSignup.cy');
+  const { VolunteerHomeTests } = require('./volunteerHome.cy');
+  const { SignupRegistrationTests } =require('./signupRegistration.cy');
+  const { SignupMessageTests } = require('./signupMessage.cy');
 });
 
 
