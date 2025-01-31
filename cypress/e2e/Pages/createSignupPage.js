@@ -16,16 +16,16 @@ class CreateSignup {
   locationField = ':nth-child(3) > app-eventzetsignupdate > :nth-child(1) > .pb-2 > .card > .card-body > :nth-child(1) > :nth-child(1) > .mt-4 > .col-lg-12 > #content > .content-inside > .col-md-6 > .form-floating > #LocationAddDate';
   dateField = ':nth-child(3) > app-eventzetsignupdate > :nth-child(1) > .pb-2 > .card > .card-body > :nth-child(1) > :nth-child(1) > .mt-4 > .col-lg-12 > #content > .content-inside > .col-md-4 > .form-floating > #floatingInput';
   dateDeleteButton = ':nth-child(3) > app-eventzetsignupdate > :nth-child(1) > .pb-2 > .card > .card-body > :nth-child(1) > :nth-child(1) > .mt-4 > .col-lg-12 > #content > .content-inside > .col-md-2 > span > .btn';
-  slotTab = '//a[@href="#SlotTabSignup"]';
-  timeTab = '//a[@href="#SignupTimeTabSignup"]';
-  settingsTab = '//a[@href="#SettingsTabSignup"]';
-  designTab = '//a[@href="#DesignTabSignup"]';
-  publishTab = '//a[@href="#PublishTabSignup"]';
+  slotTab = '//*[@id="second_tab"]/span[2][text()=" Slots "]';
+  timeTab = '//*[@id="second_tab"]/span[2][text()="Time"]';
+  settingsTab = '(//a[@data-bs-toggle="tab"])[4]';
+  designTab = '(//a[@data-bs-toggle="tab"])[5]';
+  publishTab = '(//a[@data-bs-toggle="tab"])[6]';
   dateTab = '(//a[@data-bs-toggle="tab"])[1]';
   deleteDateButton = ':nth-child(3) > app-eventzetsignupdate > :nth-child(1) > .col-lg-9 > .card > .card-body > :nth-child(1) > :nth-child(1) > :nth-child(2) > .col-lg-12 > #content > .content-inside > .col-md-2 > span > .btn';
   signupListMenu = '#menu > :nth-child(1) > .nav-link';
   searchBox = '.form-control';
-  signupEditButton = ':nth-child(1) > td > .card > .card-body > .row > :nth-child(3) > .list-inline > :nth-child(1) > .btn > .bi';
+  signupEditButton =':nth-child(1) > .btn > .bi';
   dateField2 = ':nth-child(2) > .content-inside > .col-md-4 > .form-floating > #floatingInput';
   locationField2 = ':nth-child(2) > .content-inside > .col-md-6 > .form-floating > #LocationAddDate';
   slotSaveButton = ':nth-child(3) > app-eventzetsignupslot > :nth-child(1) > .col-lg-12 > .card > .card-body > :nth-child(1) > .mt-3 > .md-raised';
@@ -65,17 +65,21 @@ class CreateSignup {
   blackColorPellet = '.col-lg-7 > .card > .card-body > .g-3 > :nth-child(2)';
   imageDeleteButton = '.position-absolute > .bi';
   copyURLButton = ':nth-child(3) > app-eventzetsignuppublish > :nth-child(3) > :nth-child(1) > :nth-child(1) > .card > .card-body > .my-1 > :nth-child(2) > .list-inline > .list-inline-item > .btn';
-  publishButton = ':nth-child(3) > app-eventzetsignuppublish > :nth-child(3) > :nth-child(1) > :nth-child(1) > .card > .card-body > .my-2 > .col-md-6 > .md-raised';
-  saveDraftButton = '//button[@id="Save Draft"]';
+  publishButton = ':nth-child(3) > app-eventzetsignuppublish > :nth-child(4) > :nth-child(1) > :nth-child(1) > .card > .card-body > .my-2 > .col-md-6 > .md-raised';
+  saveDraftButton = '(//button[@id="Save Draft"])[1]';
   privateSignupButton = ':nth-child(3) > app-eventzetsignuppublish > :nth-child(3) > :nth-child(1) > :nth-child(1) > .card > .card-body > .g-3 > :nth-child(2) > .form-check > #flexSwitchCheckDefault';
   unPublishButton = ':nth-child(1) > td > .card > .card-body > .row > :nth-child(3) > .list-inline > :nth-child(4) > .btn > .px-1';
-  inviteButton = ':nth-child(3) > app-eventzetsignuppublish > :nth-child(3) > :nth-child(1) > :nth-child(1) > .card > .card-body > .my-2 > .col-md-6 > .btn';
+  inviteButton = ':nth-child(3) > app-eventzetsignuppublish > :nth-child(4) > :nth-child(1) > :nth-child(1) > .card > .card-body > .my-2 > .col-md-6 > .btn';
 
+
+  clickEditButton(){
+
+    cy.get('.list-inline > :nth-child(1) > .btn > .bi').click();
+  }
   clickSignupInviteButton() {
 
     //Make it as a private signup toggle button
-    cy.get(':nth-child(3) > app-eventzetsignuppublish > :nth-child(3) > :nth-child(1) > :nth-child(1) > .card > .card-body > .g-3 > :nth-child(2) > .form-check > #flexSwitchCheckDefault')
-      .click({ force: true });
+    cy.get(':nth-child(3) > app-eventzetsignuppublish > :nth-child(4) > :nth-child(1) > :nth-child(1) > .card > .card-body > .g-3 > :nth-child(2) > .form-check > #flexSwitchCheckDefault').click({ force: true });
     cy.wait(1000);
     cy.get(this.inviteButton).click();
   }
@@ -106,40 +110,39 @@ class CreateSignup {
 
   checkSignupCreatorName(username) {
 
-    cy.get(':nth-child(3) > app-eventzetsignuppublish > :nth-child(3) > :nth-child(2) > .col-lg-12 > .container-fluid > .row.py-1 > .text-left > :nth-child(2)')
+    cy.get(':nth-child(3) > app-eventzetsignuppublish > :nth-child(4) > :nth-child(2) > .col-lg-12 > .container-fluid > .row.py-1 > .text-left > :nth-child(2)')
       .should('be.visible').should('contain', username);
   }
 
   checkSignupDescription() {
 
-    cy.get(':nth-child(3) > app-eventzetsignuppublish > :nth-child(3) > :nth-child(2) > .col-lg-12 > .container-fluid > .row.py-1 > .text-left > :nth-child(3)')
+    cy.get(':nth-child(3) > app-eventzetsignuppublish > :nth-child(4) > :nth-child(2) > .col-lg-12 > .container-fluid > .row.py-1 > .text-left > :nth-child(3)')
       .should('be.visible').should('exist');
 
   }
 
   checkSignUPName(signupname) {
 
-    cy.get(':nth-child(3) > app-eventzetsignuppublish > :nth-child(3) > :nth-child(2) > .col-lg-12 > .container-fluid > .row.py-1 > .text-left > .h3')
-      .should('contain', signupname);
+    cy.get(':nth-child(3) > app-eventzetsignuppublish > :nth-child(4) > :nth-child(2) > .col-lg-12 > .container-fluid > .row.py-1 > .text-left > .h3')      .should('contain', signupname);
 
   }
 
   checkSecondSlot(slotname, slotcount, date, location, timedata) {
 
-    cy.get(':nth-child(3) > app-eventzetsignuppublish > :nth-child(3) > :nth-child(2) > .col-lg-12 > .container-fluid > :nth-child(2) > .p-3 > :nth-child(2) > :nth-child(1) > .card > .card-header > .row > .col-12 > :nth-child(1) > .h5')
+    cy.get(':nth-child(3) > app-eventzetsignuppublish > :nth-child(4) > :nth-child(2) > .col-lg-12 > .container-fluid > :nth-child(2) > .p-3 > :nth-child(2) > :nth-child(1) > .card > .card-header > .row > .col-12 > :nth-child(1) > .h5')
       .should('be.visible').
       should('contain', slotname).
       should('contain', slotcount);
 
-      cy.get(':nth-child(3) > app-eventzetsignuppublish > :nth-child(3) > :nth-child(2) > .col-lg-12 > .container-fluid > :nth-child(2) > .p-3 > :nth-child(2) > :nth-child(1) > .card > .card-body > .list-group > .list-group-item > :nth-child(1) > .col-md-12 > .d-flex > .flex-fill > .h6')
+      cy.get(':nth-child(3) > app-eventzetsignuppublish > :nth-child(4) > :nth-child(2) > .col-lg-12 > .container-fluid > :nth-child(2) > .p-3 > :nth-child(2) > :nth-child(1) > .card > .card-body > .list-group > .list-group-item > :nth-child(1) > .col-md-12 > .d-flex > .flex-fill > .h6')
       .should('be.visible').
       should('contain', date);
 
-      cy.get(':nth-child(3) > app-eventzetsignuppublish > :nth-child(3) > :nth-child(2) > .col-lg-12 > .container-fluid > :nth-child(2) > .p-3 > :nth-child(2) > :nth-child(1) > .card > .card-body > .list-group > .list-group-item > :nth-child(2) > :nth-child(1) > .row > .col-md-12 > .p-0')
+      cy.get(':nth-child(3) > app-eventzetsignuppublish > :nth-child(4) > :nth-child(2) > .col-lg-12 > .container-fluid > :nth-child(2) > .p-3 > :nth-child(2) > :nth-child(1) > .card > .card-body > .list-group > .list-group-item > :nth-child(2) > :nth-child(1) > .row > .col-md-12 > .p-0')
       .should('be.visible').
       should('contain', location);
 
-      cy.get(':nth-child(3) > app-eventzetsignuppublish > :nth-child(3) > :nth-child(2) > .col-lg-12 > .container-fluid > :nth-child(2) > .p-3 > :nth-child(2) > :nth-child(1) > .card > .card-body > .list-group > .list-group-item > :nth-child(2) > :nth-child(1) > .row > .col-lg-3 > .p-0')
+      cy.get(':nth-child(3) > app-eventzetsignuppublish > :nth-child(4) > :nth-child(2) > .col-lg-12 > .container-fluid > :nth-child(2) > .p-3 > :nth-child(2) > :nth-child(1) > .card > .card-body > .list-group > .list-group-item > :nth-child(2) > :nth-child(1) > .row > .col-lg-3 > .p-0')
       .should('be.visible').
       should('contain', timedata);
 
@@ -147,20 +150,20 @@ class CreateSignup {
 
   checkFirstSlot(slotname, slotcount, date, location, timedata) {
 
-    cy.get(':nth-child(3) > app-eventzetsignuppublish > :nth-child(3) > :nth-child(2) > .col-lg-12 > .container-fluid > :nth-child(2) > .p-3 > :nth-child(1) > :nth-child(1) > .card > .card-header > .row > .col-12 > :nth-child(1) > .h5')
+    cy.get(':nth-child(3) > app-eventzetsignuppublish > :nth-child(4) > :nth-child(2) > .col-lg-12 > .container-fluid > :nth-child(2) > .p-3 > :nth-child(1) > :nth-child(1) > .card > .card-header > .row > .col-12 > :nth-child(1) > .h5')
       .should('be.visible').
       should('contain', slotname).
       should('contain', slotcount);
 
-      cy.get(':nth-child(3) > app-eventzetsignuppublish > :nth-child(3) > :nth-child(2) > .col-lg-12 > .container-fluid > :nth-child(2) > .p-3 > :nth-child(1) > :nth-child(1) > .card > .card-body > .list-group > .list-group-item > :nth-child(1) > .col-md-12 > .d-flex > .flex-fill > .h6')
+      cy.get(':nth-child(3) > app-eventzetsignuppublish > :nth-child(4) > :nth-child(2) > .col-lg-12 > .container-fluid > :nth-child(2) > .p-3 > :nth-child(1) > :nth-child(1) > .card > .card-body > .list-group > .list-group-item > :nth-child(1) > .col-md-12 > .d-flex > .flex-fill > .h6')
       .should('be.visible').
       should('contain', date);
 
-      cy.get(':nth-child(3) > app-eventzetsignuppublish > :nth-child(3) > :nth-child(2) > .col-lg-12 > .container-fluid > :nth-child(2) > .p-3 > :nth-child(1) > :nth-child(1) > .card > .card-body > .list-group > .list-group-item > :nth-child(2) > :nth-child(1) > .row > .col-md-12 > .p-0')
+      cy.get(':nth-child(3) > app-eventzetsignuppublish > :nth-child(4) > :nth-child(2) > .col-lg-12 > .container-fluid > :nth-child(2) > .p-3 > :nth-child(1) > :nth-child(1) > .card > .card-body > .list-group > .list-group-item > :nth-child(2) > :nth-child(1) > .row > .col-md-12 > .p-0')
       .should('be.visible').
       should('contain', location);
 
-      cy.get(':nth-child(3) > app-eventzetsignuppublish > :nth-child(3) > :nth-child(2) > .col-lg-12 > .container-fluid > :nth-child(2) > .p-3 > :nth-child(1) > :nth-child(1) > .card > .card-body > .list-group > .list-group-item > :nth-child(2) > :nth-child(1) > .row > .col-lg-3 > .p-0')
+      cy.get(':nth-child(3) > app-eventzetsignuppublish > :nth-child(4) > :nth-child(2) > .col-lg-12 > .container-fluid > :nth-child(2) > .p-3 > :nth-child(1) > :nth-child(1) > .card > .card-body > .list-group > .list-group-item > :nth-child(2) > :nth-child(1) > .row > .col-lg-3 > .p-0')
       .should('be.visible').
       should('contain', timedata);
 
@@ -233,6 +236,8 @@ class CreateSignup {
 
   checkTimeDeleteValue(starttime, endtime, slot, date) {
 
+
+cy.get(':nth-child(3) > app-eventzetsignuptime > :nth-child(2) > :nth-child(1) > .card > .card-body > :nth-child(1) > .mt-3 > .md-btn-lg-line').click();
     cy.get(this.startTime1).should('not.have.value', starttime);
     cy.get(this.endTime1).should('not.have.value', endtime);
     cy.xpath(this.selectSlotDropdown1).should('not.have.value', slot);
@@ -403,6 +408,7 @@ class CreateSignup {
 
   checkSlotDeleteValue(count, slotname) {
 
+    cy.get(':nth-child(3) > app-eventzetsignupslot > :nth-child(1) > .col-lg-12 > .card > .card-body > .row > .mt-3 > .md-btn-lg-line').click();
     cy.get(this.slotCountField1).should('not.have.value', count);
     cy.get(this.slotNameField1).should('not.have.value', slotname);
 

@@ -13,9 +13,9 @@ class CreateEventTimeSlots {
     searchEventInputBox = '#myOwneventstab > :nth-child(1) > .col-md-4 > .input-group > .form-control';
     timeSlotsTab = ':nth-child(4) > .nav-link > .progressactive > .bi';
     startDateField = '#StartDate';
-    startTimeField = ':nth-child(2) > app-marzet-tp > .form-floating > #martime_0_tp';
+    startTimeField = '#martime_StartTime_tp';
     endDateField = '#EndDate';
-    endTimeField = ':nth-child(4) > app-marzet-tp > .form-floating > #martime_0_tp';
+    endTimeField = '#martime_EndTime_tp';
     timeZoneDropdown = '#floatingSelectGridCategory';
     addTimeSlotButton = '.col-md-12.my-1 > .btn';
     continueButton = '.fixed_btm_div > .btn';
@@ -51,14 +51,14 @@ class CreateEventTimeSlots {
 
     checkStartDateValidation() {
 
-        cy.get('#contentInsideSignupSlot0 > :nth-child(1) > :nth-child(2)').
+        cy.get(':nth-child(1) > .invalid-feedback').
             should('be.visible').
             should('contain', 'Start Date is required');
     }
 
     checkEndDateValidation() {
 
-        cy.get(':nth-child(3) > :nth-child(2)').
+        cy.get(':nth-child(3) > .invalid-feedback').
             should('be.visible').
             should('contain', 'End Date is required');
     }

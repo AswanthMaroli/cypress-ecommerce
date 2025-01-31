@@ -7,7 +7,7 @@ const bi = new CreateEventBasicInfo();
 const moment = require('moment');  // Import moment.js
 
 function formatDate(dateStr) {
-    return moment(dateStr).format('MM/DD/YY');  // Format date to MM/DD/YY
+    return moment(dateStr).format('M/D/YY');  // Format date to MM/DD/YY
 }
 
 const startDate = dateCalculations.calculateSevenDaysLater();
@@ -22,6 +22,8 @@ function performLogin(email, password) {
     bi.inputPassword(password);
     bi.loginClick();
   }
+
+
   
 
 module.exports = {

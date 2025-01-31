@@ -124,7 +124,7 @@ class EventRegistration {
 
     selectCancelTicketTier() {
 
-        cy.get(':nth-child(1) > [scope="row"] > .form-check-input').check();
+        cy.get(':nth-child(1) > :nth-child(1) > .form-check-input').check();
 
 
     }

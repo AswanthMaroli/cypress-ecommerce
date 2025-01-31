@@ -12,11 +12,11 @@ function formatDate(dateString) {
 
     // Array of weekday names
     const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    const months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    // const months = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
 
     // Extract the weekday, day, month, and year components
     const weekday = weekdays[date.getDay()];  // Get the day of the week (0 - 6)
-    const month = months[date.getMonth()];    // Get the month (0 - 11)
+    const month = date.getMonth() + 1;  // Get the month (0 - 11)
     const day = String(date.getDate()); // Get the day of the month (01 - 31)
     const year = String(date.getFullYear()).slice(2); // Get last 2 digits of the year
 
@@ -40,7 +40,8 @@ function dateFormat(dateString) {
     const date = new Date(dateString);
 
     // Extract the month, day, and year
-    const month = String(date.getMonth() + 1).padStart(2, '0');  // Months are 0-indexed, so we add 1
+    const month = date.getMonth() + 1; 
+    // const month = String(date.getMonth() + 1).padStart(2, '0');  // Months are 0-indexed, so we add 1
     const day = String(date.getDate());  // Ensure day is 2 digits
     const year = String(date.getFullYear()).slice(2); // Get the last 2 digits of the year
 
@@ -137,9 +138,6 @@ module.exports = {
         it('Test 1: Clicking Create VolunteerSignup button - it is redirected to the date page(create signup)', () => {
 
             cy.visit(baseUrl);
-            cy.wait(4000);
-            cy.scrollTo(0, 0);
-            cy.viewport(1400, 860);
             readDataFromFile(filename).then((list) => {
                 cs.clickLogin(list.useremail, list.userpassword);
             });
@@ -162,8 +160,6 @@ module.exports = {
         it('Test 2: Check date page validation is working or not ', () => {
             cy.visit(baseUrl);
             cy.wait(4000);
-            cy.scrollTo(0, 0);
-            cy.viewport(1400, 860);
             readDataFromFile(filename).then((list) => {
                 cs.clickLogin(list.useremail, list.userpassword);
             });
@@ -605,8 +601,8 @@ module.exports = {
                 cy.wait(5000);
                 cs.checkSlotDeleteValue(list.slotcount1, list.slotname1);
 
-                //after deleting the slot then we can navigate to the time page by clicking time tab
-                cs.clickTimeTab();
+                //after deleting the slot then we can navigate to the time page by clicking save and continue button
+                cs.clickSlotSaveButton();
                 cy.url().should('include', 'https://test.eventzet.com/#/VolunteerSignup/Volunteersignup/EventzetSignup/EventzetSignupSlot');
 
             });
@@ -988,7 +984,7 @@ module.exports = {
         }),
 
 
-       // Settings page  tests
+     //  Settings page  tests
 
         it('Test 23: Check whether user can save the settings page', () => {
 
@@ -1257,7 +1253,7 @@ module.exports = {
 
         }),
 
-       //  publish page tests
+      //  publish page tests
 
         it('Test 30: Check whether publish page contain all the details', () => {
 
@@ -1378,7 +1374,7 @@ module.exports = {
             readDataFromFile(filename).then((list) => {
 
                 cs.searchSignupName(list.signuptitle);
-                cs.clickSignupEditButton();
+                cs.clickEditButton();
                 cy.wait(5000);
                 cs.clickPublishTab();
                 cy.intercept('GET', '/api/SignupPublishWrapper/GetSignupPublishWrapper?SignUpID=*&SignUpStatus=SignUpStatus&SignUpPrivacyStatus=SignUpPrivacyStatus').as('signupPublishData');

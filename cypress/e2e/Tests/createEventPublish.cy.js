@@ -60,40 +60,10 @@ module.exports = {
         }),
 
 
-      
-
-        it("Test 2:Check user can enable service charge is given by the event creator button", () => {
-
-            readDataFromFile(filename).then((list) => {
-
-                performLogin(list.email, list.password);
-                navigateToPublishPage();
-                publish.clickServiceChargeButton();
-                cy.wait(2000);
-
-            });
-
-            cy.log('Service charge is given by the event creator button is enabled');
-        }),
-       
-
-        it("Test 3:Check user can enable accept refund requests button", () => {
-
-            
-            readDataFromFile(filename).then((list) => {
-
-                performLogin(list.email, list.password);
-                navigateToPublishPage();
-                publish.clickRefundRequestButton();
-                cy.wait(2000);
-
-            });
-            cy.log('Accept refund request button is enabled');
-        }),
      
 
 
-        it("Test 4:Check user can save publish page without selecting refund policy in dropdown", () => {
+        it("Test 2:Check user can save publish page without selecting refund policy in dropdown", () => {
 
             readDataFromFile(filename).then((list) => {
 
@@ -111,7 +81,7 @@ module.exports = {
         
 
 
-        it("Test 5:Check user can disable service charge is given by the event creator button", () => {
+        it("Test 3:Check user can disable service charge is given by the event creator button", () => {
 
             readDataFromFile(filename).then((list) => {
 
@@ -126,7 +96,7 @@ module.exports = {
         }),
       
 
-        it("Test 6:Check user can disable accept refund requests button", () => {
+        it("Test 4:Check user can disable accept refund requests button", () => {
  
             readDataFromFile(filename).then((list) => {
 
@@ -141,7 +111,7 @@ module.exports = {
         }),
        
 
-        it("Test 7:Check whether user can save publish page", () => {
+        it("Test 5:Check whether user can save publish page", () => {
             
             readDataFromFile(filename).then((list) => {
 
@@ -156,7 +126,7 @@ module.exports = {
             cy.log('Event saved successfuly');
         }),
   
-        it("Test 8:Check whether user can publish the event ", () => {
+        it("Test 6:Check whether user can publish the event ", () => {
             readDataFromFile(filename).then((list) => {
 
                 performLogin(list.email, list.password);

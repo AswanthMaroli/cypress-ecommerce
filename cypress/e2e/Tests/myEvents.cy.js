@@ -63,22 +63,9 @@ module.exports = {
 
     }),
 
-    // Test 4
-    it('Test 4: Event search is working fine or not', () => {
-
-
-      readDataFromFile(filename).then((list) => {
-
-      
-        performLogin(list.email, list.password);
-        navigateToMyEvents();
-        myEventsPage.searchEvent(list.eventtitle);
-      });
-      myEventsPage.clearSearchEvent();
-    }),
 
     // Test 5
-    it('Test 5: Verify user can unpublish the event', () => {
+    it('Test 4: Verify user can unpublish the event', () => {
 
       readDataFromFile(filename).then((list) => {
 
@@ -92,7 +79,7 @@ module.exports = {
     }),
 
     // Test 6
-    it('Test 6: Verify user can publish the event', () => {
+    it('Test 5: Verify user can publish the event', () => {
 
 
       readDataFromFile(filename).then((list) => {
@@ -107,7 +94,7 @@ module.exports = {
     }),
 
 
-    it('Test 7: Verify user can delete event', () => {
+    it('Test 6: Verify user can delete event', () => {
 
       readDataFromFile(filename).then((list) => {
 

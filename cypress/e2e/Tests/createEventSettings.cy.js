@@ -72,21 +72,13 @@ module.exports = {
             });
         }),
 
-        it("Test 4: Add special instructions", () => {
+        it("Test 4: Add special instructions & Email message", () => {
 
             readDataFromFile(filename).then((list) => {
                 performLogin(list.email, list.password);
                 navigateToSettingsPage();
                 settings.inputSpecialInstruction(list.instructions1);
-            });
-        }),
-
-        it("Test 5: Add email message", () => {
-            readDataFromFile(filename).then((list) => {
-                performLogin(list.email, list.password);
-                navigateToSettingsPage();
                 settings.inputMessage(list.message1);
-
             });
         }),
 

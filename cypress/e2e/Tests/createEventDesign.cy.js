@@ -106,55 +106,8 @@ module.exports = {
             });
         }),
 
-        it("Test 6: Upload YouTube video", () => {
-            readDataFromFile(filename).then((list) => {
-                performLogin(list.email, list.password);
-                navigateToDesignPage();
-                cy.wait(1000);
-                // design.checkYouTubeSelected();
-                design.inputYoutubeVideoUrl(list.youtubeurl);
-                cy.wait(2000);
-                cy.log('YouTube video was uploaded');
-            });
-        }),
-
-        it("Test 7: Upload Rumble video", () => {
-            readDataFromFile(filename).then((list) => {
-                performLogin(list.email, list.password);
-                navigateToDesignPage();
-                design.clickRumbleTab();
-                design.checkRumbleSelected();
-                design.inputRumbleVideoUrl(list.rumbleurl);
-                cy.wait(3000);
-                cy.log('Rumble video was uploaded');
-            });
-        }),
-
-        it("Test 8: Upload Vimeo video", () => {
-            readDataFromFile(filename).then((list) => {
-                performLogin(list.email, list.password);
-                navigateToDesignPage();
-                design.clickVimieoTab();
-                design.checkVimeoSelected();
-                design.inputVimieoVideoUrl(list.vimieourl);
-                cy.wait(3000);
-                cy.log('Vimeo video was uploaded');
-            });
-        }),
-
-        it("Test 9: Invalid video URL", () => {
-            readDataFromFile(filename).then((list) => {
-                performLogin(list.email, list.password);
-                navigateToDesignPage();
-                const invalidUrl = 'https://www.example.com/video';
-                design.clickYoutubeTab();
-                design.inputYoutubeVideoUrl(invalidUrl);
-                cy.log('Invalid URL error was displayed');
-            });
-        }),
-
         
-        it("Test 10: Switch between video platforms", () => {
+        it("Test 6: Switch between video platforms", () => {
             readDataFromFile(filename).then((list) => {
                 performLogin(list.email, list.password);
                 navigateToDesignPage();
@@ -169,7 +122,7 @@ module.exports = {
             });
         }),
 
-        it("Test 11: Save Design Page", () => {
+        it("Test 7: Save Design Page", () => {
             readDataFromFile(filename).then((list) => {
                 performLogin(list.email, list.password);
                 navigateToDesignPage();

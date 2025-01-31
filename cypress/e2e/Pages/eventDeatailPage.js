@@ -120,10 +120,10 @@ class EventDetails {
         cy.get('.text-dark > span').should('contain',specialinstructions);
         cy.get(':nth-child(4) > :nth-child(2) > .list-inline > :nth-child(1) > div').should('contain',eventlocation);
         cy.get('.row > :nth-child(3) > :nth-child(2) > .text-dark').should('contain',ticketname1);
-        cy.get(':nth-child(4) > .list-inline > .list-inline-item.font_p').should('contain',addonname1);
+        cy.get(':nth-child(5) > .list-inline > .list-inline-item.font_p').should('contain',addonname1);
         cy.get(':nth-child(3) > .text-dark').should('contain',onlineticket);
         cy.get(':nth-child(4) > .text-dark').should('contain',ticketname2);
-        cy.get(':nth-child(5) > .list-inline > .list-inline-item.font_p').should('contain',addonname2);
+        cy.get(':nth-child(6) > .list-inline > .list-inline-item.font_p').should('contain',addonname2);
 
     }
 
